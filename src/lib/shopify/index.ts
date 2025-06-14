@@ -356,36 +356,41 @@ export async function getCollectionProducts({
   sortKey?: string;
   filterCategoryProduct?: any[]; // Update the type based on your GraphQL schema
 }): Promise<{ pageInfo: PageInfo | null; products: Product[] }> {
-  const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
-    query: getCollectionProductsQuery,
-    tags: [TAGS.collections, TAGS.products],
-    variables: {
-      handle: collection,
-      reverse,
-      sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
-      filterCategoryProduct, // Pass the filters variable to the query
-    } as {
-      handle: string;
-      reverse?: boolean;
-      sortKey?: string;
-      filterCategoryProduct?: any[];
-    },
-  });
+  try {
+    const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
+      query: getCollectionProductsQuery,
+      tags: [TAGS.collections, TAGS.products],
+      variables: {
+        handle: collection,
+        reverse,
+        sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
+        filterCategoryProduct, // Pass the filters variable to the query
+      } as {
+        handle: string;
+        reverse?: boolean;
+        sortKey?: string;
+        filterCategoryProduct?: any[];
+      },
+    });
 
-  if (!res.body.data.collection) {
-    // console.log(`No collection found for \`${collection}\``);
+    if (!res.body.data.collection) {
+      // console.log(`No collection found for \`${collection}\``);
+      return { pageInfo: null, products: [] };
+    }
+
+    // return reshapeProducts(removeEdgesAndNodes(res.body.data.collection.products));
+    const pageInfo = res.body.data?.collection?.products?.pageInfo;
+
+    return {
+      pageInfo,
+      products: reshapeProducts(
+        removeEdgesAndNodes(res.body.data.collection.products),
+      ),
+    };
+  } catch (error) {
+    console.error(`Error fetching collection products for ${collection}:`, error);
     return { pageInfo: null, products: [] };
   }
-
-  // return reshapeProducts(removeEdgesAndNodes(res.body.data.collection.products));
-  const pageInfo = res.body.data?.collection?.products?.pageInfo;
-
-  return {
-    pageInfo,
-    products: reshapeProducts(
-      removeEdgesAndNodes(res.body.data.collection.products),
-    ),
-  };
 }
 
 export async function createCustomer(input: CustomerInput): Promise<any> {
@@ -476,21 +481,26 @@ export async function getCollections(): Promise<Collection[]> {
 }
 
 export async function getMenu(handle: string): Promise<Menu[]> {
-  const res = await shopifyFetch<ShopifyMenuOperation>({
-    query: getMenuQuery,
-    tags: [TAGS.collections],
-    variables: { handle },
-  });
+  try {
+    const res = await shopifyFetch<ShopifyMenuOperation>({
+      query: getMenuQuery,
+      tags: [TAGS.collections],
+      variables: { handle },
+    });
 
-  return (
-    res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
-      title: item.title,
-      path: item.url
-        .replace(domain, "")
-        .replace("/collections", "/search")
-        .replace("/pages", ""),
-    })) || []
-  );
+    return (
+      res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
+        title: item.title,
+        path: item.url
+          .replace(domain, "")
+          .replace("/collections", "/search")
+          .replace("/pages", ""),
+      })) || []
+    );
+  } catch (error) {
+    console.error(`Error fetching menu ${handle}:`, error);
+    return [];
+  }
 }
 
 export async function getPage(handle: string): Promise<Page> {
@@ -511,25 +521,35 @@ export async function getPages(): Promise<Page[]> {
 }
 
 export async function getProduct(handle: string): Promise<Product | undefined> {
-  const res = await shopifyFetch<ShopifyProductOperation>({
-    query: getProductQuery,
-    tags: [TAGS.products],
-    variables: { handle },
-  });
+  try {
+    const res = await shopifyFetch<ShopifyProductOperation>({
+      query: getProductQuery,
+      tags: [TAGS.products],
+      variables: { handle },
+    });
 
-  return reshapeProduct(res.body.data.product, false);
+    return reshapeProduct(res.body.data.product, false);
+  } catch (error) {
+    console.error(`Error fetching product ${handle}:`, error);
+    return undefined;
+  }
 }
 
 export async function getProductRecommendations(
   productId: string,
 ): Promise<Product[]> {
-  const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
-    query: getProductRecommendationsQuery,
-    tags: [TAGS.products],
-    variables: { productId },
-  });
+  try {
+    const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
+      query: getProductRecommendationsQuery,
+      tags: [TAGS.products],
+      variables: { productId },
+    });
 
-  return reshapeProducts(res.body.data.productRecommendations);
+    return reshapeProducts(res.body.data.productRecommendations);
+  } catch (error) {
+    console.error(`Error fetching product recommendations for ${productId}:`, error);
+    return [];
+  }
 }
 
 export async function getVendors({
@@ -653,8 +673,8 @@ export async function getHighestProductPrice(): Promise<{
 
     return highestProductPrice || null;
   } catch (error) {
-    console.log("Error fetching highest product price:", error);
-    throw error;
+    console.error("Error fetching highest product price:", error);
+    return null;
   }
 }
 
