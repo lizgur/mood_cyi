@@ -5,8 +5,10 @@ import type { user } from "@/lib/shopify/types";
 import Cookies from "js-cookie";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import Gravatar from "react-gravatar";
 import { BsPerson } from "react-icons/bs";
+
+// Type-safe Gravatar import
+const Gravatar = require("react-gravatar").default;
 
 export const fetchUser = async () => {
   try {
