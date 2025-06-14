@@ -607,12 +607,7 @@ export async function getProducts({
     const res = await shopifyFetch<ShopifyProductsOperation>({
       query: getProductsQuery,
       tags: [TAGS.products],
-      variables: {
-        query,
-        reverse,
-        sortKey,
-        after: cursor,
-      },
+      variables: { query, reverse, sortKey, cursor },
     });
 
     // Handle missing credentials gracefully
@@ -622,7 +617,6 @@ export async function getProducts({
         pageInfo: {
           hasNextPage: false,
           hasPreviousPage: false,
-          startCursor: "",
           endCursor: "",
         },
         products: [],
@@ -639,7 +633,6 @@ export async function getProducts({
       pageInfo: {
         hasNextPage: false,
         hasPreviousPage: false,
-        startCursor: "",
         endCursor: "",
       },
       products: [],
