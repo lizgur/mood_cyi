@@ -2,43 +2,31 @@
   "colors": {
     "default": {
       "theme_color": {
-        "primary": "#121212",
+        "primary": "#9658F9",
+        "secondary": "#BDFF07",
+        "accent": "#300B6A",
+        "accent-secondary": "#5C7515",
         "body": "#fff",
         "border": "#eaeaea",
         "light": "#f2f2f2",
         "dark": "#000"
       },
       "text_color": {
-        "text": "#444",
+        "text": "#000",
         "text-dark": "#000",
         "text-light": "#666"
-      }
-    },
-    "darkmode": {
-      "theme_color": {
-        "primary": "#fff",
-        "body": "#252525",
-        "border": "#3E3E3E",
-        "light": "#222222",
-        "dark": "#000"
-      },
-      "text_color": {
-        "text": "#DDD",
-        "text-dark": "#fff",
-        "text-light": "#DDD"
       }
     }
   },
   "fonts": {
     "font_family": {
-      "primary": "Karla:wght@400;500;700",
+      "primary": "Wallpoet",
       "primary_type": "sans-serif",
-      "secondary": "",
-      "secondary_type": ""
+      "secondary": "Cute Font",
+      "secondary_type": "sans-serif",
+      "body": "Consolas",
+      "body_type": "monospace"
     },
-    "font_size": {
-      "base": "16",
-      "scale": "1.2"
-    }
+    "font_size": { "base": "16", "scale": "1.2" }
   }
 }

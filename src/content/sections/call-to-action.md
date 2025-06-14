@@ -1,11 +1,12 @@
 ---
 enable: true
-title: "Curved Collection for Your Bedroom Get 25% Off"
-sub_title: "Deal of the Week"
-image: "/images/call-to-action.png"
-description: "Subscribe our Newsletter and get all latest information and offers"
+title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt."
+sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF"
+image: "/images/pizza.png"
+description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout."
 button:
   enable: true
-  label: "Shop Now"
-  link: "/products"
+  label: "🛒 Grab the Deal Now"
+  link: "/products?c=_drop01"
+fine_print: "⏳ Ends June 30 2025 or while supplies last."
 ---

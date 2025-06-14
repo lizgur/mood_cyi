@@ -1,24 +1,19 @@
 {
   "main": [
     {
-      "name": "facebook",
-      "icon": "FaFacebookF",
-      "link": "https://www.facebook.com/"
-    },
-    {
       "name": "twitter",
       "icon": "FaXTwitter",
-      "link": "https://twitter.com/"
+      "link": "https://x.com/mood_cyi?s=21"
     },
     {
       "name": "instagram",
       "icon": "FaInstagram",
-      "link": "https://www.instagram.com/"
+      "link": "https://www.instagram.com/mood_cyi"
     },
     {
-      "name": "linkedin",
-      "icon": "FaLinkedinIn",
-      "link": "https://www.linkedin.com/"
+      "name": "email",
+      "icon": "FaEnvelope",
+      "link": "mailto:moodcyi@gmail.com"
     }
   ]
 }

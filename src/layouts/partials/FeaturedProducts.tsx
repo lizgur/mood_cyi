@@ -1,13 +1,10 @@
 "use client";
 import { AddToCart } from "@/components/cart/AddToCart";
-import config from "@/config/config.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import { Product } from "@/lib/shopify/types";
 import Link from "next/link";
 
 const FeaturedProducts = ({ products }: { products: Product[] }) => {
-  const { currencySymbol } = config.shopify;
-
   return (
     <>
       <div className="row">
@@ -24,10 +21,17 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
 
           const defaultVariantId =
             variants.length > 0 ? variants[0].id : undefined;
+
+          // Check if compare price exists and is greater than regular price
+          const hasComparePrice =
+            compareAtPriceRange?.maxVariantPrice?.amount &&
+            parseFloat(compareAtPriceRange.maxVariantPrice.amount) >
+              parseFloat(priceRange.minVariantPrice.amount);
+
           return (
             <div
               key={id}
-              className="text-center col-6 md:col-4 lg:col-3 mb-8 md:mb-14 group relative"
+              className="text-center col-6 md:col-4 lg:col-3 mb-4 group relative"
             >
               <div className="relative overflow-hidden">
                 <ImageFallback
@@ -58,21 +62,16 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
                   </Link>
                 </h2>
                 <div className="flex flex-wrap justify-center items-center gap-x-2 mt-2 md:mt-4">
-                  <span className="text-base md:text-xl font-bold text-text-dark dark:text-darkmode-text-dark">
-                    {currencySymbol}{" "}
+                  <span className="text-base md:text-xl font-bold text-text-dark ">
                     {priceRange.minVariantPrice.amount}{" "}
-                    {compareAtPriceRange?.maxVariantPrice?.currencyCode}
+                    {priceRange.minVariantPrice.currencyCode}
                   </span>
 
-                  {parseFloat(compareAtPriceRange?.maxVariantPrice.amount) >
-                    0 ? (
-                    <s className="text-text-light dark:text-darkmode-text-light text-xs md:text-base font-medium">
-                      {currencySymbol}{" "}
-                      {compareAtPriceRange?.maxVariantPrice.amount}{" "}
-                      {compareAtPriceRange?.maxVariantPrice?.currencyCode}
+                  {hasComparePrice && (
+                    <s className="text-text-light  text-xs md:text-base font-medium">
+                      {compareAtPriceRange.maxVariantPrice.amount}{" "}
+                      {compareAtPriceRange.maxVariantPrice.currencyCode}
                     </s>
-                  ) : (
-                    ""
                   )}
                 </div>
               </div>

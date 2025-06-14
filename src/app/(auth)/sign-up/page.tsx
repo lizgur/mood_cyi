@@ -69,9 +69,7 @@ const SignUp = () => {
           <div className="col-11 sm:col-9 md:col-7 mx-auto">
             <div className="mb-14 text-center">
               <h2 className="max-md:h1 md:mb-2">Create an account</h2>
-              <p className="md:text-lg">
-                Create an account and start using...
-              </p>
+              <p className="md:text-lg">Create an account and start using...</p>
             </div>
 
             <form onSubmit={handleSignUp}>
@@ -130,11 +128,9 @@ const SignUp = () => {
             </form>
 
             <div className="flex gap-x-2 text-sm md:text-base mt-6">
-              <p className="text-text-light dark:text-darkmode-text-light">
-                I have read and agree to the
-              </p>
+              <p className="text-text-light ">I have read and agree to the</p>
               <Link
-                className="underline font-medium text-text-dark dark:text-darkmode-text-dark"
+                className="underline font-medium text-text-dark "
                 href={"/terms-services"}
               >
                 Terms & Conditions
@@ -142,11 +138,9 @@ const SignUp = () => {
             </div>
 
             <div className="flex gap-x-2 text-sm md:text-base mt-2">
-              <p className="text-text-light dark:text-darkmode-text-light">
-                Have an account?
-              </p>
+              <p className="text-text-light ">Have an account?</p>
               <Link
-                className="underline font-medium text-text-dark dark:text-darkmode-text-dark"
+                className="underline font-medium text-text-dark "
                 href={"/login"}
               >
                 Login

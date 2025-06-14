@@ -20,15 +20,16 @@ function SubmitButton({ type }: { type: "plus" | "minus" }) {
         type === "plus" ? "Increase item quantity" : "Reduce item quantity"
       }
       aria-disabled={pending}
-      className={`ease flex h-full min-w-[36px] max-w-[36px] flex-none items-center justify-center rounded-full px-2 transition-all duration-200 hover:border-neutral-800 hover:opacity-80 ${pending ? "cursor-not-allowed" : ""
-        } ${type === "minus" ? "ml-auto" : ""}`}
+      className={`ease flex h-full min-w-[36px] max-w-[36px] flex-none items-center justify-center rounded-full px-2 transition-all duration-200 hover:border-neutral-800 hover:opacity-80 ${
+        pending ? "cursor-not-allowed" : ""
+      } ${type === "minus" ? "ml-auto" : ""}`}
     >
       {pending ? (
-        <LoadingDots className="bg-black dark:bg-white" />
+        <LoadingDots className="bg-black " />
       ) : type === "plus" ? (
-        <FaPlus className="h-4 w-4 dark:text-neutral-500" />
+        <FaPlus className="h-4 w-4 " />
       ) : (
-        <FaMinus className="h-4 w-4 dark:text-neutral-500" />
+        <FaMinus className="h-4 w-4 " />
       )}
     </button>
   );

@@ -15,7 +15,7 @@ const Login = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [errorMessages, setErrorMessages] = useState([]);
+  const [errorMessages, setErrorMessages] = useState<CustomerError[]>([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setFormData({
@@ -38,6 +38,15 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
 
+      // Check if response is empty or not JSON
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const textResponse = await response.text();
+        console.error("Non-JSON response:", textResponse);
+        setErrorMessages([{ code: "RESPONSE_ERROR", field: [], message: "Server returned invalid response" }]);
+        return;
+      }
+
       const responseData = await response.json();
 
       if (response.ok) {
@@ -51,6 +60,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Error during login:", error);
+      setErrorMessages([{ code: "LOGIN_ERROR", field: [], message: "Login failed. Please try again." }]);
     } finally {
       setLoading(false);
     }
@@ -116,11 +126,9 @@ const Login = () => {
             </form>
 
             <div className="flex gap-x-2 text-sm md:text-base mt-4">
-              <p className="text-text-light dark:text-darkmode-text-light">
-                Don&apos;t have an account?
-              </p>
+              <p className="text-text-light ">Don&apos;t have an account?</p>
               <Link
-                className="underline font-medium text-text-dark dark:text-darkmode-text-dark"
+                className="underline font-medium text-text-dark "
                 href={"/sign-up"}
               >
                 Register

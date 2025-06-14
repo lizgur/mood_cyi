@@ -1,6 +1,5 @@
 "use client";
 
-import config from "@/config/config.json";
 import { createUrl } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -11,11 +10,12 @@ const RangeSlider = ({
 }: {
   maxPriceData: { amount: string; currencyCode: string };
 }) => {
-  const { currencyCode, currencySymbol } = config.shopify;
   const maxAmount = parseInt(maxPriceData?.amount);
 
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(maxAmount);
+  const [initialMinValue, setInitialMinValue] = useState(0);
+  const [initialMaxValue, setInitialMaxValue] = useState(maxAmount);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -29,14 +29,13 @@ const RangeSlider = ({
 
   useEffect(() => {
     // Initialize with URL params if available
-    if (getMinPrice) {
-      setMinValue(parseInt(getMinPrice));
-    }
-    if (getMaxPrice) {
-      setMaxValue(parseInt(getMaxPrice));
-    } else {
-      setMaxValue(maxAmount);
-    }
+    const minVal = getMinPrice ? parseInt(getMinPrice) : 0;
+    const maxVal = getMaxPrice ? parseInt(getMaxPrice) : maxAmount;
+    
+    setMinValue(minVal);
+    setMaxValue(maxVal);
+    setInitialMinValue(minVal);
+    setInitialMaxValue(maxVal);
   }, [getMinPrice, getMaxPrice, maxAmount]);
 
   useEffect(() => {
@@ -65,10 +64,10 @@ const RangeSlider = ({
     maxThumbRef.current.style.left = `${maxPercent}%`;
   };
 
-  const handleMouseDown = (thumb: "min" | "max") => (e: React.MouseEvent) => {
+  const handlePointerDown = (thumb: "min" | "max") => (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
 
-    const startX = e.clientX;
+    const startX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const rangeRect = rangeRef.current?.getBoundingClientRect();
     if (!rangeRect) return;
 
@@ -76,8 +75,9 @@ const RangeSlider = ({
     const initialMinVal = minValue;
     const initialMaxVal = maxValue;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const dx = e.clientX - startX;
+    const handleMove = (e: MouseEvent | TouchEvent) => {
+      const currentX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const dx = currentX - startX;
       const dPercent = (dx / rangeWidth) * 100;
 
       if (thumb === "min") {
@@ -97,14 +97,20 @@ const RangeSlider = ({
       }
     };
 
-    const handleMouseUp = () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+    const handleEnd = () => {
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("mouseup", handleEnd);
+      document.removeEventListener("touchmove", handleMove);
+      document.removeEventListener("touchend", handleEnd);
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("mouseup", handleEnd);
+    document.addEventListener("touchmove", handleMove, { passive: false });
+    document.addEventListener("touchend", handleEnd);
   };
+
+
 
   function priceChange(minValue: number, maxValue: number) {
     const newParams = new URLSearchParams(searchParams.toString());
@@ -117,20 +123,17 @@ const RangeSlider = ({
   }
 
   const showSubmitButton =
-    (minValue !== (getMinPrice ? parseInt(getMinPrice) : 0) ||
-      maxValue !== (getMaxPrice ? parseInt(getMaxPrice) : maxAmount)) &&
-    (minValue !== 0 || maxValue !== maxAmount);
+    minValue !== initialMinValue ||
+    maxValue !== initialMaxValue;
 
   return (
     <div className="range-slider-container">
       <div className="flex justify-between">
         <p>
-          {currencySymbol}
-          {minValue} {maxPriceData?.currencyCode || currencyCode}
+          {minValue} {maxPriceData?.currencyCode}
         </p>
         <p>
-          {currencySymbol}
-          {maxValue} {maxPriceData?.currencyCode || currencyCode}
+          {maxValue} {maxPriceData?.currencyCode}
         </p>
       </div>
 
@@ -140,12 +143,14 @@ const RangeSlider = ({
         <div
           className="slider-thumb thumb-min"
           ref={minThumbRef}
-          onMouseDown={handleMouseDown("min")}
+          onMouseDown={handlePointerDown("min")}
+          onTouchStart={handlePointerDown("min")}
         ></div>
         <div
           className="slider-thumb thumb-max"
           ref={maxThumbRef}
-          onMouseDown={handleMouseDown("max")}
+          onMouseDown={handlePointerDown("max")}
+          onTouchStart={handlePointerDown("max")}
         ></div>
       </div>
 

@@ -4,6 +4,7 @@ const imageFragment = /* GraphQL */ `
     altText
     width
     height
+    transformedSrc(maxWidth: 800, maxHeight: 800, crop: CENTER)
   }
 `;
 

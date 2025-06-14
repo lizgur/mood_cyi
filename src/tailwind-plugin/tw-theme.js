@@ -18,19 +18,6 @@ const defaultColorGroups = [
   { colors: themeConfig.colors.default.theme_color, prefix: "" },
   { colors: themeConfig.colors.default.text_color, prefix: "" },
 ];
-const darkColorGroups = [];
-if (themeConfig.colors.darkmode?.theme_color) {
-  darkColorGroups.push({
-    colors: themeConfig.colors.darkmode.theme_color,
-    prefix: "darkmode-",
-  });
-}
-if (themeConfig.colors.darkmode?.text_color) {
-  darkColorGroups.push({
-    colors: themeConfig.colors.darkmode.text_color,
-    prefix: "darkmode-",
-  });
-}
 
 const getVars = (groups) => {
   const vars = {};
@@ -44,7 +31,6 @@ const getVars = (groups) => {
 };
 
 const defaultVars = getVars(defaultColorGroups);
-const darkVars = getVars(darkColorGroups);
 
 const baseSize = Number(themeConfig.fonts.font_size.base);
 const scale = Number(themeConfig.fonts.font_size.scale);
@@ -72,9 +58,9 @@ Object.entries(fontFamilies).forEach(([key, font]) => {
 
 const baseVars = { ...fontVars, ...defaultVars };
 
-// Build a colorsMap including both sets
+// Build a colorsMap for light mode only
 const colorsMap = {};
-[...defaultColorGroups, ...darkColorGroups].forEach(({ colors, prefix }) => {
+defaultColorGroups.forEach(({ colors, prefix }) => {
   Object.entries(colors).forEach(([key]) => {
     const cssKey = key.replace(/_/g, "-");
     colorsMap[prefix + cssKey] = `var(--color-${prefix}${cssKey})`;
@@ -83,10 +69,9 @@ const colorsMap = {};
 
 module.exports = plugin.withOptions(() => {
   return function ({ addBase, addUtilities, matchUtilities }) {
-    // Default vars on :root; dark vars on .dark
+    // Only default vars on :root
     addBase({
       ":root": baseVars,
-      ".dark": darkVars,
     });
 
     const fontUtils = {};

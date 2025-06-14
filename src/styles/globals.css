@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
+
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+/* Typography */
+.hero-title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-['Wallpoet'] text-[#300B6A] mb-6;
+}
+
+.hero-subtitle {
+  @apply text-lg md:text-xl text-[#300B6A]/80 font-['Consolas'] mb-8;
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl lg:text-4xl font-['Wallpoet'] text-[#300B6A] mb-4;
+}
+
+.section-subtitle {
+  @apply text-base md:text-lg text-[#300B6A]/80 font-['Consolas'] mb-6;
+}
+
+/* Graffiti style elements */
+.graffiti-text {
+  @apply font-['Wallpoet'] text-[#BDFF07] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)];
+}
+
+.graffiti-bg {
+  @apply bg-[#300B6A] text-[#BDFF07] font-['Wallpoet'];
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Typography Mix */
+h1,
+h2,
+h3 {
+  font-family: "Wallpoet", sans-serif;
+  color: #300b6a;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Cute Font", sans-serif;
+  color: #9658f9;
+}
+
+.product-title {
+  font-family: "Cute Font", sans-serif;
+  font-size: 1.5rem;
+  color: #300b6a;
+}
+
+.nav-link {
+  font-family: "Wallpoet", sans-serif;
+  font-size: 1.1rem;
+}
+
+/* Graffiti-style elements */
+.graffiti-border {
+  position: relative;
+}
+
+.graffiti-border::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #9658f9;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.graffiti-border::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid #bdff07;
+  transform: rotate(1deg);
+  z-index: -2;
+}
+
+.pixel-corner {
+  position: relative;
+}
+
+.pixel-corner::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #9658f9;
+  top: -5px;
+  left: -5px;
+}
+
+.pixel-corner::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #bdff07;
+  bottom: -5px;
+  right: -5px;
+}
+
+.card-graffiti {
+  position: relative;
+  background: white;
+  border: 3px solid #9658f9;
+  transform: rotate(-0.5deg);
+  transition: transform 0.3s ease;
+}
+
+.card-graffiti:hover {
+  transform: rotate(0.5deg) translateY(-2px);
+}
+
+.nav-graffiti {
+  position: relative;
+  font-family: "Wallpoet", sans-serif;
+}
+
+.nav-graffiti::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #bdff07;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-graffiti:hover::after {
+  transform: scaleX(1);
+}
+
+.collection-title {
+  font-family: "Wallpoet", sans-serif;
+  color: #300b6a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.collection-description {
+  font-family: "Consolas", monospace;
+  color: #000;
+  font-size: 1rem;
+}
+
+.featured-title {
+  font-family: "Wallpoet", sans-serif;
+  color: #300b6a;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-subtitle {
+  font-family: "Cute Font", sans-serif;
+  color: #9658f9;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}

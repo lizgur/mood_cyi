@@ -101,6 +101,7 @@ export type Image = {
   altText: string;
   width: number;
   height: number;
+  transformedSrc: string;
 };
 
 export type Menu = {
@@ -149,6 +150,13 @@ export type ProductVariant = {
 export type SEO = {
   title: string;
   description: string;
+};
+
+export type Metafield = {
+  key: string;
+  value: string;
+  type: string;
+  namespace: string;
 };
 
 export type ShopifyCart = {

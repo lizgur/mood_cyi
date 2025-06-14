@@ -28,13 +28,20 @@ const VariantDropDown = ({ sizeOption }: any) => {
       const sizeParam = searchParams.get(sizeOption.name.toLowerCase());
       if (sizeParam && sizeOption.values.includes(sizeParam)) {
         setSelected(sizeParam);
+      } else if (sizeOption.values.includes("M")) {
+        // Default to "M" if available and no URL parameter is set
+        setSelected("M");
+        updateUrl(sizeOption.name, "M");
       }
     };
 
     setInitialSizeFromUrl();
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };

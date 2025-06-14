@@ -11,6 +11,16 @@ const SearchBar = () => {
   const [isInputEditing, setInputEditing] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
+  // Initialize inputValue from URL parameter
+  useEffect(() => {
+    const searchQuery = searchParams.get("q");
+    if (searchQuery) {
+      setInputValue(searchQuery);
+    } else {
+      setInputValue("");
+    }
+  }, [searchParams]);
+
   useEffect(() => {
     const inputField = document.getElementById(
       "searchInput",
@@ -23,16 +33,6 @@ const SearchBar = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputEditing(true);
     setInputValue(e.target.value);
-
-    const newParams = new URLSearchParams(searchParams.toString());
-
-    if (e.target.value) {
-      newParams.set("q", e.target.value);
-    } else {
-      newParams.delete("q");
-    }
-
-    router.push(createUrl("/products", newParams), { scroll: false });
   };
 
   const handleClear = () => {
@@ -64,7 +64,7 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className={`border border-border dark:border-darkmode-border rounded-full flex bg-light/90 dark:bg-dark/10 pl-4 relative`}
+      className={`border border-border  rounded-full flex bg-light/90  pl-4 relative`}
     >
       <input
         id="searchInput"

@@ -3,7 +3,6 @@
 import React, {
   KeyboardEvent,
   ReactElement,
-  RefObject,
   useEffect,
   useRef,
   useState,
@@ -17,7 +16,7 @@ interface TabProps {
 
 function Tabs({ children }: { children: ReactElement<TabProps>[] }) {
   const [active, setActive] = useState(0);
-  const tabItemsRef: RefObject<HTMLElement[]> = useRef([]);
+  const tabItemsRef = useRef<HTMLElement[]>([]);
   const [defaultFocus, setDefaultFocus] = useState(false);
 
   useEffect(() => {

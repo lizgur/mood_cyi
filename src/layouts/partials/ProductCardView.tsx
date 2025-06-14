@@ -1,28 +1,44 @@
 "use client";
 
-import { AddToCart } from "@/components/cart/AddToCart";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { ShopifyProduct } from "@/lib/shopify/types";
+import { AddToCart } from "@/layouts/components/cart/AddToCart";
+import Image from "next/image";
+import Link from "next/link";
 import SkeletonCards from "@/components/loadings/skeleton/SkeletonCards";
-import config from "@/config/config.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import useLoadMore from "@/hooks/useLoadMore";
 import { defaultSort, sorting } from "@/lib/constants";
 import { getCollectionProducts, getProducts } from "@/lib/shopify";
 import { PageInfo, Product } from "@/lib/shopify/types";
 import { titleify } from "@/lib/utils/textConverter";
-import Link from "next/link";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
 
-const ProductCardView = ({ searchParams }: { searchParams: any }) => {
-  const { currencySymbol } = config.shopify;
-  const [isLoading, setIsLoading] = useState(true);
+interface ProductCardViewProps {
+  searchParams: any;
+  initialProducts?: Product[];
+  initialPageInfo?: PageInfo;
+}
+
+const ProductCardView = ({
+  searchParams,
+  initialProducts = [],
+  initialPageInfo,
+}: ProductCardViewProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   const targetElementRef = useRef<HTMLDivElement>(null);
   const [data, setData] = useState<{
     products: Product[];
     pageInfo: PageInfo;
   }>({
-    products: [],
-    pageInfo: { endCursor: "", hasNextPage: false, hasPreviousPage: false },
+    products: initialProducts,
+    pageInfo: initialPageInfo || {
+      endCursor: "",
+      hasNextPage: false,
+      hasPreviousPage: false,
+    },
   });
 
   const {
@@ -86,8 +102,8 @@ const ProductCardView = ({ searchParams }: { searchParams: any }) => {
           if (brand) {
             Array.isArray(brand)
               ? (queryString += `${brand
-                .map((b) => `(vendor:${b})`)
-                .join(" OR ")}`)
+                  .map((b) => `(vendor:${b})`)
+                  .join(" OR ")}`)
               : (queryString += `vendor:"${brand}"`);
 
             if (Array.isArray(brand) && brand.length > 0) {
@@ -120,14 +136,14 @@ const ProductCardView = ({ searchParams }: { searchParams: any }) => {
           productsData =
             category && category !== "all"
               ? await getCollectionProducts({
-                collection: category,
-                sortKey,
-                reverse,
-                filterCategoryProduct:
-                  filterCategoryProduct.length > 0
-                    ? filterCategoryProduct
-                    : undefined,
-              })
+                  collection: category,
+                  sortKey,
+                  reverse,
+                  filterCategoryProduct:
+                    filterCategoryProduct.length > 0
+                      ? filterCategoryProduct
+                      : undefined,
+                })
               : await getProducts({ ...query, cursor });
         } else {
           // Fetch all products
@@ -169,8 +185,6 @@ const ProductCardView = ({ searchParams }: { searchParams: any }) => {
   });
 
   const fetchDataWithNewCursor = async (newCursor: string) => {
-    // setIsLoading(true);
-
     try {
       const res = await getProducts({
         sortKey,
@@ -233,10 +247,12 @@ const ProductCardView = ({ searchParams }: { searchParams: any }) => {
               key={index}
               className="text-center col-12 sm:col-6 md:col-4 group relative"
             >
-              <div className="md:relative overflow-hidden">
+              <div className="relative overflow-hidden mb-4 md:mb-2">
                 <ImageFallback
                   src={
-                    product.featuredImage?.url || "/images/product_image404.jpg"
+                    product.featuredImage?.transformedSrc ||
+                    product.featuredImage?.url ||
+                    "/images/product_image404.jpg"
                   }
                   width={312}
                   height={269}
@@ -251,12 +267,12 @@ const ProductCardView = ({ searchParams }: { searchParams: any }) => {
                     handle={product?.handle}
                     defaultVariantId={defaultVariantId}
                     stylesClass={
-                      "btn btn-primary max-md:btn-sm z-10 absolute bottom-24 md:bottom-0 left-1/2 transform -translate-x-1/2 md:translate-y-full md:group-hover:-translate-y-6 duration-300 ease-in-out whitespace-nowrap drop-shadow-md"
+                      "btn btn-primary max-md:btn-sm z-10 absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full md:group-hover:-translate-y-6 duration-300 ease-in-out whitespace-nowrap drop-shadow-md"
                     }
                   />
                 </Suspense>
               </div>
-              <div className="py-2 md:py-4 text-center z-20">
+              <div className="text-center z-20 space-y-2">
                 <h2 className="font-medium text-base md:text-xl">
                   <Link
                     className="after:absolute after:inset-0"
@@ -265,26 +281,26 @@ const ProductCardView = ({ searchParams }: { searchParams: any }) => {
                     {product?.title}
                   </Link>
                 </h2>
-                <div className="flex flex-wrap justify-center items-center gap-x-2 mt-2 md:mt-4">
-                  <span className="text-base md:text-xl font-bold text-text-dark dark:text-darkmode-text-dark">
-                    {currencySymbol}{" "}
+                <div className="flex flex-wrap justify-center items-center gap-x-2">
+                  <span className="text-base md:text-xl font-bold text-text-dark ">
                     {product?.priceRange?.minVariantPrice?.amount}{" "}
                     {product?.priceRange?.minVariantPrice?.currencyCode}
                   </span>
-                  {parseFloat(
-                    product?.compareAtPriceRange?.maxVariantPrice?.amount,
-                  ) > 0 ? (
-                    <s className="text-text-light dark:text-darkmode-text-light text-xs md:text-base font-medium">
-                      {currencySymbol}{" "}
-                      {product?.compareAtPriceRange?.maxVariantPrice?.amount}{" "}
-                      {
-                        product?.compareAtPriceRange?.maxVariantPrice
-                          ?.currencyCode
-                      }
-                    </s>
-                  ) : (
-                    ""
-                  )}
+                  {product?.compareAtPriceRange?.maxVariantPrice?.amount &&
+                    parseFloat(
+                      product.compareAtPriceRange.maxVariantPrice.amount,
+                    ) >
+                      parseFloat(
+                        product?.priceRange?.minVariantPrice?.amount || "0",
+                      ) && (
+                      <s className="text-text-light  text-xs md:text-base font-medium">
+                        {product.compareAtPriceRange.maxVariantPrice.amount}{" "}
+                        {
+                          product.compareAtPriceRange.maxVariantPrice
+                            .currencyCode
+                        }
+                      </s>
+                    )}
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import Social from "@/components/Social";
 import { AddToCart } from "@/components/cart/AddToCart";
 import LoadingProductGallery from "@/components/loadings/skeleton/SkeletonProductGallery";
-import ProductGallery from "@/components/product/ProductGallery";
+import ProductGalleryWrapper from "@/layouts/components/product/ProductGalleryWrapper";
 import ShowTags from "@/components/product/ShowTags";
 import Tabs from "@/components/product/Tabs";
 import { VariantSelector } from "@/components/product/VariantSelector";
@@ -34,14 +34,10 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
   );
 };
 
-export default ProductSingle;
-
 const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
   const paymentsAndDelivery = getListPage("sections/payments-and-delivery.md");
   const { payment_methods, estimated_delivery } =
     paymentsAndDelivery.frontmatter;
-
-  const { currencySymbol } = config.shopify;
   const product = await getProduct(params.slug);
 
   if (!product) return notFound();
@@ -62,6 +58,70 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
 
   const defaultVariantId = variants.length > 0 ? variants[0].id : undefined;
 
+  // Helper function to format keys for display
+  const formatKey = (key: string) => {
+    return key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+  };
+
+  // Create product details from available data
+  const productDetails = [];
+
+  // Add material information
+  productDetails.push({
+    key: "material",
+    label: "Material",
+    value: "100% Cotton",
+  });
+
+  // Add fit information
+  productDetails.push({
+    key: "fit",
+    label: "Fit",
+    value: "Oversized Fit",
+  });
+
+  // Add gender information
+  productDetails.push({
+    key: "gender",
+    label: "Gender",
+    value: "Unisex",
+  });
+
+  // Add available sizes from options
+  const sizeOption = options?.find(
+    (option) => option.name.toLowerCase() === "size",
+  );
+  if (sizeOption && sizeOption.values.length > 0) {
+    productDetails.push({
+      key: "available_sizes",
+      label: "Available Sizes",
+      value: sizeOption.values.join(", "),
+    });
+  }
+
+  // Add collections
+  if (product.collections?.nodes && product.collections.nodes.length > 0) {
+    const collectionNames = product.collections.nodes
+      .map((c: any) => c.title)
+      .filter((title: string) => title !== "_drop01");
+    if (collectionNames.length > 0) {
+      productDetails.push({
+        key: "collections",
+        label: "Collections",
+        value: collectionNames.join(", "),
+      });
+    }
+  }
+
+  // Add brand if not default
+  if (product.vendor && product.vendor !== "My Store") {
+    productDetails.push({
+      key: "brand",
+      label: "Brand",
+      value: product.vendor,
+    });
+  }
+
   return (
     <>
       <section className="md:section-sm">
@@ -69,123 +129,106 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
           <div className="row justify-center">
             {/* right side contents  */}
             <div className="col-10 md:col-8 lg:col-6">
-              <Suspense>
-                <ProductGallery images={images} />
-              </Suspense>
+              <ProductGalleryWrapper images={images} />
             </div>
 
             {/* left side contents  */}
             <div className="col-10 md:col-8 lg:col-5 md:ml-7 py-6 lg:py-0">
-              <h1 className="text-3xl md:h2 mb-2 md:mb-6">{title}</h1>
+              <h1 className="h2 mb-4">{title}</h1>
 
-              <div className="flex gap-2 items-center">
-                <h4 className="text-text-light dark:text-darkmode-text-light max-md:h2">
-                  {currencySymbol} {priceRange?.minVariantPrice.amount}{" "}
-                  {priceRange?.minVariantPrice?.currencyCode}
-                </h4>
-                {parseFloat(compareAtPriceRange?.maxVariantPrice.amount) > 0 ? (
-                  <s className="text-text-light max-md:h3 dark:text-darkmode-text-light">
-                    {currencySymbol}{" "}
-                    {compareAtPriceRange?.maxVariantPrice?.amount}{" "}
-                    {compareAtPriceRange?.maxVariantPrice?.currencyCode}
-                  </s>
-                ) : (
-                  ""
-                )}
-              </div>
-
-              <div className="my-10 md:my-10 space-y-6 md:space-y-10">
-                <div>
-                  {options && (
-                    <VariantSelector
-                      options={options}
-                      variants={variants}
-                      images={images}
-                    />
-                  )}
-                </div>
-              </div>
-
-              <div className="flex gap-4 mt-8 md:mt-10 mb-6">
-                <Suspense>
-                  <AddToCart
-                    variants={product?.variants}
-                    availableForSale={product?.availableForSale}
-                    stylesClass={"btn max-md:btn-sm btn-primary"}
-                    handle={null}
-                    defaultVariantId={defaultVariantId}
-                  />
-                </Suspense>
-              </div>
-
-              <div className="mb-8 md:mb-10">
-                <p className="p-2 max-md:text-sm rounded-md bg-light dark:bg-darkmode-light inline">
-                  {estimated_delivery}
-                </p>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3">
-                <h5 className="max-md:text-base">Payment: </h5>
-                {payment_methods?.map(
-                  (payment: { name: string; image_url: string }) => (
-                    <Image
-                      key={payment.name}
-                      src={payment.image_url}
-                      alt={payment.name}
-                      width={44}
-                      height={32}
-                      className="w-[44px] h-[32px]"
-                    />
-                  ),
-                )}
-              </div>
-
-              <hr className="my-6 border border-border dark:border-border/40" />
-
-              <div className="flex gap-3 items-center mb-6">
-                <h5 className="max-md:text-base">Share:</h5>
-                <Social socialName={title} className="social-icons" />
-              </div>
-
-              {tags.length > 0 && (
-                <div className="flex flex-wrap gap-3 items-center">
-                  <h5 className="max-md:text-base">Tags:</h5>
-                  <Suspense>
-                    <ShowTags tags={tags} />
-                  </Suspense>
+              {/* Product Metafields or Fallback Details */}
+              {productDetails.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-3 text-text-dark ">
+                    Product Details
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {/* Display product details */}
+                    {productDetails.map((detail) => (
+                      <div key={detail.key} className="flex flex-col">
+                        <span className="text-sm font-medium text-text-light ">
+                          {detail.label}:
+                        </span>
+                        <span className="text-sm font-semibold text-text-dark ">
+                          {detail.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
+
+              <div className="flex items-center mb-4">
+                <span className="h3 text-primary">
+                  {priceRange.maxVariantPrice.amount}{" "}
+                  {priceRange.maxVariantPrice.currencyCode}
+                </span>
+                {compareAtPriceRange.maxVariantPrice.amount &&
+                  parseFloat(compareAtPriceRange.maxVariantPrice.amount) >
+                    parseFloat(priceRange.maxVariantPrice.amount) && (
+                    <span className="h4 text-light ml-2 line-through">
+                      {compareAtPriceRange.maxVariantPrice.amount}{" "}
+                      {compareAtPriceRange.maxVariantPrice.currencyCode}
+                    </span>
+                  )}
+              </div>
+
+              {/* Description moved here */}
+              {description && (
+                <div className="mb-2">
+                  <h3 className="text-lg font-semibold mb-3 text-text-dark ">
+                    Description
+                  </h3>
+                  <div
+                    className="text-text-light  leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                  />
+                </div>
+              )}
+
+              <div className="mb-2">
+                <VariantSelector
+                  options={options}
+                  variants={variants}
+                  images={images}
+                />
+              </div>
+              <div className="mb-4">
+                <AddToCart
+                  variants={variants}
+                  availableForSale={product.availableForSale}
+                  handle={product.handle}
+                  defaultVariantId={defaultVariantId}
+                  stylesClass="btn btn-primary max-md:btn-sm"
+                />
+              </div>
+              <div className="mb-4">
+                <ShowTags tags={tags} />
+              </div>
+              <div className="mb-4">
+                <Social socialName={title} className="social-icons" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Description of a product  */}
-      {description && (
-        <section>
+      {relatedProducts.length > 0 && (
+        <section className="pt-2 pb-8 md:pt-3 md:pb-12">
           <div className="container">
+            <div className="text-center mb-8">
+              <h2 className="section-title">Discover More...</h2>
+            </div>
             <div className="row">
-              <div className="col-10 lg:col-11 mx-auto mt-12">
-                <Tabs descriptionHtml={descriptionHtml} />
+              <div className="mx-auto">
+                <LatestProducts products={relatedProducts} />
               </div>
             </div>
           </div>
         </section>
       )}
-
-      {/* Recommended Products section  */}
-      <section className="section">
-        <div className="container">
-          {relatedProducts?.length > 0 && (
-            <>
-              <div className="text-center mb-6 md:mb-14">
-                <h2 className="mb-2">Related Products</h2>
-              </div>
-              <LatestProducts products={relatedProducts.slice(0, 4)} />
-            </>
-          )}
-        </div>
-      </section>
     </>
   );
 };
+
+export default ProductSingle;

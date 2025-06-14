@@ -2,8 +2,24 @@ html {
   @apply text-base-sm md:text-base;
 }
 
-body {
-  @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
+@layer base {
+  body {
+    @apply bg-body text-base  font-primary font-normal leading-relaxed text-text;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary font-bold leading-tight text-text-dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
 }
 
 h1,
@@ -12,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-primary font-bold leading-tight text-text-dark dark:text-darkmode-text-dark;
+  @apply font-primary font-bold leading-tight text-text-dark;
 }
 
 h1,

@@ -1,5 +1,5 @@
-import Cart from "@/components/cart/Cart";
-import OpenCart from "@/components/cart/OpenCart";
+import Cart from "@/layouts/components/cart/Cart";
+import OpenCart from "@/layouts/components/cart/OpenCart";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
@@ -13,10 +13,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // import google font css
-  const pf = theme.fonts.font_family.primary;
-  const sf = theme.fonts.font_family.secondary;
-
   return (
     <html suppressHydrationWarning={true} lang="en">
       <head>
@@ -36,11 +32,6 @@ export default function RootLayout({
           media="(prefers-color-scheme: light)"
           content="#fff"
         />
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: dark)"
-          content="#000"
-        />
 
         {/* google font css */}
         <link
@@ -49,8 +40,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href={`https://fonts.googleapis.com/css2?family=${pf}${sf ? "&family=" + sf : ""
-            }&display=swap`}
+          href="https://fonts.googleapis.com/css2?family=Wallpoet&family=Cute+Font&family=Consolas&display=swap"
           rel="stylesheet"
         />
       </head>

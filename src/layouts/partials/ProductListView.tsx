@@ -2,7 +2,6 @@
 
 import { AddToCart } from "@/components/cart/AddToCart";
 import SkeletonCards from "@/components/loadings/skeleton/SkeletonCards";
-import config from "@/config/config.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import useLoadMore from "@/hooks/useLoadMore";
 import { defaultSort, sorting } from "@/lib/constants";
@@ -13,16 +12,29 @@ import Link from "next/link";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
 
-const ProductListView = ({ searchParams }: { searchParams: any }) => {
-  const { currencySymbol } = config.shopify;
-  const [isLoading, setIsLoading] = useState(true);
+interface ProductListViewProps {
+  searchParams: any;
+  initialProducts?: Product[];
+  initialPageInfo?: PageInfo;
+}
+
+const ProductListView = ({
+  searchParams,
+  initialProducts = [],
+  initialPageInfo,
+}: ProductListViewProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   const targetElementRef = useRef<HTMLDivElement>(null);
   const [data, setData] = useState<{
     products: Product[];
     pageInfo: PageInfo;
   }>({
-    products: [],
-    pageInfo: { endCursor: "", hasNextPage: false, hasPreviousPage: false },
+    products: initialProducts,
+    pageInfo: initialPageInfo || {
+      endCursor: "",
+      hasNextPage: false,
+      hasPreviousPage: false,
+    },
   });
 
   const {
@@ -86,8 +98,8 @@ const ProductListView = ({ searchParams }: { searchParams: any }) => {
           if (brand) {
             Array.isArray(brand)
               ? (queryString += `${brand
-                .map((b) => `(vendor:${b})`)
-                .join(" OR ")}`)
+                  .map((b) => `(vendor:${b})`)
+                  .join(" OR ")}`)
               : (queryString += `vendor:"${brand}"`);
 
             if (Array.isArray(brand) && brand.length > 0) {
@@ -120,14 +132,14 @@ const ProductListView = ({ searchParams }: { searchParams: any }) => {
           productsData =
             category && category !== "all"
               ? await getCollectionProducts({
-                collection: category,
-                sortKey,
-                reverse,
-                filterCategoryProduct:
-                  filterCategoryProduct.length > 0
-                    ? filterCategoryProduct
-                    : undefined,
-              })
+                  collection: category,
+                  sortKey,
+                  reverse,
+                  filterCategoryProduct:
+                    filterCategoryProduct.length > 0
+                      ? filterCategoryProduct
+                      : undefined,
+                })
               : await getProducts({ ...query, cursor });
         } else {
           // Fetch all products
@@ -169,8 +181,6 @@ const ProductListView = ({ searchParams }: { searchParams: any }) => {
   });
 
   const fetchDataWithNewCursor = async (newCursor: string) => {
-    // setIsLoading(true);
-
     try {
       const res = await getProducts({
         sortKey,
@@ -242,42 +252,43 @@ const ProductListView = ({ searchParams }: { searchParams: any }) => {
 
             return (
               <div className="col-12" key={id}>
-                <div className="row">
-                  <div className="col-4">
+                <div className="row items-center">
+                  <div className="col-12 sm:col-5 md:col-4 mb-4 sm:mb-0">
                     <ImageFallback
-                      src={featuredImage?.url || "/images/product_image404.jpg"}
-                      // fallback={'/images/category-1.png'}
+                      src={
+                        featuredImage?.transformedSrc ||
+                        "/images/product_image404.jpg"
+                      }
                       width={312}
                       height={269}
                       alt={featuredImage?.altText || "fallback image"}
-                      className="w-[312px] h-[150px] md:h-[269px] object-cover border border-border dark:border-darkmode-border rounded-md"
+                      className="w-full h-[180px] sm:h-[200px] md:h-[269px] object-cover rounded-md border mx-auto"
                     />
                   </div>
 
-                  <div className="col-8 py-3 max-md:pt-4">
-                    <h2 className="font-bold md:font-normal h4">
+                  <div className="col-12 sm:col-7 md:col-8">
+                    <h2 className="font-bold md:font-normal text-lg md:text-xl mb-2">
                       <Link href={`/products/${handle}`}>{title}</Link>
                     </h2>
 
-                    <div className="flex items-center gap-x-2 mt-2">
-                      <span className="text-text-light dark:text-darkmode-text-light text-xs md:text-lg font-bold">
-                        ৳ {priceRange?.minVariantPrice?.amount}{" "}
+                    <div className="flex items-center gap-x-2 mb-3">
+                      <span className="text-text-dark text-base md:text-lg font-bold">
+                        {priceRange?.minVariantPrice?.amount}{" "}
                         {priceRange?.minVariantPrice?.currencyCode}
                       </span>
-                      {parseFloat(
-                        compareAtPriceRange?.maxVariantPrice?.amount,
-                      ) > 0 ? (
-                        <s className="text-text-light dark:text-darkmode-text-light text-xs md:text-base font-medium">
-                          {currencySymbol}{" "}
-                          {compareAtPriceRange?.maxVariantPrice?.amount}{" "}
-                          {compareAtPriceRange?.maxVariantPrice?.currencyCode}
-                        </s>
-                      ) : (
-                        ""
-                      )}
+                      {compareAtPriceRange?.maxVariantPrice?.amount &&
+                        parseFloat(compareAtPriceRange.maxVariantPrice.amount) >
+                          parseFloat(
+                            priceRange?.minVariantPrice?.amount || "0",
+                          ) && (
+                          <s className="text-text-light text-sm md:text-base font-medium">
+                            {compareAtPriceRange.maxVariantPrice.amount}{" "}
+                            {compareAtPriceRange.maxVariantPrice.currencyCode}
+                          </s>
+                        )}
                     </div>
 
-                    <p className="max-md:text-xs text-text-light dark:text-darkmode-text-light my-4 md:mb-8 line-clamp-1 md:line-clamp-3">
+                    <p className="text-sm md:text-base text-text-light mb-4 line-clamp-2 md:line-clamp-3">
                       {description}
                     </p>
                     <Suspense>

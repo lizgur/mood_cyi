@@ -18,10 +18,12 @@ const Footer = () => {
   const { copyright } = config.params;
 
   return (
-    <footer className="bg-light dark:bg-darkmode-light">
+    <footer className="bg-light ">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-center py-10 md:pt-20 md:pb-14">
-          <Logo />
+        <div className="flex flex-col md:flex-row justify-start items-center py-10 md:pt-20 md:pb-14 gap-x-8">
+          <div className="md:mr-auto">
+            <Logo />
+          </div>
 
           <ul className="flex gap-x-4 lg:gap-x-10 my-3">
             {menu.footer.map((menu) => (
@@ -49,8 +51,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="border-t border-border py-5 dark:border-darkmode-border">
-          <div className="flex flex-col md:flex-row gap-y-2 justify-between items-center text-text-light dark:text-darkmode-text-light">
+        <div className="border-t border-border py-5 ">
+          <div className="flex flex-col md:flex-row gap-y-2 justify-between items-center text-text-light ">
             <ul className="flex gap-x-4">
               {menu.footerCopyright.map((menu) => (
                 <li className="footer-link" key={menu.name}>

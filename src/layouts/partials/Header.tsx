@@ -3,7 +3,6 @@
 import Logo from "@/components/Logo";
 import NavUser from "@/components/NavUser";
 import SearchBar from "@/components/SearchBar";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import Link from "next/link";
@@ -35,10 +34,11 @@ const renderMenuItem = (
   return menu.hasChildren ? (
     <li className="nav-item nav-dropdown group relative" key={menu.name}>
       <span
-        className={`nav-link inline-flex items-center ${(menu.children?.map(({ url }) => url).includes(pathname) ||
-          menu.children?.map(({ url }) => `${url}/`).includes(pathname)) &&
+        className={`nav-link inline-flex items-center ${
+          (menu.children?.map(({ url }) => url).includes(pathname) ||
+            menu.children?.map(({ url }) => `${url}/`).includes(pathname)) &&
           "active"
-          }`}
+        }`}
         onClick={handleToggleChildMenu}
       >
         {menu.name}
@@ -117,9 +117,9 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
           <div className="relative z-40 hidden md:block">
             <label
               htmlFor="nav-toggle"
-              className="order-3 cursor-pointer flex items-center text-text-dark dark:text-white lg:order-1"
+              className="order-3 cursor-pointer flex items-center text-text-dark  lg:order-1"
             >
-              <span className="mr-2 font-medium">Pages</span>
+              <span className="mr-2 font-medium">Menu</span>
               <button
                 id="nav-toggle"
                 className="focus:outline-none"
@@ -148,7 +148,7 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
             ></div>
 
             <div
-              className={`fixed top-0 left-0 h-full bg-white dark:bg-darkmode-body overflow-y-auto w-full md:w-96 p-9 ${showSidebar ? "transition-transform transform translate-x-0" : "transition-transform transform -translate-x-full"}`}
+              className={`fixed top-0 left-0 h-full bg-white  overflow-y-auto w-full md:w-96 p-9 ${showSidebar ? "transition-transform transform translate-x-0" : "transition-transform transform -translate-x-full"}`}
             >
               <div className="flex justify-between items-center mb-14">
                 <Logo />
@@ -198,7 +198,6 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
         </div>
 
         <div className="order-2 lg:order-3 ml-auto flex items-center lg:ml-0">
-          <ThemeSwitcher className="mr-4 md:mr-6" />
           <Suspense fallback={children[0]}>{children[1]}</Suspense>
 
           {settings.account && (
@@ -210,7 +209,7 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
           <div className="relative z-40 block md:hidden ml-6">
             <label
               htmlFor="nav-toggle"
-              className="cursor-pointer flex items-center text-text-dark dark:text-white border dark:border-border/40 p-1 rounded-md"
+              className="cursor-pointer flex items-center text-text-dark  border  p-1 rounded-md"
             >
               <button
                 id="nav-toggle"
@@ -240,7 +239,7 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
             ></div>
 
             <div
-              className={`fixed top-0 left-0 h-full bg-white dark:bg-darkmode-body overflow-y-auto w-full md:w-96 p-9 ${showSidebar ? "transition-transform transform translate-x-0" : "transition-transform transform -translate-x-full"}`}
+              className={`fixed top-0 left-0 h-full bg-white  overflow-y-auto w-full md:w-96 p-9 ${showSidebar ? "transition-transform transform translate-x-0" : "transition-transform transform -translate-x-full"}`}
             >
               <div className="flex justify-between items-center mb-14">
                 <Logo />

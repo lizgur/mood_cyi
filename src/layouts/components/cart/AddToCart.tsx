@@ -13,11 +13,13 @@ function SubmitButton({
   selectedVariantId,
   stylesClass,
   handle,
+  buttonText = "Add To Cart",
 }: {
   availableForSale: boolean;
   selectedVariantId: string | undefined;
   stylesClass: string;
   handle: string | null;
+  buttonText?: string;
 }) {
   const { pending } = useFormStatus();
   const buttonClasses = stylesClass;
@@ -67,7 +69,7 @@ function SubmitButton({
           size={26}
         />
       ) : (
-        "Add To Cart"
+        buttonText
       )}
     </button>
   );
@@ -79,12 +81,14 @@ export function AddToCart({
   stylesClass,
   handle,
   defaultVariantId,
+  buttonText,
 }: {
   variants: ProductVariant[];
   availableForSale: boolean;
   stylesClass: string;
   handle: string | null;
   defaultVariantId: string | undefined;
+  buttonText?: string;
 }) {
   const [message, formAction] = useActionState(addItem, null);
   const searchParams = useSearchParams();
@@ -111,6 +115,7 @@ export function AddToCart({
         selectedVariantId={selectedVariantId}
         stylesClass={stylesClass}
         handle={handle}
+        buttonText={buttonText}
       />
       <p aria-live="polite" className="sr-only" role="status">
         {message}

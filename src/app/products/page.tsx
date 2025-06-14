@@ -7,21 +7,22 @@ import {
   getCollections,
   getHighestProductPrice,
   getProducts,
-  getVendors,
 } from "@/lib/shopify";
 import { PageInfo, Product } from "@/lib/shopify/types";
 import CallToAction from "@/partials/CallToAction";
-import ProductCardView from "@/partials/ProductCardView";
 import ProductFilters from "@/partials/ProductFilters";
-import ProductListView from "@/partials/ProductListView";
+import ResponsiveProductView from "@/partials/ResponsiveProductView";
 import { Suspense } from "react";
+
+// Force dynamic rendering
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 interface SearchParams {
   sort?: string;
   q?: string;
   minPrice?: string;
   maxPrice?: string;
-  b?: string;
   c?: string;
   t?: string;
 }
@@ -36,7 +37,6 @@ const ShowProducts = async ({
     q: searchValue,
     minPrice,
     maxPrice,
-    b: brand,
     c: category,
     t: tag,
   } = searchParams as {
@@ -49,10 +49,9 @@ const ShowProducts = async ({
     sorting.find((item) => item.slug === sort) || defaultSort;
 
   let productsData: any;
-  let vendorsWithCounts: { vendor: string; productCount: number }[] = [];
   let categoriesWithCounts: { category: string; productCount: number }[] = [];
 
-  if (searchValue || brand || minPrice || maxPrice || category || tag) {
+  if (searchValue || minPrice || maxPrice || category || tag) {
     let queryString = "";
 
     if (minPrice || maxPrice) {
@@ -60,42 +59,38 @@ const ShowProducts = async ({
     }
 
     if (searchValue) {
-      queryString += ` ${searchValue}`;
-    }
-
-    if (brand) {
-      Array.isArray(brand)
-        ? (queryString += `${brand.map((b) => `(vendor:${b})`).join(" OR ")}`)
-        : (queryString += `vendor:"${brand}"`);
+      // Add proper spacing if there's already content in queryString
+      if (queryString) {
+        queryString += ` `;
+      }
+      queryString += `title:*${searchValue}*`;
     }
 
     if (tag) {
-      queryString += ` ${tag}`;
+      // Add proper spacing if there's already content in queryString
+      if (queryString) {
+        queryString += ` `;
+      }
+      queryString += `tag:${tag}`;
     }
+
+    console.log("Search query string:", queryString);
 
     const query = {
       sortKey,
       reverse,
-      query: queryString,
+      query: queryString.trim(),
       cursor,
     };
 
     productsData =
       category && category !== "all"
         ? await getCollectionProducts({
-          collection: category,
-          sortKey,
-          reverse,
-        })
+            collection: category,
+            sortKey,
+            reverse,
+          })
         : await getProducts(query);
-
-    const uniqueVendors: string[] = [
-      ...new Set(
-        ((productsData?.products as Product[]) || []).map((product: Product) =>
-          String(product?.vendor || ""),
-        ),
-      ),
-    ];
 
     const uniqueCategories: string[] = [
       ...new Set(
@@ -107,13 +102,6 @@ const ShowProducts = async ({
         ),
       ),
     ];
-
-    vendorsWithCounts = uniqueVendors.map((vendor: string) => {
-      const productCount = (productsData?.products || []).filter(
-        (product: Product) => product?.vendor === vendor,
-      ).length;
-      return { vendor, productCount };
-    });
 
     categoriesWithCounts = uniqueCategories.map((category: string) => {
       const productCount = ((productsData?.products as Product[]) || []).filter(
@@ -129,7 +117,6 @@ const ShowProducts = async ({
     productsData = await getProducts({ sortKey, reverse, cursor });
   }
   const categories = await getCollections();
-  const vendors = await getVendors({});
 
   const tags = [
     ...new Set(
@@ -146,10 +133,8 @@ const ShowProducts = async ({
       <Suspense>
         <ProductLayouts
           categories={categories}
-          vendors={vendors}
           tags={tags}
           maxPriceData={maxPriceData}
-          vendorsWithCounts={vendorsWithCounts}
           categoriesWithCounts={categoriesWithCounts}
         />
       </Suspense>
@@ -160,21 +145,21 @@ const ShowProducts = async ({
             <Suspense>
               <ProductFilters
                 categories={categories}
-                vendors={vendors}
                 tags={tags}
                 maxPriceData={maxPriceData!}
-                vendorsWithCounts={vendorsWithCounts}
                 categoriesWithCounts={categoriesWithCounts}
               />
             </Suspense>
           </div>
 
           <div className="col-12 lg:col-9">
-            {layout === "list" ? (
-              <ProductListView searchParams={searchParams} />
-            ) : (
-              <ProductCardView searchParams={searchParams} />
-            )}
+            <Suspense fallback={<LoadingProducts />}>
+              <ResponsiveProductView
+                searchParams={searchParams}
+                initialProducts={productsData.products}
+                initialPageInfo={productsData.pageInfo}
+              />
+            </Suspense>
           </div>
         </div>
       </div>

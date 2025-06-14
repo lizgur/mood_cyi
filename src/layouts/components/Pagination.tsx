@@ -34,7 +34,7 @@ const Pagination = ({
                   ? `${section ? "/" + section : "/"}`
                   : `${section ? "/" + section : ""}/page/${currentPage - 1}`
               }
-              className="rounded px-2 py-1.5 text-text-dark hover:bg-light dark:text-darkmode-text-dark dark:hover:bg-darkmode-light"
+              className="rounded px-2 py-1.5 text-text-dark hover:bg-light  "
             >
               <span className="sr-only">Previous</span>
               <svg
@@ -76,33 +76,33 @@ const Pagination = ({
               {pagination === currentPage ? (
                 <span
                   aria-current="page"
-                  className="rounded bg-primary px-4 py-2 text-white dark:bg-darkmode-primary dark:text-text-dark"
+                  className="rounded bg-primary px-4 py-2 text-white  "
                 >
                   {pagination}
                 </span>
               ) : // Check if the page should be displayed with ellipsis
-                i === 0 && currentPage - i > 2 ? (
-                  <span>...</span>
-                ) : i === totalPages - 1 && totalPages - currentPage > 2 ? (
-                  <span>...</span>
-                ) : i === currentPage - 2 ||
-                  i === currentPage - 1 ||
-                  i === currentPage ||
-                  i === currentPage + 1 ||
-                  i === currentPage + 2 ? (
-                  <Link
-                    href={
-                      i === 0
-                        ? `${section ? "/" + section : "/"}`
-                        : `${section ? "/" + section : ""}/page/${pagination}`
-                    }
-                    passHref
-                    aria-current="page"
-                    className="rounded px-4 py-2 text-text-dark hover:bg-light dark:text-darkmode-text-dark dark:hover:bg-darkmode-theme-light"
-                  >
-                    {pagination}
-                  </Link>
-                ) : null}
+              i === 0 && currentPage - i > 2 ? (
+                <span>...</span>
+              ) : i === totalPages - 1 && totalPages - currentPage > 2 ? (
+                <span>...</span>
+              ) : i === currentPage - 2 ||
+                i === currentPage - 1 ||
+                i === currentPage ||
+                i === currentPage + 1 ||
+                i === currentPage + 2 ? (
+                <Link
+                  href={
+                    i === 0
+                      ? `${section ? "/" + section : "/"}`
+                      : `${section ? "/" + section : ""}/page/${pagination}`
+                  }
+                  passHref
+                  aria-current="page"
+                  className="rounded px-4 py-2 text-text-dark hover:bg-light  "
+                >
+                  {pagination}
+                </Link>
+              ) : null}
             </React.Fragment>
           ))}
 
@@ -110,7 +110,7 @@ const Pagination = ({
           {hasNextPage ? (
             <Link
               href={`${section ? "/" + section : ""}/page/${currentPage + 1}`}
-              className="rounded px-2 py-1.5 text-text-dark hover:bg-light dark:text-darkmode-dark dark:hover:bg-darkmode-theme-light"
+              className="rounded px-2 py-1.5 text-text-dark hover:bg-light  "
             >
               <span className="sr-only">Next</span>
               <svg

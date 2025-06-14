@@ -15,10 +15,8 @@ export type PathFilterItem = { title: string; path: string };
 
 const ProductLayouts = ({
   categories,
-  vendors,
   tags,
   maxPriceData,
-  vendorsWithCounts,
   categoriesWithCounts,
 }: any) => {
   const router = useRouter();
@@ -83,22 +81,22 @@ const ProductLayouts = ({
 
           <div className="col-12 lg:col-9">
             <div className="flex justify-between items-center mb-4">
-              <div className="flex gap-x-4 items-center font-medium text-xs md:text-base">
-                <p className="max-md:hidden text-text-dark dark:text-darkmode-text-dark">
-                  Views
-                </p>
+              <div className="hidden md:flex gap-x-4 items-center font-medium text-xs md:text-base">
+                <p className="text-text-dark ">Views</p>
                 <div className="flex gap-2">
                   <button
                     onClick={() => layoutChange("card")}
-                    className={`btn border dark:border-darkmode-border ${isListView ? "btn-outline-primary" : "btn-primary"
-                      } p-2 hover:scale-105 duration-300`}
+                    className={`btn border  ${
+                      isListView ? "btn-outline-primary" : "btn-primary"
+                    } p-2 hover:scale-105 duration-300`}
                   >
                     <BsGridFill />
                   </button>
                   <button
                     onClick={() => layoutChange("list")}
-                    className={`btn border dark:border-darkmode-border ${isListView ? "btn-primary" : "btn-outline-primary"
-                      } p-2 hover:scale-105 duration-300`}
+                    className={`btn border  ${
+                      isListView ? "btn-primary" : "btn-outline-primary"
+                    } p-2 hover:scale-105 duration-300`}
                   >
                     <FaList />
                   </button>
@@ -123,9 +121,7 @@ const ProductLayouts = ({
                 {/* Filter Button Trigger End */}
 
                 <div className="flex gap-x-4 items-center font-medium text-sm md:text-base relative z-20">
-                  <p className="max-md:hidden text-text-dark dark:text-darkmode-text-dark">
-                    Sort By
-                  </p>
+                  <p className="max-md:hidden text-text-dark ">Sort By</p>
                   <Suspense>
                     <DropdownMenu list={sorting} />
                   </Suspense>
@@ -138,7 +134,7 @@ const ProductLayouts = ({
             <div className="lg:block relative">
               <div className="block lg:hidden w-full">
                 <section
-                  className="collapse-container-class z-20 bg-body dark:bg-darkmode-body w-full px-4 rounded-md"
+                  className="collapse-container-class z-20 bg-body  w-full px-4 rounded-md"
                   style={{ display: isExpanded ? "block" : "none" }}
                 >
                   <div className="pb-8">
@@ -146,10 +142,8 @@ const ProductLayouts = ({
                       {" "}
                       <ProductFilters
                         categories={categories}
-                        vendors={vendors}
                         tags={tags}
                         maxPriceData={maxPriceData}
-                        vendorsWithCounts={vendorsWithCounts}
                         categoriesWithCounts={categoriesWithCounts}
                       />
                     </Suspense>

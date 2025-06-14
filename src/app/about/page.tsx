@@ -7,7 +7,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { AboutUsItem, RegularPage } from "@/types";
 import Link from "next/link";
-import { FaBoxOpen, FaCheckCircle, FaHeadset } from "react-icons/fa";
+import { FaBoxOpen, FaCheckCircle, FaHeadset, FaShieldAlt, FaLeaf, FaUsers } from "react-icons/fa";
 
 const About = () => {
   const data: RegularPage = getListPage("about/_index.md");
@@ -33,11 +33,11 @@ const About = () => {
 
       <PageHeader title={title} />
 
-      <section>
+      <section className="py-10">
         <div className="container">
           {about_us?.map((section: AboutUsItem, index: number) => (
             <div
-              className={`lg:flex gap-8 mt-14 lg:mt-28`}
+              className={`lg:flex gap-8 mt-8 lg:mt-16`}
               key={section?.title}
             >
               {index % 2 === 0 ? (
@@ -52,7 +52,7 @@ const About = () => {
                   <div className="mt-10 lg:mt-0">
                     <h2>{section?.title}</h2>
                     <p
-                      className="mt-4 text-text-light dark:text-darkmode-text-light leading-7"
+                      className="mt-4 text-text-light  leading-7"
                       dangerouslySetInnerHTML={markdownify(section?.content)}
                     />
                   </div>
@@ -62,7 +62,7 @@ const About = () => {
                   <div>
                     <h2>{section.title}</h2>
                     <p
-                      className="mt-4 text-text-light dark:text-darkmode-text-light leading-7"
+                      className="mt-4 text-text-light  leading-7"
                       dangerouslySetInnerHTML={markdownify(section.content)}
                     />
                   </div>
@@ -87,18 +87,18 @@ const About = () => {
         />
       )}
 
-      <section>
-        <div className="container">
-          <div className="text-center">
-            <h2>Our Staff</h2>
+      {staff_section_enable && (
+        <section>
+          <div className="container">
+            <div className="text-center">
+              <h2>Our Staff</h2>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14">
-              {staff_section_enable &&
-                staff!.map((s, idx) => (
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14">
+                {staff!.map((s, idx) => (
                   <div key={idx} className="border border-border rounded-lg">
                     <div className="py-6 space-y-2">
                       <h3 className="h4">{s.name}</h3>
-                      <p className="text-text-dark dark:text-darkmode-text-light">{s.designation}</p>
+                      <p className="text-text-dark ">{s.designation}</p>
                     </div>
                     <div className="bg-light rounded-b-xl mx-auto">
                       <ImageFallback
@@ -111,52 +111,49 @@ const About = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="py-10">
+        <div className="container">
+          <div className="bg-light px-4 py-10 text-center rounded-md">
+            <h2 className="mb-6">Reasons to shop with us</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+              <div className="flex flex-col items-center">
+                <FaShieldAlt size={32} className="mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Authentic Web3 Culture</h3>
+                <p className="text-sm text-text-light">Real blockchain lore and crypto history - no generic prints.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <FaBoxOpen size={32} className="mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Limited Edition Drops</h3>
+                <p className="text-sm text-text-light">Rare and exclusive releases. Once sold out, gone forever.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <FaLeaf size={32} className="mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Sustainable & Ethical</h3>
+                <p className="text-sm text-text-light">Premium materials and eco-conscious printing practices.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <FaUsers size={32} className="mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Community Driven</h3>
+                <p className="text-sm text-text-light">Built by and for the Web3 community. Your feedback matters.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="py-10">
         <div className="container">
-          <div className="bg-light px-7 py-20 dark:bg-darkmode-light text-center rounded-md">
-            <h2>Reasons to shop with us</h2>
-
-            <div className="row justify-center gap-6 mt-14">
-              <div className="col-6 md:col-5 lg:col-3">
-                <div className="flex justify-center">
-                  <FaHeadset size={48} />
-                </div>
-                <h3 className="md:h4 mt-6 mb-4">24/7 Friendly Support</h3>
-                <p>Our support team always ready for you to 7 days a week</p>
-              </div>
-
-              <div className="col-6 md:col-5 lg:col-3">
-                <div className="flex justify-center">
-                  <FaBoxOpen size={48} />
-                </div>
-                <h3 className="md:h4 mt-6 mb-4">7 Days Easy Return</h3>
-                <p>
-                  Product any fault within 7 days for an immediately exchange.
-                </p>
-              </div>
-
-              <div className="col-6 md:col-5 lg:col-3">
-                <div className="flex justify-center">
-                  <FaCheckCircle size={48} />
-                </div>
-                <h3 className="md:h4 mt-6 mb-4">Quality Guaranteed</h3>
-                <p>
-                  If your product are not perfect, return them for a full refund
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <div className="bg-light px-7 lg:px-32 py-20 dark:bg-darkmode-light mb-14 xl:mb-28 rounded-b-md">
+          <div className="bg-light px-7 lg:px-32 py-12 mb-8 rounded-b-md">
             <div className="row">
               <div className="md:col-5 mx-auto space-y-5 mb-10 md:mb-0">
                 <h1 dangerouslySetInnerHTML={markdownify(faq_section_title!)} />

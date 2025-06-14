@@ -91,6 +91,16 @@ export async function shopifyFetch<T>({
   variables?: ExtractVariables<T>;
 }): Promise<{ status: number; body: T } | never> {
   try {
+    console.log("Shopify Config:", { 
+      domain, 
+      hasKey: !!key, 
+      endpoint 
+    });
+    
+    if (!domain || !key) {
+      throw new Error(`Missing Shopify credentials - Domain: ${domain}, Key: ${key ? 'Present' : 'Missing'}`);
+    }
+
     const result = await fetch(endpoint, {
       method: "POST",
       headers: {
@@ -102,18 +112,31 @@ export async function shopifyFetch<T>({
         ...(query && { query }),
         ...(variables && { variables }),
       }),
-      cache,
-      ...(tags && { next: { tags } }),
+      cache: "no-store",
+      next: {
+        tags: [...(tags || []), "products", "collections"],
+        revalidate: 0,
+      },
     });
+
+    if (!result.ok) {
+      throw new Error(`HTTP error! status: ${result.status}`);
+    }
 
     const body = await result.json();
 
     if (body.errors) {
-      throw body.errors[0];
+      console.error("Shopify GraphQL errors:", body.errors);
+      throw new Error(body.errors[0].message || "GraphQL error");
     }
+
+    // Log the response data for debugging
+    console.log("Shopify GraphQL response:", JSON.stringify(body, null, 2));
 
     return { status: result.status, body };
   } catch (e) {
+    console.error("Shopify fetch error:", e);
+
     if (isShopifyError(e)) {
       throw {
         cause: e.cause?.toString() || "unknown",
@@ -123,7 +146,11 @@ export async function shopifyFetch<T>({
       };
     }
 
-    throw { error: e, query };
+    throw {
+      error: e instanceof Error ? e.message : "Unknown error",
+      query,
+      status: 500,
+    };
   }
 }
 
@@ -168,12 +195,27 @@ const reshapeCollections = (collections: ShopifyCollection[]) => {
 const reshapeImages = (images: Connection<Image>, productTitle: string) => {
   const flattened = removeEdgesAndNodes(images);
 
+  // Log the flattened images for debugging
+  console.log("Flattened images:", JSON.stringify(flattened, null, 2));
+
   return flattened.map((image) => {
     const filename = image.url.match(/.*\/(.*)\..*/)[1];
-    return {
+    const reshapedImage = {
       ...image,
       altText: image.altText || `${productTitle} - ${filename}`,
+      transformedSrc: image.transformedSrc || image.url,
+      url: image.url.startsWith("//") ? `https:${image.url}` : image.url,
     };
+
+    // Ensure transformedSrc is also properly formatted
+    if (reshapedImage.transformedSrc.startsWith("//")) {
+      reshapedImage.transformedSrc = `https:${reshapedImage.transformedSrc}`;
+    }
+
+    // Log each reshaped image for debugging
+    console.log("Reshaped image:", JSON.stringify(reshapedImage, null, 2));
+
+    return reshapedImage;
   });
 };
 
@@ -231,6 +273,13 @@ export async function addToCart(
     variables: { cartId, lines },
     cache: "no-store",
   });
+
+  console.log("Shopify addToCart response:", JSON.stringify(res.body, null, 2));
+
+  if (!res.body.data.cartLinesAdd.cart) {
+    throw new Error("Failed to add items to cart - item may be out of stock or unavailable");
+  }
+
   return reshapeCart(res.body.data.cartLinesAdd.cart);
 }
 

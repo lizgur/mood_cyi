@@ -15,6 +15,11 @@ const Expandable = ({ faqs }: { faqs: Faq[] }) => {
         >
           <button
             className="accordion-header"
+            style={{ 
+              fontFamily: '"Cute Font", sans-serif',
+              fontSize: '1.5rem',
+              fontWeight: '600'
+            }}
             onClick={() => {
               activeTab === index ? setActiveTab(null) : setActiveTab(index);
             }}

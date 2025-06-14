@@ -1,11 +1,10 @@
-
 "use client";
 
 import { getUserDetails } from "@/lib/shopify";
 import type { user } from "@/lib/shopify/types";
 import Cookies from "js-cookie";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Gravatar from "react-gravatar";
 import { BsPerson } from "react-icons/bs";
 
@@ -30,6 +29,7 @@ const NavUser = () => {
   const pathname = usePathname();
   const [user, setUser] = useState<any>();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const getUser = async () => {
@@ -39,6 +39,23 @@ const NavUser = () => {
 
     getUser();
   }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownOpen]);
 
   const handleLogout = () => {
     Cookies.remove("token");
@@ -52,14 +69,14 @@ const NavUser = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       {user ? (
         <button
           onClick={toggleDropdown}
           className="relative cursor-pointer text-left sm:text-xs flex items-center justify-center"
         >
           <div className="flex items-center gap-x-1">
-            <div className="h-6 w-6 border border-darkmode-border dark:border-border rounded-full">
+            <div className="h-6 w-6 border border-border rounded-full">
               <Gravatar
                 email={user?.email}
                 style={{ borderRadius: "50px" }}
@@ -68,11 +85,11 @@ const NavUser = () => {
             </div>
             <div className="leading-none max-md:hidden">
               <div className="flex items-center">
-                <p className="block text-text-dark dark:text-darkmode-text-dark text-base truncate">
+                <p className="block text-text-dark text-base truncate">
                   {user?.firstName?.split(" ")[0]}
                 </p>
                 <svg
-                  className={`w-5 text-text-dark dark:text-darkmode-text-dark dark:hover:text-darkmode-text-primary`}
+                  className="w-5 text-text-dark"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
@@ -89,17 +106,23 @@ const NavUser = () => {
         </button>
       ) : (
         <a
-          className="text-xl text-text-dark hover:text-text-primary dark:border-darkmode-border dark:text-white flex items-center"
+          className="text-xl text-text-dark hover:text-text-primary flex items-center"
           href="/login"
           aria-label="login"
         >
-          <BsPerson className="dark:hover:text-darkmode-primary" />
+          <BsPerson />
         </a>
       )}
 
       {dropdownOpen && (
-        <div className="z-20 text-center absolute w-full right-8 bg-transparent shadow-md rounded mt-2">
-          <button onClick={handleLogout} className="btn btn-primary max-md:btn-sm mt-2">
+        <div className="z-20 absolute right-0 mt-2 w-48 bg-white border border-border rounded-md shadow-lg py-1">
+          <button
+            onClick={handleLogout}
+            className="w-full px-4 py-2 text-sm text-text-dark hover:bg-gray-50 hover:text-red-600 transition-colors duration-200 text-left flex items-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
             Logout
           </button>
         </div>

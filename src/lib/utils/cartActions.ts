@@ -15,11 +15,21 @@ export async function addItem(
   prevState: any,
   selectedVariantId: string | undefined,
 ) {
-  let cartId = (await cookies()).get("cartId")?.value;
+  let cartId: string | undefined = (await cookies()).get("cartId")?.value;
   let cart;
 
+  // Decode the cart ID if it exists
   if (cartId) {
-    cart = await getCart(cartId);
+    try {
+      const decodedCartId = decodeURIComponent(cartId);
+      cart = await getCart(decodedCartId);
+      cartId = decodedCartId;
+    } catch (error) {
+      console.error("Error decoding/fetching cart:", error);
+      // If cart can't be fetched, create a new one
+      cart = null;
+      cartId = undefined;
+    }
   }
 
   if (!cartId || !cart) {
@@ -33,11 +43,19 @@ export async function addItem(
   }
 
   try {
-    await addToCart(cartId, [
+    console.log("Adding to cart:", { cartId, selectedVariantId });
+    const result = await addToCart(cartId, [
       { merchandiseId: selectedVariantId, quantity: 1 },
     ]);
+    console.log("Add to cart result:", result);
     revalidateTag(TAGS.cart);
+    return "Item added to cart successfully";
   } catch (e) {
+    console.error("Error adding item to cart:", e);
+    const errorMessage = e instanceof Error ? e.message : "Unknown error";
+    if (errorMessage.includes("out of stock") || errorMessage.includes("unavailable")) {
+      return "This item is currently out of stock";
+    }
     return "Error adding item to cart";
   }
 }

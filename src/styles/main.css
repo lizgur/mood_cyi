@@ -4,19 +4,102 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @import "./safe.css";
 @import "./utilities.css";
 
 @layer base {
   @import "./base.css";
+
+  /* Custom Font Styles */
+  h1,
+  h2,
+  h3 {
+    @apply font-['Wallpoet'] text-[#300B6A];
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply font-['Cute_Font'] text-[#9658F9];
+  }
+
+  p,
+  span,
+  div {
+    @apply font-['Consolas'] text-black;
+  }
 }
 
 @layer components {
   @import "./components.css";
   @import "./navigation.css";
-  @import "./buttons.css";
+
+  .product-title {
+    @apply font-['Cute_Font'] text-[1.5rem] text-[#300B6A];
+  }
+
+  .nav-link {
+    @apply font-['Wallpoet'] text-[1.1rem];
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
+
+  .section-title {
+    @apply font-['Wallpoet'] text-[#300B6A] relative inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-[-8px] left-0 w-full h-[4px] bg-[#BDFF07];
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-subtitle {
+    @apply font-['Cute_Font'] text-[#9658F9] text-[1.2rem];
+  }
+
+  .hero-title {
+    @apply font-['Wallpoet'] text-[3rem] text-[#300B6A];
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-subtitle {
+    @apply font-['Cute_Font'] text-[1.8rem];
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .collection-title {
+    @apply font-['Wallpoet'] text-[#300B6A] text-[2rem] mb-4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
+
+  .collection-description {
+    @apply font-['Consolas'] text-black text-base;
+  }
+
+  .featured-title {
+    @apply font-['Wallpoet'] text-[#300B6A] text-[2.5rem] mb-2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
+
+  .featured-subtitle {
+    @apply font-['Cute_Font'] text-[#9658F9] text-[1.5rem] mb-8;
+  }
 }
 
 .iiz__hint {
@@ -35,7 +118,8 @@ input:-webkit-autofill:active {
 .dark input:-webkit-autofill:hover,
 .dark input:-webkit-autofill:focus,
 .dark input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.9) inset;
+  -webkit-box-shadow: 0 0 0 30px #1a1a1a inset;
+  -webkit-text-fill-color: #ddd;
 }
 
 /*Change text in autofill textbox*/
