@@ -14,6 +14,11 @@ export interface ISocial {
   link: string;
 }
 
+interface IMenuItem {
+  name: string;
+  url: string;
+}
+
 const Footer = () => {
   const { copyright } = config.params;
 
@@ -26,9 +31,9 @@ const Footer = () => {
           </div>
 
           <ul className="flex gap-x-4 lg:gap-x-10 my-3">
-            {menu.footer.map((menu) => (
-              <li className="footer-link" key={menu.name}>
-                <Link href={menu.url}>{menu.name}</Link>
+            {menu.footer.map((item: IMenuItem) => (
+              <li className="footer-link" key={item.name}>
+                <Link href={item.url}>{item.name}</Link>
               </li>
             ))}
           </ul>
@@ -54,9 +59,9 @@ const Footer = () => {
         <div className="border-t border-border py-5 ">
           <div className="flex flex-col md:flex-row gap-y-2 justify-between items-center text-text-light ">
             <ul className="flex gap-x-4">
-              {menu.footerCopyright.map((menu) => (
-                <li className="footer-link" key={menu.name}>
-                  <Link href={menu.url}>{menu.name}</Link>
+              {menu.footerCopyright.map((item: IMenuItem) => (
+                <li className="footer-link" key={item.name}>
+                  <Link href={item.url}>{item.name}</Link>
                 </li>
               ))}
             </ul>
