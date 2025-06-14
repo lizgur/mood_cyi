@@ -98,7 +98,15 @@ export async function shopifyFetch<T>({
     });
     
     if (!domain || !key) {
-      throw new Error(`Missing Shopify credentials - Domain: ${domain}, Key: ${key ? 'Present' : 'Missing'}`);
+      console.warn(`Missing Shopify credentials - Domain: ${domain}, Key: ${key ? 'Present' : 'Missing'}`);
+      // Return mock data structure instead of throwing error
+      return { 
+        status: 200, 
+        body: { 
+          data: null,
+          errors: [{ message: "Shopify credentials not configured" }]
+        } as T 
+      };
     }
 
     const result = await fetch(endpoint, {
@@ -423,31 +431,48 @@ export async function getUserDetails(accessToken: string): Promise<user> {
 }
 
 export async function getCollections(): Promise<Collection[]> {
-  const res = await shopifyFetch<ShopifyCollectionsOperation>({
-    query: getCollectionsQuery,
-    tags: [TAGS.collections],
-  });
-  const shopifyCollections = removeEdgesAndNodes(res.body?.data?.collections);
-  const collections = [
-    // {
-    //   handle: '',
-    //   title: 'All',
-    //   description: 'All products',
-    //   seo: {
-    //     title: 'All',
-    //     description: 'All products'
-    //   },
-    //   path: '/products',
-    //   updatedAt: new Date().toISOString()
-    // },
-    // Filter out the `hidden` collections.
-    // Collections that start with `hidden-*` need to be hidden on the search page.
-    ...reshapeCollections(shopifyCollections).filter(
-      (collection) => !collection.handle.startsWith("hidden"),
-    ),
-  ];
+  try {
+    const shopifyResponse = await shopifyFetch<ShopifyCollectionsOperation>({
+      query: getCollectionsQuery,
+      tags: [TAGS.collections],
+    });
 
-  return collections;
+    // Handle missing credentials gracefully
+    if (!shopifyResponse.body.data || (shopifyResponse.body as any).errors) {
+      console.warn("Shopify not configured, returning empty collections");
+      return [];
+    }
+
+    const collections = reshapeCollections(
+      removeEdgesAndNodes(shopifyResponse.body.data.collections),
+    );
+
+    return [
+      {
+        handle: "all",
+        title: "All",
+        description: "All products",
+        seo: { title: "All", description: "All products" },
+        path: "/products",
+        updatedAt: new Date().toISOString(),
+      },
+      // Add a placeholder filter
+      ...collections,
+    ];
+  } catch (error) {
+    console.error("Error fetching collections:", error);
+    // Return fallback collections
+    return [
+      {
+        handle: "all",
+        title: "All",
+        description: "All products",
+        seo: { title: "All", description: "All products" },
+        path: "/products",
+        updatedAt: new Date().toISOString(),
+      },
+    ];
+  }
 }
 
 export async function getMenu(handle: string): Promise<Menu[]> {
@@ -578,18 +603,48 @@ export async function getProducts({
   sortKey?: string;
   cursor?: string;
 }): Promise<{ pageInfo: PageInfo; products: Product[] }> {
-  const res = await shopifyFetch<ShopifyProductsOperation>({
-    query: getProductsQuery,
-    tags: [TAGS.products],
-    variables: { query, reverse, sortKey, cursor },
-  });
+  try {
+    const res = await shopifyFetch<ShopifyProductsOperation>({
+      query: getProductsQuery,
+      tags: [TAGS.products],
+      variables: {
+        query,
+        reverse,
+        sortKey,
+        after: cursor,
+      },
+    });
 
-  const pageInfo = res.body.data?.products?.pageInfo;
+    // Handle missing credentials gracefully
+    if (!res.body.data || (res.body as any).errors) {
+      console.warn("Shopify not configured, returning empty products");
+      return {
+        pageInfo: {
+          hasNextPage: false,
+          hasPreviousPage: false,
+          startCursor: "",
+          endCursor: "",
+        },
+        products: [],
+      };
+    }
 
-  return {
-    pageInfo,
-    products: reshapeProducts(removeEdgesAndNodes(res.body.data.products)),
-  };
+    return {
+      pageInfo: res.body.data.products.pageInfo,
+      products: reshapeProducts(removeEdgesAndNodes(res.body.data.products)),
+    };
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return {
+      pageInfo: {
+        hasNextPage: false,
+        hasPreviousPage: false,
+        startCursor: "",
+        endCursor: "",
+      },
+      products: [],
+    };
+  }
 }
 
 export async function getHighestProductPrice(): Promise<{
