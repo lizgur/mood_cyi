@@ -97,6 +97,8 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
       options,
       variants,
       tags,
+      availableForSale,
+      handle,
     } = product;
 
     const defaultVariantId = variants.length > 0 ? variants[0].id : undefined;
@@ -166,90 +168,90 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
     }
 
     return (
-      <>
-        <section className="md:section-sm">
-          <div className="container">
-            <div className="row justify-center">
-              {/* right side contents  */}
-              <div className="col-10 md:col-8 lg:col-6">
-                <ProductGalleryWrapper images={images} />
+      <div className="section">
+        <div className="container">
+          <div className="row gx-5">
+            <div className="md:col-7 lg:col-6">
+              <div className="product-gallery">
+                <div className="gallery-wrapper">
+                  <ProductGalleryWrapper images={images} />
+                </div>
               </div>
-
-              {/* left side contents  */}
-              <div className="col-10 md:col-8 lg:col-5 md:ml-7 py-6 lg:py-0">
-                <h1 className="h2 mb-4">{title}</h1>
-
-                {/* Product Metafields or Fallback Details */}
-                {productDetails.length > 0 && (
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold mb-3 text-text-dark ">
-                      Product Details
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {/* Display product details */}
-                      {productDetails.map((detail) => (
-                        <div key={detail.key} className="flex flex-col">
-                          <span className="text-sm font-medium text-text-light ">
-                            {detail.label}:
-                          </span>
-                          <span className="text-sm font-semibold text-text-dark ">
-                            {detail.value}
-                          </span>
-                        </div>
-                      ))}
+            </div>
+            <div className="md:col-5 lg:col-6">
+              <div className="product-info">
+                <div className="product-info-inner">
+                  <div className="product-meta">
+                    <h1 className="product-title">{title}</h1>
+                    <div className="product-price">
+                      <span className="price">
+                        {priceRange.minVariantPrice.amount}{" "}
+                        {priceRange.minVariantPrice.currencyCode}
+                      </span>
                     </div>
                   </div>
-                )}
 
-                <div className="flex items-center mb-4">
-                  <span className="h3 text-primary">
-                    {priceRange.maxVariantPrice.amount}{" "}
-                    {priceRange.maxVariantPrice.currencyCode}
-                  </span>
-                  {compareAtPriceRange.maxVariantPrice.amount &&
-                    parseFloat(compareAtPriceRange.maxVariantPrice.amount) >
-                      parseFloat(priceRange.maxVariantPrice.amount) && (
-                      <span className="h4 text-light ml-2 line-through">
-                        {compareAtPriceRange.maxVariantPrice.amount}{" "}
-                        {compareAtPriceRange.maxVariantPrice.currencyCode}
-                      </span>
-                    )}
-                </div>
-
-                {/* Description moved here */}
-                {description && (
-                  <div className="mb-2">
-                    <h3 className="text-lg font-semibold mb-3 text-text-dark ">
-                      Description
-                    </h3>
+                  <div className="product-description">
                     <div
-                      className="text-text-light  leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                      dangerouslySetInnerHTML={{
+                        __html: descriptionHtml,
+                      }}
                     />
                   </div>
-                )}
 
-                <div className="mb-2">
-                  <VariantSelector
-                    options={options}
-                    variants={variants}
-                    images={images}
-                  />
+                  <div className="variant-selector-wrapper">
+                    <VariantSelector
+                      options={options}
+                      variants={variants}
+                      images={images}
+                    />
+                  </div>
+
+                  <div className="add-to-cart-wrapper">
+                    <AddToCart
+                      variants={variants}
+                      availableForSale={availableForSale}
+                      defaultVariantId={defaultVariantId}
+                      stylesClass="btn btn-primary max-md:btn-sm"
+                      handle={handle}
+                    />
+                  </div>
+
+                  <div className="product-tags">
+                    <ShowTags tags={tags} />
+                  </div>
+
+                  <div className="product-social">
+                    <Social
+                      socialName={title}
+                      className="social-icons"
+                    />
+                  </div>
                 </div>
-                <div className="mb-4">
-                  <AddToCart
-                    variants={variants}
-                    availableForSale={product.availableForSale}
-                    handle={product.handle}
-                    defaultVariantId={defaultVariantId}
-                    stylesClass="btn btn-primary max-md:btn-sm"
-                  />
-                </div>
-                <div className="mb-4">
-                  <ShowTags tags={tags} />
-                </div>
-                <div className="mb-4">
-                  <Social socialName={title} className="social-icons" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section className="section pt-0">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <div className="payment-delivery-info">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <h4>Payment Methods</h4>
+                      <ul>
+                        {payment_methods.map((method: string, index: number) => (
+                          <li key={index}>{method}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="col-md-6">
+                      <h4>Estimated Delivery</h4>
+                      <p>{estimated_delivery}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -259,8 +261,10 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
         {productRecommendations.length > 0 && (
           <section className="pt-2 pb-8 md:pt-3 md:pb-12">
             <div className="container">
-              <div className="text-center mb-8">
-                <h2 className="section-title">Discover More...</h2>
+              <div className="row">
+                <div className="col-12">
+                  <h2 className="h3 mb-8 text-center">You might also like</h2>
+                </div>
               </div>
               <div className="row">
                 <div className="mx-auto">
@@ -270,9 +274,11 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
             </div>
           </section>
         )}
-        
-        <CallToAction data={callToAction} />
-      </>
+
+        {callToAction.frontmatter.enable && (
+          <CallToAction data={callToAction} />
+        )}
+      </div>
     );
   } catch (error) {
     console.error('Error loading product:', error);
