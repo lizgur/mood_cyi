@@ -36,202 +36,218 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
 
 const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
   try {
+    console.log('Loading product with slug:', params.slug);
+    
     const paymentsAndDelivery = getListPage("sections/payments-and-delivery.md");
     const { payment_methods, estimated_delivery } =
       paymentsAndDelivery.frontmatter;
     const product = await getProduct(params.slug);
 
-    if (!product) return notFound();
-  const {
-    id,
-    title,
-    description,
-    descriptionHtml,
-    priceRange,
-    compareAtPriceRange,
-    images,
-    options,
-    variants,
-    tags,
-  } = product;
+    console.log('Product fetched:', product ? 'SUCCESS' : 'FAILED');
+    
+    if (!product) {
+      console.error('Product not found for slug:', params.slug);
+      return notFound();
+    }
 
-  const relatedProducts = await getProductRecommendations(id);
+    console.log('Product details:', { id: product.id, title: product.title, handle: product.handle });
 
-  const defaultVariantId = variants.length > 0 ? variants[0].id : undefined;
+    const {
+      id,
+      title,
+      description,
+      descriptionHtml,
+      priceRange,
+      compareAtPriceRange,
+      images,
+      options,
+      variants,
+      tags,
+    } = product;
 
-  // Helper function to format keys for display
-  const formatKey = (key: string) => {
-    return key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
-  };
+    const relatedProducts = await getProductRecommendations(id);
 
-  // Create product details from available data
-  const productDetails = [];
+    const defaultVariantId = variants.length > 0 ? variants[0].id : undefined;
 
-  // Add material information
-  productDetails.push({
-    key: "material",
-    label: "Material",
-    value: "100% Cotton",
-  });
+    // Helper function to format keys for display
+    const formatKey = (key: string) => {
+      return key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+    };
 
-  // Add fit information
-  productDetails.push({
-    key: "fit",
-    label: "Fit",
-    value: "Oversized Fit",
-  });
+    // Create product details from available data
+    const productDetails = [];
 
-  // Add gender information
-  productDetails.push({
-    key: "gender",
-    label: "Gender",
-    value: "Unisex",
-  });
-
-  // Add available sizes from options
-  const sizeOption = options?.find(
-    (option) => option.name.toLowerCase() === "size",
-  );
-  if (sizeOption && sizeOption.values.length > 0) {
+    // Add material information
     productDetails.push({
-      key: "available_sizes",
-      label: "Available Sizes",
-      value: sizeOption.values.join(", "),
+      key: "material",
+      label: "Material",
+      value: "100% Cotton",
     });
-  }
 
-  // Add collections
-  if (product.collections?.nodes && product.collections.nodes.length > 0) {
-    const collectionNames = product.collections.nodes
-      .map((c: any) => c.title)
-      .filter((title: string) => title !== "_drop01");
-    if (collectionNames.length > 0) {
+    // Add fit information
+    productDetails.push({
+      key: "fit",
+      label: "Fit",
+      value: "Oversized Fit",
+    });
+
+    // Add gender information
+    productDetails.push({
+      key: "gender",
+      label: "Gender",
+      value: "Unisex",
+    });
+
+    // Add available sizes from options
+    const sizeOption = options?.find(
+      (option) => option.name.toLowerCase() === "size",
+    );
+    if (sizeOption && sizeOption.values.length > 0) {
       productDetails.push({
-        key: "collections",
-        label: "Collections",
-        value: collectionNames.join(", "),
+        key: "available_sizes",
+        label: "Available Sizes",
+        value: sizeOption.values.join(", "),
       });
     }
-  }
 
-  // Add brand if not default
-  if (product.vendor && product.vendor !== "My Store") {
-    productDetails.push({
-      key: "brand",
-      label: "Brand",
-      value: product.vendor,
-    });
-  }
+    // Add collections
+    if (product.collections?.nodes && product.collections.nodes.length > 0) {
+      const collectionNames = product.collections.nodes
+        .map((c: any) => c.title)
+        .filter((title: string) => title !== "_drop01");
+      if (collectionNames.length > 0) {
+        productDetails.push({
+          key: "collections",
+          label: "Collections",
+          value: collectionNames.join(", "),
+        });
+      }
+    }
 
-  return (
-    <>
-      <section className="md:section-sm">
-        <div className="container">
-          <div className="row justify-center">
-            {/* right side contents  */}
-            <div className="col-10 md:col-8 lg:col-6">
-              <ProductGalleryWrapper images={images} />
-            </div>
+    // Add brand if not default
+    if (product.vendor && product.vendor !== "My Store") {
+      productDetails.push({
+        key: "brand",
+        label: "Brand",
+        value: product.vendor,
+      });
+    }
 
-            {/* left side contents  */}
-            <div className="col-10 md:col-8 lg:col-5 md:ml-7 py-6 lg:py-0">
-              <h1 className="h2 mb-4">{title}</h1>
-
-              {/* Product Metafields or Fallback Details */}
-              {productDetails.length > 0 && (
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-3 text-text-dark ">
-                    Product Details
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {/* Display product details */}
-                    {productDetails.map((detail) => (
-                      <div key={detail.key} className="flex flex-col">
-                        <span className="text-sm font-medium text-text-light ">
-                          {detail.label}:
-                        </span>
-                        <span className="text-sm font-semibold text-text-dark ">
-                          {detail.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="flex items-center mb-4">
-                <span className="h3 text-primary">
-                  {priceRange.maxVariantPrice.amount}{" "}
-                  {priceRange.maxVariantPrice.currencyCode}
-                </span>
-                {compareAtPriceRange.maxVariantPrice.amount &&
-                  parseFloat(compareAtPriceRange.maxVariantPrice.amount) >
-                    parseFloat(priceRange.maxVariantPrice.amount) && (
-                    <span className="h4 text-light ml-2 line-through">
-                      {compareAtPriceRange.maxVariantPrice.amount}{" "}
-                      {compareAtPriceRange.maxVariantPrice.currencyCode}
-                    </span>
-                  )}
+    return (
+      <>
+        <section className="md:section-sm">
+          <div className="container">
+            <div className="row justify-center">
+              {/* right side contents  */}
+              <div className="col-10 md:col-8 lg:col-6">
+                <ProductGalleryWrapper images={images} />
               </div>
 
-              {/* Description moved here */}
-              {description && (
+              {/* left side contents  */}
+              <div className="col-10 md:col-8 lg:col-5 md:ml-7 py-6 lg:py-0">
+                <h1 className="h2 mb-4">{title}</h1>
+
+                {/* Product Metafields or Fallback Details */}
+                {productDetails.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold mb-3 text-text-dark ">
+                      Product Details
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {/* Display product details */}
+                      {productDetails.map((detail) => (
+                        <div key={detail.key} className="flex flex-col">
+                          <span className="text-sm font-medium text-text-light ">
+                            {detail.label}:
+                          </span>
+                          <span className="text-sm font-semibold text-text-dark ">
+                            {detail.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex items-center mb-4">
+                  <span className="h3 text-primary">
+                    {priceRange.maxVariantPrice.amount}{" "}
+                    {priceRange.maxVariantPrice.currencyCode}
+                  </span>
+                  {compareAtPriceRange.maxVariantPrice.amount &&
+                    parseFloat(compareAtPriceRange.maxVariantPrice.amount) >
+                      parseFloat(priceRange.maxVariantPrice.amount) && (
+                      <span className="h4 text-light ml-2 line-through">
+                        {compareAtPriceRange.maxVariantPrice.amount}{" "}
+                        {compareAtPriceRange.maxVariantPrice.currencyCode}
+                      </span>
+                    )}
+                </div>
+
+                {/* Description moved here */}
+                {description && (
+                  <div className="mb-2">
+                    <h3 className="text-lg font-semibold mb-3 text-text-dark ">
+                      Description
+                    </h3>
+                    <div
+                      className="text-text-light  leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                    />
+                  </div>
+                )}
+
                 <div className="mb-2">
-                  <h3 className="text-lg font-semibold mb-3 text-text-dark ">
-                    Description
-                  </h3>
-                  <div
-                    className="text-text-light  leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                  <VariantSelector
+                    options={options}
+                    variants={variants}
+                    images={images}
                   />
                 </div>
-              )}
-
-              <div className="mb-2">
-                <VariantSelector
-                  options={options}
-                  variants={variants}
-                  images={images}
-                />
-              </div>
-              <div className="mb-4">
-                <AddToCart
-                  variants={variants}
-                  availableForSale={product.availableForSale}
-                  handle={product.handle}
-                  defaultVariantId={defaultVariantId}
-                  stylesClass="btn btn-primary max-md:btn-sm"
-                />
-              </div>
-              <div className="mb-4">
-                <ShowTags tags={tags} />
-              </div>
-              <div className="mb-4">
-                <Social socialName={title} className="social-icons" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {relatedProducts.length > 0 && (
-        <section className="pt-2 pb-8 md:pt-3 md:pb-12">
-          <div className="container">
-            <div className="text-center mb-8">
-              <h2 className="section-title">Discover More...</h2>
-            </div>
-            <div className="row">
-              <div className="mx-auto">
-                <LatestProducts products={relatedProducts} />
+                <div className="mb-4">
+                  <AddToCart
+                    variants={variants}
+                    availableForSale={product.availableForSale}
+                    handle={product.handle}
+                    defaultVariantId={defaultVariantId}
+                    stylesClass="btn btn-primary max-md:btn-sm"
+                  />
+                </div>
+                <div className="mb-4">
+                  <ShowTags tags={tags} />
+                </div>
+                <div className="mb-4">
+                  <Social socialName={title} className="social-icons" />
+                </div>
               </div>
             </div>
           </div>
         </section>
-      )}
-    </>
-  );
+
+        {relatedProducts.length > 0 && (
+          <section className="pt-2 pb-8 md:pt-3 md:pb-12">
+            <div className="container">
+              <div className="text-center mb-8">
+                <h2 className="section-title">Discover More...</h2>
+              </div>
+              <div className="row">
+                <div className="mx-auto">
+                  <LatestProducts products={relatedProducts} />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+      </>
+    );
   } catch (error) {
     console.error('Error loading product:', error);
+    console.error('Product slug:', params.slug);
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      name: error instanceof Error ? error.name : 'Unknown'
+    });
     
     // Fallback UI when product fails to load
     return (
@@ -244,6 +260,15 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
             <p className="text-[#300B6A]/80 mb-6" style={{fontFamily: 'Consolas, monospace'}}>
               This product is temporarily unavailable. Please try again later or browse our other products.
             </p>
+            {process.env.NODE_ENV === 'development' && (
+              <div className="text-left mb-4 p-3 bg-red-50 border border-red-200 rounded text-sm">
+                <strong>Debug Info:</strong><br/>
+                <code className="text-red-600">
+                  Slug: {params.slug}<br/>
+                  Error: {error instanceof Error ? error.message : 'Unknown error'}
+                </code>
+              </div>
+            )}
             <div className="space-y-4">
               <a
                 href="/products"
