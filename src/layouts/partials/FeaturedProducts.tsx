@@ -7,8 +7,9 @@ import Link from "next/link";
 const FeaturedProducts = ({ products }: { products: Product[] }) => {
   return (
     <>
-      <div className="row justify-content-center">
-        {products.map((product: any) => {
+      <div className="flex justify-center">
+        <div className="row">
+          {products.map((product: any) => {
           const {
             id,
             title,
@@ -78,6 +79,7 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
             </div>
           );
         })}
+        </div>
       </div>
 
       <div className="flex justify-center">
