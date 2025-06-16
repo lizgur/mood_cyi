@@ -8,6 +8,7 @@ import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
 import { Wallpoet, Cute_Font } from "next/font/google";
+import { Metadata } from "next";
 
 // Load Google Fonts with Next.js optimization
 const wallpoet = Wallpoet({
@@ -23,6 +24,35 @@ const cuteFont = Cute_Font({
   display: "swap",
   variable: "--font-cute",
 });
+
+export const metadata: Metadata = {
+  title: config.site.title,
+  description: config.metadata.meta_description,
+  openGraph: {
+    url: config.site.base_url,
+    type: 'website',
+    title: config.site.title,
+    description: config.metadata.meta_description,
+    images: [
+      {
+        url: config.metadata.meta_image,
+        width: 1200,
+        height: 673,
+        alt: config.site.title,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: config.site.title,
+    description: config.metadata.meta_description,
+    images: [config.metadata.meta_image],
+  },
+  authors: [{ name: config.metadata.meta_author }],
+  alternates: {
+    canonical: config.site.base_url,
+  },
+};
 
 export default function RootLayout({
   children,

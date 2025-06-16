@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "MOOD",
+    "title": "MOOD - Code Your Identity",
     "base_url": "https://moodcyi.com",
     "base_path": "/",
     "trailing_slash": false,
@@ -32,7 +32,7 @@
   },
   "metadata": {
     "meta_author": "MOOD - Code Your Identity",
-    "meta_image": "/images/metaimage.png",
+    "meta_image": "https://opengraph.b-cdn.net/production/images/e8fbf604-8b37-415d-9639-0f51610d31ae.png?token=DuoI-xK9GqI3qY9tJYbsViIbsUIgDR21FtQ3lBeeFkI&height=673&width=1200&expires=33286093428",
     "meta_description": "Street wear for crypto heads."
   },
   "shopify": {

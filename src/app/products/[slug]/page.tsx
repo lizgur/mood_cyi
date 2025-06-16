@@ -25,11 +25,43 @@ export const generateMetadata = async (props: {
   const params = await props.params;
   const product = await getProduct(params.slug);
   if (!product) return notFound();
+  
+  const title = product.seo.title || product.title;
+  const description = product.seo.description || product.description;
+  const image = product.featuredImage?.url || config.metadata.meta_image;
+  const url = `${config.site.base_url}/products/${params.slug}`;
+  
   return {
-    title: product.seo.title || product.title,
-    description: product.seo.description || product.description,
+    title,
+    description,
+    openGraph: {
+      url,
+      type: 'website',
+      title,
+      description,
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 673,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 };
+
+// Add revalidation to prevent aggressive caching
+export const revalidate = 60; // Revalidate every 60 seconds
 
 const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;

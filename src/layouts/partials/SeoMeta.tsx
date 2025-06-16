@@ -22,13 +22,16 @@ const SeoMeta = ({
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
   const pathname = usePathname();
+  
+  const finalTitle = plainify(meta_title ? meta_title : title ? title : config.site.title);
+  const finalDescription = plainify(description ? description : meta_description);
+  const finalImage = image ? (image.startsWith('http') ? image : `${base_url}${image}`) : meta_image;
+  const currentUrl = `${base_url}${pathname === '/' ? '' : pathname}`;
 
   return (
     <>
-      {/* title */}
-      <title>
-        {plainify(meta_title ? meta_title : title ? title : config.site.title)}
-      </title>
+      {/* HTML Meta Tags */}
+      <title>{finalTitle}</title>
 
       {/* canonical url */}
       {canonical && <link rel="canonical" href={canonical} itemProp="url" />}
@@ -37,59 +40,25 @@ const SeoMeta = ({
       {noindex && <meta name="robots" content="noindex,nofollow" />}
 
       {/* meta-description */}
-      <meta
-        name="description"
-        content={plainify(description ? description : meta_description)}
-      />
+      <meta name="description" content={finalDescription} />
 
       {/* author from config.json */}
       <meta name="author" content={meta_author} />
 
-      {/* og-title */}
-      <meta
-        property="og:title"
-        content={plainify(
-          meta_title ? meta_title : title ? title : config.site.title,
-        )}
-      />
-
-      {/* og-description */}
-      <meta
-        property="og:description"
-        content={plainify(description ? description : meta_description)}
-      />
+      {/* Facebook Meta Tags */}
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:url"
-        content={`${base_url}/${pathname.replace("/", "")}`}
-      />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={finalDescription} />
+      <meta property="og:image" content={finalImage} />
 
-      {/* twitter-title */}
-      <meta
-        name="twitter:title"
-        content={plainify(
-          meta_title ? meta_title : title ? title : config.site.title,
-        )}
-      />
-
-      {/* twitter-description */}
-      <meta
-        name="twitter:description"
-        content={plainify(description ? description : meta_description)}
-      />
-
-      {/* og-image */}
-      <meta
-        property="og:image"
-        content={`${base_url}${image ? image : meta_image}`}
-      />
-
-      {/* twitter-image */}
-      <meta
-        name="twitter:image"
-        content={`${base_url}${image ? image : meta_image}`}
-      />
+      {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="moodcyi.com" />
+      <meta property="twitter:url" content={currentUrl} />
+      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:description" content={finalDescription} />
+      <meta name="twitter:image" content={finalImage} />
     </>
   );
 };
