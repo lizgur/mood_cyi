@@ -9,6 +9,7 @@ import config from "@/config/config.json";
 import { getListPage } from "@/lib/contentParser";
 import { getProduct, getProductRecommendations } from "@/lib/shopify";
 import LatestProducts from "@/partials/FeaturedProducts";
+import CallToAction from "@/partials/CallToAction";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -27,10 +28,37 @@ export const generateMetadata = async (props: {
 
 const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
+  
+  let callToAction;
+  try {
+    callToAction = getListPage("sections/call-to-action.md");
+  } catch (error) {
+    console.error('Error loading call-to-action:', error);
+    // Fallback call-to-action data
+    callToAction = {
+      frontmatter: {
+        enable: true,
+        title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt.",
+        sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF",
+        image: "/images/pizza.png",
+        description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout.",
+        button: {
+          enable: true,
+          label: "🛒 Grab the Deal Now",
+          link: "/products?c=_drop01"
+        },
+        fine_print: "⏳ Ends June 30 2025 or while supplies last."
+      }
+    };
+  }
+
   return (
-    <Suspense fallback={<LoadingProductGallery />}>
-      <ShowProductSingle params={params} />
-    </Suspense>
+    <>
+      <Suspense fallback={<LoadingProductGallery />}>
+        <ShowProductSingle params={params} />
+      </Suspense>
+      <CallToAction data={callToAction} />
+    </>
   );
 };
 
