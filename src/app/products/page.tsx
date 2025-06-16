@@ -14,9 +14,9 @@ import ProductFilters from "@/partials/ProductFilters";
 import ResponsiveProductView from "@/partials/ResponsiveProductView";
 import { Suspense } from "react";
 
-// Force dynamic rendering
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Removed force-dynamic to prevent SSR failures in production
+// export const dynamic = "force-dynamic";
+// export const revalidate = 0;
 
 interface SearchParams {
   sort?: string;
@@ -32,24 +32,25 @@ const ShowProducts = async ({
 }: {
   searchParams: SearchParams;
 }) => {
-  const {
-    sort,
-    q: searchValue,
-    minPrice,
-    maxPrice,
-    c: category,
-    t: tag,
-  } = searchParams as {
-    [key: string]: string;
-  };
+  try {
+    const {
+      sort,
+      q: searchValue,
+      minPrice,
+      maxPrice,
+      c: category,
+      t: tag,
+    } = searchParams as {
+      [key: string]: string;
+    };
 
-  const { layout, cursor } = searchParams as { [key: string]: string };
+    const { layout, cursor } = searchParams as { [key: string]: string };
 
-  const { sortKey, reverse } =
-    sorting.find((item) => item.slug === sort) || defaultSort;
+    const { sortKey, reverse } =
+      sorting.find((item) => item.slug === sort) || defaultSort;
 
-  let productsData: any;
-  let categoriesWithCounts: { category: string; productCount: number }[] = [];
+    let productsData: any;
+    let categoriesWithCounts: { category: string; productCount: number }[] = [];
 
   if (searchValue || minPrice || maxPrice || category || tag) {
     let queryString = "";
@@ -165,13 +166,68 @@ const ShowProducts = async ({
       </div>
     </>
   );
+  } catch (error) {
+    console.error('Error loading products page:', error);
+    
+    // Fallback UI when API fails
+    return (
+      <div className="container">
+        <div className="text-center py-16">
+          <div className="bg-white border-2 border-[#9658F9] rounded-lg p-8 max-w-md mx-auto">
+            <h2 className="text-2xl font-['Wallpoet'] text-[#300B6A] mb-4">
+              Products Loading...
+            </h2>
+            <p className="text-[#300B6A]/80 font-['Consolas'] mb-6">
+              Our product catalog is being prepared. Please check back in a moment or try refreshing the page.
+            </p>
+            <div className="space-y-4">
+              <a
+                href="/products"
+                className="btn btn-primary bg-[#BDFF07] text-[#300B6A] hover:bg-[#BDFF07]/90 inline-block"
+              >
+                Refresh Page
+              </a>
+              <br />
+              <a
+                href="/"
+                className="text-[#300B6A] hover:underline"
+              >
+                ← Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 const ProductsListPage = async (props: {
   searchParams: Promise<SearchParams>;
 }) => {
   const searchParams = await props.searchParams;
-  const callToAction = getListPage("sections/call-to-action.md");
+  
+  let callToAction;
+  try {
+    callToAction = getListPage("sections/call-to-action.md");
+  } catch (error) {
+    console.error('Error loading call-to-action:', error);
+    // Fallback call-to-action data
+    callToAction = {
+      frontmatter: {
+        enable: true,
+        title: "Ready to Shop?",
+        sub_title: "🛍️ Explore Our Collection",
+        description: "Discover unique blockchain-inspired designs and limited edition drops.",
+        image: "/images/pizza.png",
+        button: {
+          enable: true,
+          label: "Browse Products",
+          link: "/products"
+        }
+      }
+    };
+  }
 
   return (
     <>
