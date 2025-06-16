@@ -238,10 +238,10 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
       <div className="container">
         <div className="text-center py-16">
           <div className="bg-white border-2 border-[#9658F9] rounded-lg p-8 max-w-md mx-auto">
-            <h2 className="text-2xl font-['Wallpoet'] text-[#300B6A] mb-4">
+            <h2 className="text-2xl text-[#300B6A] mb-4" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
               Product Not Available
             </h2>
-            <p className="text-[#300B6A]/80 font-['Consolas'] mb-6">
+            <p className="text-[#300B6A]/80 mb-6" style={{fontFamily: 'Consolas, monospace'}}>
               This product is temporarily unavailable. Please try again later or browse our other products.
             </p>
             <div className="space-y-4">

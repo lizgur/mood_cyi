@@ -36,12 +36,12 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="hero-title mb-4 [text-shadow:_2px_2px_4px_rgba(0,0,0,0.3)]">
             Code your{" "}
-            <span className="text-[#BDFF07] font-['Wallpoet'] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)]">
+            <span className="text-[#BDFF07] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
               identity
             </span>
             <br />
             wear your{" "}
-            <span className="text-[#BDFF07] font-['Wallpoet'] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)]">
+            <span className="text-[#BDFF07] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
               future
             </span>
           </h1>

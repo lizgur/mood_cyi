@@ -1,34 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
+
 
 @import "tailwindcss/preflight";
 @tailwind utilities;
 
 /* Typography */
 .hero-title {
-  @apply text-4xl md:text-5xl lg:text-6xl font-['Wallpoet'] text-[#300B6A] mb-6;
+  @apply text-4xl md:text-5xl lg:text-6xl text-[#300B6A] mb-6;
+  font-family: var(--font-wallpoet), sans-serif;
 }
 
 .hero-subtitle {
-  @apply text-lg md:text-xl text-[#300B6A]/80 font-['Consolas'] mb-8;
+  @apply text-lg md:text-xl text-[#300B6A]/80 mb-8;
+  font-family: 'Consolas', monospace;
 }
 
 .section-title {
-  @apply text-2xl md:text-3xl lg:text-4xl font-['Wallpoet'] text-[#300B6A] mb-4;
+  @apply text-2xl md:text-3xl lg:text-4xl text-[#300B6A] mb-4;
+  font-family: var(--font-wallpoet), sans-serif;
 }
 
 .section-subtitle {
-  @apply text-base md:text-lg text-[#300B6A]/80 font-['Consolas'] mb-6;
+  @apply text-base md:text-lg text-[#300B6A]/80 mb-6;
+  font-family: 'Consolas', monospace;
 }
 
 /* Graffiti style elements */
 .graffiti-text {
-  @apply font-['Wallpoet'] text-[#BDFF07] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)];
+  @apply text-[#BDFF07] [text-shadow:_2px_2px_4px_rgba(0,0,0,0.5)];
+  font-family: var(--font-wallpoet), sans-serif;
 }
 
 .graffiti-bg {
-  @apply bg-[#300B6A] text-[#BDFF07] font-['Wallpoet'];
+  @apply bg-[#300B6A] text-[#BDFF07];
+  font-family: var(--font-wallpoet), sans-serif;
 }
 
 /* Custom animations */
@@ -52,25 +56,25 @@
 h1,
 h2,
 h3 {
-  font-family: "Wallpoet", sans-serif;
+  font-family: var(--font-wallpoet), sans-serif;
   color: #300b6a;
 }
 
 h4,
 h5,
 h6 {
-  font-family: "Cute Font", sans-serif;
+  font-family: var(--font-cute), sans-serif;
   color: #9658f9;
 }
 
 .product-title {
-  font-family: "Cute Font", sans-serif;
+  font-family: var(--font-cute), sans-serif;
   font-size: 1.5rem;
   color: #300b6a;
 }
 
 .nav-link {
-  font-family: "Wallpoet", sans-serif;
+  font-family: var(--font-wallpoet), sans-serif;
   font-size: 1.1rem;
 }
 
@@ -141,7 +145,7 @@ h6 {
 
 .nav-graffiti {
   position: relative;
-  font-family: "Wallpoet", sans-serif;
+  font-family: var(--font-wallpoet), sans-serif;
 }
 
 .nav-graffiti::after {
@@ -161,7 +165,7 @@ h6 {
 }
 
 .collection-title {
-  font-family: "Wallpoet", sans-serif;
+  font-family: var(--font-wallpoet), sans-serif;
   color: #300b6a;
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -174,14 +178,14 @@ h6 {
 }
 
 .featured-title {
-  font-family: "Wallpoet", sans-serif;
+  font-family: var(--font-wallpoet), sans-serif;
   color: #300b6a;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
 .featured-subtitle {
-  font-family: "Cute Font", sans-serif;
+  font-family: var(--font-cute), sans-serif;
   color: #9658f9;
   font-size: 1.5rem;
   margin-bottom: 2rem;

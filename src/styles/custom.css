@@ -1,34 +1,33 @@
 /* Custom Font Styles */
-@import url("https://fonts.googleapis.com/css2?family=Wallpoet&family=Cute+Font&family=Consolas&display=swap");
 
 /* Typography Mix */
 h1,
 h2,
 h3 {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   color: #300b6a !important;
 }
 
 h4,
 h5,
 h6 {
-  font-family: "Cute Font", sans-serif !important;
+  font-family: var(--font-cute), sans-serif !important;
   color: #9658f9 !important;
 }
 
 .product-title {
-  font-family: "Cute Font", sans-serif !important;
+  font-family: var(--font-cute), sans-serif !important;
   font-size: 1.5rem !important;
   color: #300b6a !important;
 }
 
 .nav-link {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   font-size: 1.1rem !important;
 }
 
 .section-title {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   color: #300b6a !important;
   position: relative !important;
   display: inline-block !important;
@@ -46,7 +45,7 @@ h6 {
 }
 
 .section-subtitle {
-  font-family: "Cute Font", sans-serif !important;
+  font-family: var(--font-cute), sans-serif !important;
   color: #9658f9 !important;
   font-size: 1.2rem !important;
 }
@@ -61,21 +60,21 @@ div,
 
 /* Hero section specific styles */
 .hero-title {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   font-size: 3rem !important;
   color: #300b6a !important;
   text-shadow: 2px 2px #bdff07 !important;
 }
 
 .hero-subtitle {
-  font-family: "Cute Font", sans-serif !important;
+  font-family: var(--font-cute), sans-serif !important;
   font-size: 1.8rem !important;
   color: #9658f9 !important;
 }
 
 /* Collection section specific styles */
 .collection-title {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   color: #300b6a !important;
   font-size: 2rem !important;
   margin-bottom: 1rem !important;
@@ -89,14 +88,14 @@ div,
 
 /* Featured products section specific styles */
 .featured-title {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   color: #300b6a !important;
   font-size: 2.5rem !important;
   margin-bottom: 0.5rem !important;
 }
 
 .featured-subtitle {
-  font-family: "Cute Font", sans-serif !important;
+  font-family: var(--font-cute), sans-serif !important;
   color: #9658f9 !important;
   font-size: 1.5rem !important;
   margin-bottom: 2rem !important;

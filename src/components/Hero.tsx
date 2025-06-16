@@ -5,13 +5,13 @@ const Hero = () => {
     <section className="relative overflow-hidden bg-gradient-to-b from-accent to-accent/90 py-12 md:py-20">
       {/* Graffiti elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-10 top-10 text-[100px] font-['Wallpoet'] text-white/5 rotate-[-15deg]">
+        <div className="absolute -left-10 top-10 text-[100px] text-white/5 rotate-[-15deg]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
           CODE
         </div>
-        <div className="absolute right-0 top-1/4 text-[80px] font-['Wallpoet'] text-white/5 rotate-[10deg]">
+        <div className="absolute right-0 top-1/4 text-[80px] text-white/5 rotate-[10deg]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
           WEAR
         </div>
-        <div className="absolute bottom-10 left-1/4 text-[60px] font-['Wallpoet'] text-white/5 rotate-[5deg]">
+        <div className="absolute bottom-10 left-1/4 text-[60px] text-white/5 rotate-[5deg]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
           FUTURE
         </div>
       </div>

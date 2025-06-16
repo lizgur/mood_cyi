@@ -227,7 +227,7 @@
 .content h1,
 .content h2,
 .content h3 {
-  font-family: "Wallpoet", sans-serif !important;
+  font-family: var(--font-wallpoet), sans-serif !important;
   color: #300B6A !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -237,7 +237,7 @@
 .content h4,
 .content h5,
 .content h6 {
-  font-family: "Cute Font", sans-serif !important;
+  font-family: var(--font-cute), sans-serif !important;
   color: #9658F9 !important;
 }
 

@@ -7,6 +7,22 @@ import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
+import { Wallpoet, Cute_Font } from "next/font/google";
+
+// Load Google Fonts with Next.js optimization
+const wallpoet = Wallpoet({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-wallpoet",
+});
+
+const cuteFont = Cute_Font({
+  weight: "400", 
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cute",
+});
 
 export default function RootLayout({
   children,
@@ -14,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html suppressHydrationWarning={true} lang="en" className={`${wallpoet.variable} ${cuteFont.variable}`}>
       <head>
         {/* responsive meta */}
         <meta
@@ -33,16 +49,9 @@ export default function RootLayout({
           content="#fff"
         />
 
-        {/* google font css */}
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Wallpoet&family=Cute+Font&family=Consolas&display=swap"
-          rel="stylesheet"
-        />
+        {/* Preconnect to Google Fonts for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
 
       <body suppressHydrationWarning={true}>

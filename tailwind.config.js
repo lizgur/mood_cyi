@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'wallpoet': ['Wallpoet', 'sans-serif'],
-        'cute': ['Cute Font', 'sans-serif'],
+        'wallpoet': ['var(--font-wallpoet)', 'sans-serif'],
+        'cute': ['var(--font-cute)', 'sans-serif'],
         'consolas': ['Consolas', 'monospace'],
       },
       colors: {

@@ -59,13 +59,15 @@ const CallToAction = ({ data }: { data: PageData }) => {
                     dangerouslySetInnerHTML={markdownify(
                       data.frontmatter.title,
                     )}
-                    className="my-4 text-2xl md:text-3xl text-text-dark  font-['Wallpoet']"
+                    className="my-4 text-2xl md:text-3xl text-text-dark"
+            style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}
                   />
                   <p
                     dangerouslySetInnerHTML={markdownify(
                       data.frontmatter.description,
                     )}
-                    className="mb-8 md:text-lg text-text-dark/80  font-['Consolas'] whitespace-pre-line"
+                    className="mb-8 md:text-lg text-text-dark/80 whitespace-pre-line"
+            style={{fontFamily: 'Consolas, monospace'}}
                   />
 
                   {pizzaProduct ? (
@@ -89,7 +91,7 @@ const CallToAction = ({ data }: { data: PageData }) => {
                   )}
 
                   {data.frontmatter.fine_print && (
-                    <p className="text-sm text-text-dark/60  font-['Consolas']">
+                    <p className="text-sm text-text-dark/60" style={{fontFamily: 'Consolas, monospace'}}>
                       {data.frontmatter.fine_print}
                     </p>
                   )}

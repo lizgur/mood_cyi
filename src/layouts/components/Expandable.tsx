@@ -16,7 +16,7 @@ const Expandable = ({ faqs }: { faqs: Faq[] }) => {
           <button
             className="accordion-header"
             style={{ 
-              fontFamily: '"Cute Font", sans-serif',
+              fontFamily: 'var(--font-cute), sans-serif',
               fontSize: '1.5rem',
               fontWeight: '600'
             }}

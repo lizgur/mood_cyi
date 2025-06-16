@@ -53,12 +53,12 @@ const ShowCollections = async () => {
                 <h2 className="section-title text-[#300B6A] mb-6">
                   {collection.handle}
                 </h2>
-                <h2 className="text-xl md:text-2xl mb-4 font-['Wallpoet'] text-[#300B6A]">
+                <h2 className="text-xl md:text-2xl mb-4 text-[#300B6A]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                   {collection.handle === "_drop01"
                     ? "Bitcoin Occasions"
                     : "Coming Soon"}
                 </h2>
-                <h4 className="text-sm md:text-base mb-8 font-['Consolas'] text-[#300B6A]">
+                <h4 className="text-sm md:text-base mb-8 text-[#300B6A]" style={{fontFamily: 'Consolas, monospace'}}>
                   {collection.handle === "_drop01"
                     ? "Celebrate Bitcoin milestones with our exclusive collection. From genesis block to pizza day, wear your crypto pride."
                     : "Get ready for our next blockchain network drop. Stay tuned for exclusive designs celebrating the future of web3."}
@@ -96,10 +96,10 @@ const ShowCollections = async () => {
                 <h2 className="section-title text-[#300B6A] mb-6">
                   {collection.handle}
                 </h2>
-                <h2 className="text-xl md:text-2xl mb-4 font-['Wallpoet'] text-[#300B6A]">
+                <h2 className="text-xl md:text-2xl mb-4 text-[#300B6A]" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                   {collection.title}
                 </h2>
-                <h4 className="text-sm md:text-base mb-8 font-['Consolas'] text-[#300B6A]">
+                <h4 className="text-sm md:text-base mb-8 text-[#300B6A]" style={{fontFamily: 'Consolas, monospace'}}>
                   {collection.description}
                 </h4>
               </div>
@@ -138,10 +138,10 @@ const ShowDrop01Products = async () => {
       return (
         <div className="text-center py-12">
           <div className="bg-white border-2 border-[#9658F9] rounded-lg p-8 max-w-md mx-auto">
-            <h3 className="text-xl font-['Wallpoet'] text-[#300B6A] mb-4">
+            <h3 className="text-xl text-[#300B6A] mb-4" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
               Products Loading...
             </h3>
-            <p className="text-[#300B6A]/80 font-['Consolas'] mb-6">
+            <p className="text-[#300B6A]/80 mb-6" style={{fontFamily: 'Consolas, monospace'}}>
               Our Bitcoin collection is being prepared. Check back soon for exclusive designs!
             </p>
             <Link
@@ -161,10 +161,10 @@ const ShowDrop01Products = async () => {
     return (
       <div className="text-center py-12">
         <div className="bg-white border-2 border-[#9658F9] rounded-lg p-8 max-w-md mx-auto">
-          <h3 className="text-xl font-['Wallpoet'] text-[#300B6A] mb-4">
+          <h3 className="text-xl text-[#300B6A] mb-4" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
             Exclusive Bitcoin Collection
           </h3>
-          <p className="text-[#300B6A]/80 font-['Consolas'] mb-6">
+          <p className="text-[#300B6A]/80 mb-6" style={{fontFamily: 'Consolas, monospace'}}>
             Celebrate crypto milestones with our limited edition designs. Each piece tells a story from blockchain history.
           </p>
           <Link
@@ -255,10 +255,10 @@ const Home = () => {
               <div className="flex items-start gap-4">
                 <span className="text-2xl">🔐</span>
                 <div>
-                  <h3 className="text-xl font-['Wallpoet'] text-[#300B6A] mb-2">
+                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Rooted in Real Blockchain History
                   </h3>
-                  <p className="text-[#300B6A]/80 font-['Consolas']">
+                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Each design is a nod to pivotal crypto moments — raw,
                     verifiable, immutable.
                   </p>
@@ -270,10 +270,10 @@ const Home = () => {
               <div className="flex items-start gap-4">
                 <span className="text-2xl">🧵</span>
                 <div>
-                  <h3 className="text-xl font-['Wallpoet'] text-[#300B6A] mb-2">
+                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Quality Worthy of a DAO Proposal
                   </h3>
-                  <p className="text-[#300B6A]/80 font-['Consolas']">
+                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Premium materials and craftsmanship approved by the
                     community (not a central committee).
                   </p>
@@ -285,10 +285,10 @@ const Home = () => {
               <div className="flex items-start gap-4">
                 <span className="text-2xl">⏳</span>
                 <div>
-                  <h3 className="text-xl font-['Wallpoet'] text-[#300B6A] mb-2">
+                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Finite Supply. No Restakes.
                   </h3>
-                  <p className="text-[#300B6A]/80 font-['Consolas']">
+                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Every drop is non-replicable. No reruns. When it's gone,
                     it's gone.
                   </p>
@@ -300,10 +300,10 @@ const Home = () => {
               <div className="flex items-start gap-4">
                 <span className="text-2xl">💡</span>
                 <div>
-                  <h3 className="text-xl font-['Wallpoet'] text-[#300B6A] mb-2">
+                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Every Tee is a Statement on the Ledger
                   </h3>
-                  <p className="text-[#300B6A]/80 font-['Consolas']">
+                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Wear your alignment. Signal your tribe. No whitepaper
                     required.
                   </p>
