@@ -17,35 +17,40 @@ export const generateStaticParams = () => {
 const RegularPages = async (props: {
   params: Promise<{ regular: string }>;
 }) => {
-  const params = await props.params;
-  const regularData = getSinglePage("pages");
-  const data = regularData.find(
-    (page: RegularPage) => page.slug === params.regular,
-  );
+  try {
+    const params = await props.params;
+    const regularData = getSinglePage("pages");
+    const data = regularData.find(
+      (page: RegularPage) => page.slug === params.regular,
+    );
 
-  if (!data) return notFound();
+    if (!data) return notFound();
 
   const { frontmatter, content } = data;
   const { title, meta_title, description, image } = frontmatter;
 
-  return (
-    <>
-      <SeoMeta
-        title={title}
-        meta_title={meta_title}
-        description={description}
-        image={image}
-      />
-      <PageHeader title={title} />
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <MDXContent content={content} />
+    return (
+      <>
+        <SeoMeta
+          title={title}
+          meta_title={meta_title}
+          description={description}
+          image={image}
+        />
+        <PageHeader title={title} />
+        <section className="section">
+          <div className="container">
+            <div className="content">
+              <MDXContent content={content} />
+            </div>
           </div>
-        </div>
-      </section>
-    </>
-  );
+        </section>
+      </>
+    );
+  } catch (error) {
+    console.error('Error loading regular page:', error);
+    return notFound();
+  }
 };
 
 export default RegularPages;

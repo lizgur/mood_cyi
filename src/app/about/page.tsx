@@ -10,9 +10,10 @@ import Link from "next/link";
 import { FaBoxOpen, FaCheckCircle, FaHeadset, FaShieldAlt, FaLeaf, FaUsers } from "react-icons/fa";
 
 const About = () => {
-  const data: RegularPage = getListPage("about/_index.md");
+  try {
+    const data: RegularPage = getListPage("about/_index.md");
 
-  const { frontmatter } = data;
+    const { frontmatter } = data;
   const {
     title,
     about_us,
@@ -180,7 +181,23 @@ const About = () => {
         </div>
       </section>
     </>
-  );
+    );
+  } catch (error) {
+    console.error('Error loading about page:', error);
+    return (
+      <>
+        <PageHeader title="About" />
+        <section className="section">
+          <div className="container">
+            <div className="content">
+              <h1>About</h1>
+              <p>We're experiencing some technical difficulties. Please try again later.</p>
+            </div>
+          </div>
+        </section>
+      </>
+    );
+  }
 };
 
 export default About;
