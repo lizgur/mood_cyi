@@ -52,17 +52,6 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
     };
   }
 
-  return (
-    <>
-      <Suspense fallback={<LoadingProductGallery />}>
-        <ShowProductSingle params={params} />
-      </Suspense>
-      <CallToAction data={callToAction} />
-    </>
-  );
-};
-
-const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
   try {
     console.log('Loading product with slug:', params.slug);
     
@@ -266,6 +255,8 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
             </div>
           </section>
         )}
+        
+        <CallToAction data={callToAction} />
       </>
     );
   } catch (error) {
