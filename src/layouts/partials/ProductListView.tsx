@@ -208,9 +208,9 @@ const ProductListView = ({
 
   return (
     <section>
-      <div ref={targetElementRef} className="row">
+      <div ref={targetElementRef} className="w-full">
         {searchValue ? (
-          <p className="mb-4">
+          <p className="mb-4 px-4">
             {products.length === 0
               ? "There are no products that match "
               : `Showing ${products.length} ${resultsText} for `}
@@ -219,7 +219,7 @@ const ProductListView = ({
         ) : null}
 
         {products?.length === 0 && (
-          <div className="mx-auto pt-5 text-center">
+          <div className="mx-auto pt-5 text-center px-4">
             <ImageFallback
               className="mx-auto mb-6"
               src="/images/no-search-found.png"
@@ -234,7 +234,7 @@ const ProductListView = ({
           </div>
         )}
 
-        <div className="row space-y-10">
+        <div className="space-y-10">
           {products?.map((product: Product) => {
             const {
               id,
@@ -251,7 +251,7 @@ const ProductListView = ({
               variants.length > 0 ? variants[0].id : undefined;
 
             return (
-              <div className="col-12" key={id}>
+              <div className="w-full px-4" key={id}>
                 <div className="row items-center">
                   <div className="col-12 sm:col-5 md:col-4 mb-4 sm:mb-0">
                     <ImageFallback
@@ -312,7 +312,7 @@ const ProductListView = ({
         <p
           className={
             hasNextPage || isLoading
-              ? "opacity-100 flex justify-center"
+              ? "opacity-100 flex justify-center px-4"
               : "opacity-0 hidden"
           }
         >

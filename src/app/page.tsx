@@ -252,14 +252,16 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg p-6 md:p-8 border-2 border-[#9658F9] shadow-lg">
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">🔐</span>
-                <div>
-                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
+            <div className="bg-white rounded-lg p-8 border-2 border-[#9658F9] shadow-lg h-full flex flex-col">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="flex-shrink-0">
+                  <span className="text-2xl">🔐</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg md:text-xl text-[#300B6A] mb-3" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Rooted in Real Blockchain History
                   </h3>
-                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
+                  <p className="text-sm md:text-base text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Each design is a nod to pivotal crypto moments — raw,
                     verifiable, immutable.
                   </p>
@@ -267,29 +269,32 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 border-2 border-[#9658F9] shadow-lg">
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">🧵</span>
-                <div>
-                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
+            <div className="bg-white rounded-lg p-8 border-2 border-[#9658F9] shadow-lg h-full flex flex-col">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="flex-shrink-0">
+                  <span className="text-2xl">🧵</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg md:text-xl text-[#300B6A] mb-3" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Quality Worthy of a DAO Proposal
                   </h3>
-                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
-                    Premium materials and craftsmanship approved by the
-                    community (not a central committee).
+                  <p className="text-sm md:text-base text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
+                    Premium materials and craftsmanship approved by the community (not a committee).
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 border-2 border-[#9658F9] shadow-lg">
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">⏳</span>
-                <div>
-                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
+            <div className="bg-white rounded-lg p-8 border-2 border-[#9658F9] shadow-lg h-full flex flex-col">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="flex-shrink-0">
+                  <span className="text-2xl">⏳</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg md:text-xl text-[#300B6A] mb-3" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Finite Supply. No Restakes.
                   </h3>
-                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
+                  <p className="text-sm md:text-base text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Every drop is non-replicable. No reruns. When it's gone,
                     it's gone.
                   </p>
@@ -297,14 +302,16 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 border-2 border-[#9658F9] shadow-lg">
-              <div className="flex items-start gap-4">
-                <span className="text-2xl">💡</span>
-                <div>
-                  <h3 className="text-xl text-[#300B6A] mb-2" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
+            <div className="bg-white rounded-lg p-8 border-2 border-[#9658F9] shadow-lg h-full flex flex-col">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="flex-shrink-0">
+                  <span className="text-2xl">💡</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg md:text-xl text-[#300B6A] mb-3" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
                     Every Tee is a Statement on the Ledger
                   </h3>
-                  <p className="text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
+                  <p className="text-sm md:text-base text-[#300B6A]/80" style={{fontFamily: 'Consolas, monospace'}}>
                     Wear your alignment. Signal your tribe. No whitepaper
                     required.
                   </p>
