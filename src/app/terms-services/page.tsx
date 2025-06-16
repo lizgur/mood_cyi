@@ -124,7 +124,7 @@ const TermsOfService = () => {
               <hr className="my-8" />
               
               <p className="text-sm text-text-light">
-                <strong>Last updated:</strong> January 1, 2024
+                <strong>Last updated:</strong> June 13, 2025
               </p>
             </div>
           </div>
