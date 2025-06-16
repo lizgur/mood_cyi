@@ -211,6 +211,52 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
               <a
                 href={cart.checkoutUrl}
                 className="block w-full rounded-md bg-dark  p-3 text-center text-sm font-medium text-white  opacity-100 hover:opacity-90"
+                onClick={async (e) => {
+                  // Debug logging for checkout
+                  console.log("Checkout button clicked");
+                  console.log("Cart data:", {
+                    id: cart?.id,
+                    checkoutUrl: cart?.checkoutUrl,
+                    totalQuantity: cart?.totalQuantity,
+                    hasLines: cart?.lines?.length > 0
+                  });
+                  
+                  // Check if checkoutUrl is missing or invalid
+                  if (!cart?.checkoutUrl) {
+                    e.preventDefault();
+                    console.error("Missing checkout URL");
+                    
+                    // Try to refresh the page to get a fresh cart
+                    if (confirm("Unable to proceed to checkout. Would you like to refresh the page to try again?")) {
+                      window.location.reload();
+                    }
+                    return;
+                  }
+                  
+                  // Check if checkoutUrl is malformed
+                  if (!cart.checkoutUrl.startsWith('http')) {
+                    e.preventDefault();
+                    console.error("Invalid checkout URL format:", cart.checkoutUrl);
+                    
+                    // Try to refresh the page to get a fresh cart
+                    if (confirm("Invalid checkout URL detected. Would you like to refresh the page to try again?")) {
+                      window.location.reload();
+                    }
+                    return;
+                  }
+                  
+                  // Log the final checkout URL for debugging
+                  console.log("Redirecting to checkout URL:", cart.checkoutUrl);
+                  
+                  // Try to open in same window first, fallback to new window if blocked
+                  try {
+                    window.location.href = cart.checkoutUrl;
+                  } catch (redirectError) {
+                    console.error("Failed to redirect:", redirectError);
+                    // Fallback: open in new window
+                    window.open(cart.checkoutUrl, '_blank');
+                  }
+                }}
               >
                 Proceed to Checkout
               </a>
