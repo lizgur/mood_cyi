@@ -26,6 +26,7 @@ const cuteFont = Cute_Font({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(config.site.base_url),
   title: config.site.title,
   description: config.metadata.meta_description,
   openGraph: {
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
       {
         url: config.metadata.meta_image,
         width: 1200,
-        height: 673,
+        height: 630,
         alt: config.site.title,
       },
     ],

@@ -26,7 +26,7 @@ const SeoMeta = ({
   const finalTitle = plainify(meta_title ? meta_title : title ? title : config.site.title);
   const finalDescription = plainify(description ? description : meta_description);
   
-  // Handle image URL with cache busting for Telegram and other platforms
+  // Handle image URL - simple and stable approach
   const getImageUrl = () => {
     let imageUrl = image || meta_image;
     
@@ -35,10 +35,7 @@ const SeoMeta = ({
       imageUrl = `${base_url}${imageUrl}`;
     }
     
-    // Add cache busting parameter with current timestamp for better cache invalidation
-    const cacheBuster = Date.now();
-    const separator = imageUrl?.includes('?') ? '&' : '?';
-    return `${imageUrl}${separator}v=${cacheBuster}`;
+    return imageUrl;
   };
   
   const finalImage = getImageUrl();
@@ -79,9 +76,6 @@ const SeoMeta = ({
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={finalImage} />
       <meta name="twitter:image:alt" content={finalTitle} />
-      
-      {/* Telegram specific meta tags */}
-      <meta property="telegram:channel" content="@moodcyi" />
       
       {/* Additional meta for better social sharing */}
       <meta property="og:site_name" content="MOOD" />
