@@ -15,6 +15,9 @@ import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
 import Image from "next/image";
 import { Suspense } from "react";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 export const generateMetadata = async (props: {
   params: Promise<{ slug: string }>;
@@ -41,33 +44,38 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
     });
   }
   
-  let callToAction;
-  try {
-    console.log('Attempting to load call-to-action.md...');
-    callToAction = getListPage("sections/call-to-action.md");
-    console.log('Call-to-action loaded successfully');
-  } catch (error) {
-    console.error('Error loading call-to-action:', error);
-    console.error('Error type:', error instanceof Error ? error.constructor.name : typeof error);
-    console.error('Error message:', error instanceof Error ? error.message : String(error));
-    
-    // Robust fallback call-to-action data that matches the actual file content
-    callToAction = {
-      frontmatter: {
+  // Load call-to-action with safe fallback (avoid notFound() errors in production)
+  let callToAction = {
+    frontmatter: {
+      enable: true,
+      title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt.",
+      sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF",
+      image: "/images/pizza.png",
+      description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout.",
+      button: {
         enable: true,
-        title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt.",
-        sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF",
-        image: "/images/pizza.png",
-        description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout.",
-        button: {
-          enable: true,
-          label: "🛒 Grab the Deal Now",
-          link: "/products?c=_drop01"
-        },
-        fine_print: "⏳ Ends June 30 2025 or while supplies last."
-      }
-    };
-    console.log('Using fallback call-to-action data');
+        label: "🛒 Grab the Deal Now",
+        link: "/products?c=_drop01"
+      },
+      fine_print: "⏳ Ends June 30 2025 or while supplies last."
+    }
+  };
+
+  // Try to load the actual file, but don't let it break the page
+  try {
+    const contentPath = path.join(process.cwd(), 'src/content');
+    const callToActionPath = path.join(contentPath, 'sections/call-to-action.md');
+    
+    if (fs.existsSync(callToActionPath)) {
+      const fileContent = fs.readFileSync(callToActionPath, 'utf8');
+      const { data: frontmatter } = matter(fileContent);
+      callToAction = { frontmatter: frontmatter as any };
+      console.log('Call-to-action loaded successfully from file');
+    } else {
+      console.log('Call-to-action file not found, using fallback data');
+    }
+  } catch (error) {
+    console.log('Error loading call-to-action file, using fallback data:', error instanceof Error ? error.message : String(error));
   }
 
   try {
