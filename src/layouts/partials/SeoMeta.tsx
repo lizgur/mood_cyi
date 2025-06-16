@@ -25,7 +25,23 @@ const SeoMeta = ({
   
   const finalTitle = plainify(meta_title ? meta_title : title ? title : config.site.title);
   const finalDescription = plainify(description ? description : meta_description);
-  const finalImage = image ? (image.startsWith('http') ? image : `${base_url}${image}`) : meta_image;
+  
+  // Handle image URL with cache busting for Telegram and other platforms
+  const getImageUrl = () => {
+    let imageUrl = image || meta_image;
+    
+    // If it's a relative path, make it absolute
+    if (imageUrl && !imageUrl.startsWith('http')) {
+      imageUrl = `${base_url}${imageUrl}`;
+    }
+    
+    // Add cache busting parameter with current timestamp for better cache invalidation
+    const cacheBuster = Date.now();
+    const separator = imageUrl?.includes('?') ? '&' : '?';
+    return `${imageUrl}${separator}v=${cacheBuster}`;
+  };
+  
+  const finalImage = getImageUrl();
   const currentUrl = `${base_url}${pathname === '/' ? '' : pathname}`;
 
   return (
@@ -51,6 +67,9 @@ const SeoMeta = ({
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={finalDescription} />
       <meta property="og:image" content={finalImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={finalTitle} />
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -59,6 +78,14 @@ const SeoMeta = ({
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={finalImage} />
+      <meta name="twitter:image:alt" content={finalTitle} />
+      
+      {/* Telegram specific meta tags */}
+      <meta property="telegram:channel" content="@moodcyi" />
+      
+      {/* Additional meta for better social sharing */}
+      <meta property="og:site_name" content="MOOD" />
+      <meta property="og:locale" content="en_US" />
     </>
   );
 };
