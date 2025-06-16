@@ -84,9 +84,6 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
   try {
     console.log('Loading product with slug:', params.slug);
     
-    const paymentsAndDelivery = getListPage("sections/payments-and-delivery.md");
-    const { payment_methods, estimated_delivery } =
-      paymentsAndDelivery.frontmatter;
     const product = await getProduct(params.slug);
 
     console.log('Product fetched:', product ? 'SUCCESS' : 'FAILED');
@@ -265,28 +262,6 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
                 <div className="mb-4">
                   <Social socialName={title} className="social-icons" />
                 </div>
-
-                {/* Payment and Delivery Info */}
-                <section className="mt-8">
-                  <div className="payment-delivery-info">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <h4>Payment Methods</h4>
-                        <ul>
-                          {payment_methods.map((method: any, index: number) => (
-                            <li key={index}>
-                              {typeof method === 'string' ? method : method.name || method}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="col-md-6">
-                        <h4>Estimated Delivery</h4>
-                        <p>{estimated_delivery}</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
               </div>
             </div>
           </div>
