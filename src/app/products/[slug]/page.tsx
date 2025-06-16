@@ -31,6 +31,16 @@ export const generateMetadata = async (props: {
 const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
   
+  // Debug environment variables (only log in development for security)
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Environment check:', {
+      NODE_ENV: process.env.NODE_ENV,
+      SHOPIFY_STORE_DOMAIN: process.env.SHOPIFY_STORE_DOMAIN ? 'SET' : 'NOT SET',
+      SHOPIFY_STOREFRONT_ACCESS_TOKEN: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN ? 'SET' : 'NOT SET',
+      slug: params.slug
+    });
+  }
+  
   let callToAction;
   try {
     callToAction = getListPage("sections/call-to-action.md");
@@ -41,35 +51,40 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
       frontmatter: {
         enable: true,
         title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt.",
-        sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF",
+        sub_title: "🍕 Deal of the Month\\nBitcoin Pizza Tee — 22% OFF",
         image: "/images/pizza.png",
-        description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout.",
+        description: "Celebrate crypto's tastiest moment — all June long.\\nNo code needed — discount applied at checkout.",
         button: {
           enable: true,
-          label: "🛒 Grab the Deal Now",
-          link: "/products?c=_drop01"
-        },
-        fine_print: "⏳ Ends June 30 2025 or while supplies last."
+          label: "Shop Now",
+          link: "/products"
+        }
       }
     };
   }
 
   try {
     console.log('Loading product with slug:', params.slug);
+    console.log('Environment:', process.env.NODE_ENV);
     
     const paymentsAndDelivery = getListPage("sections/payments-and-delivery.md");
     const { payment_methods, estimated_delivery } =
       paymentsAndDelivery.frontmatter;
+    
+    console.log('About to call getProduct...');
     const product = await getProduct(params.slug);
-
-    console.log('Product fetched:', product ? 'SUCCESS' : 'FAILED');
+    console.log('getProduct completed, result:', product ? 'SUCCESS' : 'FAILED');
     
     if (!product) {
       console.error('Product not found for slug:', params.slug);
+      console.error('This might be a production environment issue');
       return notFound();
     }
 
     console.log('Product details:', { id: product.id, title: product.title, handle: product.handle });
+
+    const productRecommendations = await getProductRecommendations(product.id);
+    console.log('Product recommendations loaded:', productRecommendations?.length || 0, 'items');
 
     const {
       id,
@@ -83,8 +98,6 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
       variants,
       tags,
     } = product;
-
-    const relatedProducts = await getProductRecommendations(id);
 
     const defaultVariantId = variants.length > 0 ? variants[0].id : undefined;
 
@@ -243,7 +256,7 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
           </div>
         </section>
 
-        {relatedProducts.length > 0 && (
+        {productRecommendations.length > 0 && (
           <section className="pt-2 pb-8 md:pt-3 md:pb-12">
             <div className="container">
               <div className="text-center mb-8">
@@ -251,7 +264,7 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
               </div>
               <div className="row">
                 <div className="mx-auto">
-                  <LatestProducts products={relatedProducts} />
+                  <LatestProducts products={productRecommendations} />
                 </div>
               </div>
             </div>
@@ -263,48 +276,61 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
     );
   } catch (error) {
     console.error('Error loading product:', error);
-    console.error('Product slug:', params.slug);
-    console.error('Error details:', {
-      message: error instanceof Error ? error.message : 'Unknown error',
-      stack: error instanceof Error ? error.stack : undefined,
-      name: error instanceof Error ? error.name : 'Unknown'
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    console.error('Error message:', error instanceof Error ? error.message : String(error));
+    console.error('Error name:', error instanceof Error ? error.name : 'Unknown error type');
+    
+    // Additional production debugging
+    console.error('Production debug info:', {
+      NODE_ENV: process.env.NODE_ENV,
+      slug: params.slug,
+      timestamp: new Date().toISOString(),
+      // Don't log actual tokens in production, just check if they exist
+      hasShopifyDomain: !!process.env.SHOPIFY_STORE_DOMAIN,
+      hasShopifyToken: !!process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+      shopifyDomainLength: process.env.SHOPIFY_STORE_DOMAIN?.length || 0,
+      shopifyTokenLength: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.length || 0
     });
     
-    // Fallback UI when product fails to load
-    return (
-      <div className="container">
-        <div className="text-center py-16">
-          <div className="bg-white border-2 border-[#9658F9] rounded-lg p-8 max-w-md mx-auto">
-            <h2 className="text-2xl text-[#300B6A] mb-4" style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}>
-              Product Not Available
-            </h2>
-            <p className="text-[#300B6A]/80 mb-6" style={{fontFamily: 'Consolas, monospace'}}>
-              This product is temporarily unavailable. Please try again later or browse our other products.
-            </p>
-            {process.env.NODE_ENV === 'development' && (
-              <div className="text-left mb-4 p-3 bg-red-50 border border-red-200 rounded text-sm">
-                <strong>Debug Info:</strong><br/>
-                <code className="text-red-600">
-                  Slug: {params.slug}<br/>
-                  Error: {error instanceof Error ? error.message : 'Unknown error'}
-                </code>
-              </div>
-            )}
-            <div className="space-y-4">
-              <a
-                href="/products"
-                className="btn btn-primary bg-[#BDFF07] text-[#300B6A] hover:bg-[#BDFF07]/90 inline-block"
-              >
-                Browse All Products
-              </a>
-              <br />
-              <a
-                href="/"
-                className="text-[#300B6A] hover:underline"
-              >
-                ← Back to Home
-              </a>
+    // In development, show detailed error information
+    if (process.env.NODE_ENV === 'development') {
+      return (
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-red-600 mb-4">Development Error</h1>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-left">
+              <p className="font-semibold">Error Details:</p>
+              <pre className="mt-2 text-sm overflow-auto">
+                {error instanceof Error ? error.stack : String(error)}
+              </pre>
             </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Production error page with more helpful information
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Product Not Available</h1>
+          <p className="text-gray-600 mb-4">
+            This product is temporarily unavailable. Please try again later or browse our other products.
+          </p>
+          <div className="space-y-4">
+            <a
+              href="/products"
+              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+            >
+              Browse All Products
+            </a>
+            <br />
+            <a
+              href="/"
+              className="text-blue-600 hover:underline"
+            >
+              ← Back to Home
+            </a>
           </div>
         </div>
       </div>
