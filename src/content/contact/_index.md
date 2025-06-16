@@ -4,7 +4,7 @@ meta_title: ""
 description: "this is meta description"
 draft: false
 
-#Contact Options
+# Contact Options section
 contact_meta:
   - name: "Address"
     contact: "123 Main Street, Anytown, </br> CA 12345 - USA"

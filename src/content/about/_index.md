@@ -5,7 +5,7 @@ description: "MOOD is not just a T-shirt brand — it's a digital statement. Bor
 image: ""
 draft: false
 
-#About Us
+# About Us section
 about_us:
   - title: "Code your identity."
     image: "/images/graffiti/grafity.svg"
