@@ -242,8 +242,10 @@ const ProductSingle = async (props: { params: Promise<{ slug: string }> }) => {
                     <div className="col-md-6">
                       <h4>Payment Methods</h4>
                       <ul>
-                        {payment_methods.map((method: string, index: number) => (
-                          <li key={index}>{method}</li>
+                        {payment_methods.map((method: any, index: number) => (
+                          <li key={index}>
+                            {typeof method === 'string' ? method : method.name || method}
+                          </li>
                         ))}
                       </ul>
                     </div>
