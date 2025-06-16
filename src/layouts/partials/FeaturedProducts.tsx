@@ -7,7 +7,8 @@ import Link from "next/link";
 const FeaturedProducts = ({ products }: { products: Product[] }) => {
   return (
     <>
-      <div className="flex justify-between items-start gap-4 px-4 md:px-8 lg:px-12">
+      <div className="flex justify-center">
+        <div className="flex justify-between items-start w-full max-w-6xl px-4">
         {products.map((product: any) => {
           const {
             id,
@@ -31,7 +32,7 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
           return (
             <div
               key={id}
-              className="text-center flex-1 mb-4 group relative max-w-sm"
+              className="text-center mb-4 group relative w-full max-w-sm"
             >
               <div className="relative overflow-hidden">
                 <ImageFallback
@@ -78,6 +79,7 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
             </div>
           );
         })}
+        </div>
       </div>
 
       <div className="flex justify-center">
