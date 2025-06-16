@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic";
+// Removed force-dynamic to prevent SSR failures
+// export const dynamic = "force-dynamic";
 
 import CollectionsSlider from "@/components/CollectionsSlider";
 import HeroSlider from "@/components/HeroSlider";
@@ -17,11 +18,12 @@ import Link from "next/link";
 const { collections: shopifyCollections } = config.shopify;
 
 const ShowCollections = async () => {
-  const allCollections = await getCollections();
-  const homepageCollections = allCollections.filter(
-    (collection) =>
-      collection.handle === "_drop01" || collection.handle === "_drop02",
-  );
+  try {
+    const allCollections = await getCollections();
+    const homepageCollections = allCollections.filter(
+      (collection) =>
+        collection.handle === "_drop01" || collection.handle === "_drop02",
+    );
 
   return (
     <div className="grid md:grid-cols-2 gap-8">
@@ -62,13 +64,30 @@ const ShowCollections = async () => {
       ))}
     </div>
   );
+  } catch (error) {
+    console.error('Error loading collections:', error);
+    return (
+      <div className="text-center py-8">
+        <p>Unable to load collections. Please try again later.</p>
+      </div>
+    );
+  }
 };
 
 const ShowDrop01Products = async () => {
-  const { products } = await getCollectionProducts({
-    collection: shopifyCollections.drop01,
-  });
-  return <FeaturedProducts products={products} />;
+  try {
+    const { products } = await getCollectionProducts({
+      collection: shopifyCollections.drop01,
+    });
+    return <FeaturedProducts products={products} />;
+  } catch (error) {
+    console.error('Error loading products:', error);
+    return (
+      <div className="text-center py-8">
+        <p>Unable to load products. Please try again later.</p>
+      </div>
+    );
+  }
 };
 
 const Home = () => {
