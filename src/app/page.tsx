@@ -180,7 +180,29 @@ const ShowDrop01Products = async () => {
 };
 
 const Home = () => {
-  const callToAction = getListPage("sections/call-to-action.md");
+  let callToAction;
+  
+  try {
+    callToAction = getListPage("sections/call-to-action.md");
+  } catch (error) {
+    console.error('Error loading call-to-action:', error);
+    // Use the original call-to-action content as fallback
+    callToAction = {
+      frontmatter: {
+        enable: true,
+        title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt.",
+        sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF",
+        image: "/images/pizza.png",
+        description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout.",
+        button: {
+          enable: true,
+          label: "🛒 Grab the Deal Now",
+          link: "/products?c=_drop01"
+        },
+        fine_print: "⏳ Ends June 30 2025 or while supplies last."
+      }
+    };
+  }
 
   return (
     <>
