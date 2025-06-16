@@ -5,10 +5,17 @@ import { Product } from "@/lib/shopify/types";
 import Link from "next/link";
 
 const FeaturedProducts = ({ products }: { products: Product[] }) => {
+  // Determine layout approach based on number of products
+  const getLayoutClasses = (productCount: number) => {
+    if (productCount === 1) return "flex justify-center";
+    if (productCount === 2) return "flex justify-center gap-8 md:gap-12";
+    return "grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center";
+  };
+
   return (
     <>
       <div className="flex justify-center">
-        <div className="flex justify-between items-start w-full max-w-6xl px-4">
+        <div className={`${getLayoutClasses(products.length)} w-full max-w-6xl px-4`}>
         {products.map((product: any) => {
           const {
             id,
@@ -32,7 +39,7 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
           return (
             <div
               key={id}
-              className="text-center mb-4 group relative w-full max-w-sm"
+              className="text-center mb-4 group relative flex flex-col w-full max-w-sm"
             >
               <div className="relative overflow-hidden">
                 <ImageFallback
@@ -40,7 +47,7 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
                   width={312}
                   height={269}
                   alt={featuredImage?.altText || "fallback image"}
-                  className="w-[312px] h-[150px] md:h-[269px] object-cover border border-border rounded-md"
+                  className="w-full h-[150px] md:h-[269px] object-cover border border-border rounded-md"
                 />
 
                 <AddToCart
