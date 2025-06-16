@@ -180,28 +180,7 @@ const ShowDrop01Products = async () => {
 };
 
 const Home = () => {
-  let callToAction;
-  
-  try {
-    callToAction = getListPage("sections/call-to-action.md");
-  } catch (error) {
-    console.error('Error loading call-to-action:', error);
-    // Fallback call-to-action data matching the expected PageData structure
-    callToAction = {
-      frontmatter: {
-        enable: true,
-        title: "Ready to Join the Movement?",
-        sub_title: "🚀 Limited Edition Drops",
-        description: "Don't miss out on limited drops and exclusive blockchain-inspired designs.",
-        image: "/images/pizza.png",
-        button: {
-          enable: true,
-          label: "Shop Now",
-          link: "/products"
-        }
-      }
-    };
-  }
+  const callToAction = getListPage("sections/call-to-action.md");
 
   return (
     <>
