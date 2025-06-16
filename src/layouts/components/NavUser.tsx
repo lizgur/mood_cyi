@@ -6,9 +6,13 @@ import Cookies from "js-cookie";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BsPerson } from "react-icons/bs";
+import dynamic from 'next/dynamic';
 
-// Type-safe Gravatar import
-const Gravatar = require("react-gravatar").default;
+// Dynamically import Gravatar to avoid SSR issues and TypeScript conflicts
+const Gravatar = dynamic(() => import("react-gravatar"), {
+  ssr: false,
+  loading: () => <div className="h-6 w-6 bg-gray-200 rounded-full animate-pulse" />
+});
 
 export const fetchUser = async () => {
   try {
