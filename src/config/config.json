@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "MOOD",
-    "base_url": "https://mood-cyi.com",
+    "base_url": "https://moodcyi.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
