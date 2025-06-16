@@ -1,9 +1,10 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Social from "@/components/Social";
 import { AddToCart } from "@/components/cart/AddToCart";
 import LoadingProductGallery from "@/components/loadings/skeleton/SkeletonProductGallery";
 import ProductGalleryWrapper from "@/layouts/components/product/ProductGalleryWrapper";
 import ShowTags from "@/components/product/ShowTags";
-import Tabs from "@/components/product/Tabs";
 import { VariantSelector } from "@/components/product/VariantSelector";
 import config from "@/config/config.json";
 import { getListPage } from "@/lib/contentParser";
@@ -11,7 +12,6 @@ import { getProduct, getProductRecommendations } from "@/lib/shopify";
 import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export const generateMetadata = async (props: {
