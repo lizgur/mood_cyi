@@ -1,12 +1,11 @@
 ---
 enable: true
-title: "10,000 BTC for 2 pizzas? We'll settle for 22% off this iconic shirt."
-sub_title: "🍕 Deal of the Month\nBitcoin Pizza Tee — 22% OFF"
-image: "/images/pizza.png"
-description: "Celebrate crypto's tastiest moment — all June long.\nNo code needed. Discount applied at checkout."
+title: "MOOD was born at the merge of tech & history."
+image: "/images/promo1.png"
+description: "We're here for the coders, traders, and builders who live in keystrokes and commit history.\nEvery design? A statement. Every drop? On-chain inspired."
 button:
   enable: true
-  label: "🛒 Grab the Deal Now"
-  link: "/products?c=_drop01"
-fine_print: "⏳ Ends June 30 2025 or while supplies last."
+  label: "🚀 Explore the Collection"
+  link: "/products"
+fine_print: "✨ Limited drops. Unlimited expression."
 ---

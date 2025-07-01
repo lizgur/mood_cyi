@@ -1,13 +1,8 @@
 "use client";
 
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Call_to_action } from "@/types";
 import Link from "next/link";
-import { AddToCart } from "@/layouts/components/cart/AddToCart";
-import { useEffect, useState } from "react";
-import { getCollectionProducts } from "@/lib/shopify";
-import { Product } from "@/lib/shopify/types";
 
 interface PageData {
   notFound?: boolean;
@@ -17,96 +12,105 @@ interface PageData {
   };
 }
 
-const CallToAction = ({ data }: { data: PageData }) => {
-  const [pizzaProduct, setPizzaProduct] = useState<Product | null>(null);
+interface CallToActionProps {
+  data: PageData;
+  variant?: "home" | "products";
+}
 
-  useEffect(() => {
-    const fetchPizzaProduct = async () => {
-      try {
-        const { products } = await getCollectionProducts({
-          collection: "_drop01",
-        });
-        // Find the pizza t-shirt product
-        const pizzaTee = products.find((product) =>
-          product.title.toLowerCase().includes("pizza"),
-        );
-        if (pizzaTee) {
-          setPizzaProduct(pizzaTee);
-        }
-      } catch (error) {
-        console.error("Error fetching pizza product:", error);
-      }
-    };
-
-    fetchPizzaProduct();
-  }, []);
+const CallToAction = ({ data, variant = "products" }: CallToActionProps) => {
+  // Different spacing classes based on variant
+  const spacingClasses = variant === "home" 
+    ? "pt-20 pb-12 md:pt-20 md:pb-20" 
+    : "mt-6 pt-20 pb-12 md:mt-8 md:pt-20 md:pb-20";
 
   return (
     <>
       {data.frontmatter.enable && (
-        <section className="py-8 md:py-12">
-          <div className="container">
-            <div className="rounded-xl bg-light px-6 py-8 md:py-16 ">
-              <div className="row items-center">
-                <div className="mb-10 md:mb-0 lg:col-6 xl:col-6 mx-auto text-center order-2 lg:order-0">
-                  <div
-                    dangerouslySetInnerHTML={markdownify(
-                      data.frontmatter.sub_title,
-                    )}
-                    className="md:text-lg text-text-dark  font-bold mb-6 whitespace-pre-line"
-                  />
-                  <h2
-                    dangerouslySetInnerHTML={markdownify(
-                      data.frontmatter.title,
-                    )}
-                    className="my-4 text-2xl md:text-3xl text-text-dark"
-            style={{fontFamily: 'var(--font-wallpoet), sans-serif'}}
-                  />
-                  <p
-                    dangerouslySetInnerHTML={markdownify(
-                      data.frontmatter.description,
-                    )}
-                    className="mb-8 md:text-lg text-text-dark/80 whitespace-pre-line"
-            style={{fontFamily: 'Consolas, monospace'}}
-                  />
+        <section className={`${spacingClasses} relative overflow-hidden`}>
+          {/* Background gradient animation */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#9658F9]/5 via-transparent to-[#BDFF07]/5 animate-pulse"></div>
+          
+          {/* Graffiti background elements - similar to hero section */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Main graffiti - top left - moved down to avoid touching border */}
+            <div className="absolute -left-40 top-10 w-[400px] h-[400px] opacity-15">
+              <img
+                src="/images/graffiti/grafity.svg"
+                alt="Graffiti background"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            {/* Secondary graffiti - top right */}
+            <div className="absolute -right-20 top-10 w-[300px] h-[300px] opacity-15">
+              <img
+                src="/images/graffiti/grafitybox.svg"
+                alt="Graffiti box"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            {/* Tertiary graffiti - bottom left */}
+            <div className="absolute -left-20 -bottom-20 w-[350px] h-[350px] opacity-15">
+              <img
+                src="/images/graffiti/grafityyellow.svg"
+                alt="Yellow graffiti"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            {/* Fourth graffiti - bottom right */}
+            <div className="absolute -right-30 -bottom-10 w-[250px] h-[250px] opacity-15">
+              <img
+                src="/images/graffiti/grafity.svg"
+                alt="Graffiti background"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          
+          <div className="container relative z-10">
+            <div className="rounded-2xl bg-gradient-to-br from-white via-white to-[#9658F9]/5 border-2 border-[#9658F9]/20 px-8 py-12 md:py-20 shadow-xl backdrop-blur-sm">
+              
+              {/* Text Content Section */}
+              <div className="text-center max-w-4xl mx-auto relative z-10">
 
-                  {pizzaProduct ? (
-                    <div className="mb-8">
-                      <AddToCart
-                        variants={pizzaProduct.variants}
-                        availableForSale={pizzaProduct.availableForSale}
-                        stylesClass="btn btn-lg bg-[#BDFF07] text-[#300B6A] hover:bg-[#BDFF07]/90 font-medium"
-                        handle={pizzaProduct.handle}
-                        defaultVariantId={pizzaProduct.variants[0]?.id}
-                        buttonText={data.frontmatter.button.label}
-                      />
-                    </div>
-                  ) : (
-                    <Link
-                      className="btn btn-lg bg-[#BDFF07] text-[#300B6A] hover:bg-[#BDFF07]/90 font-medium mb-8"
-                      href={data.frontmatter.button.link}
-                    >
-                      {data.frontmatter.button.label}
-                    </Link>
+                {/* Main title with hero-title styling to match platform sizing */}
+                <h2
+                  dangerouslySetInnerHTML={markdownify(
+                    data.frontmatter.title,
                   )}
+                  className="hero-title mb-8 leading-tight"
+                />
 
-                  {data.frontmatter.fine_print && (
-                    <p className="text-sm text-text-dark/60" style={{fontFamily: 'Consolas, monospace'}}>
-                      {data.frontmatter.fine_print}
-                    </p>
+                {/* Description with smaller text */}
+                <p
+                  dangerouslySetInnerHTML={markdownify(
+                    data.frontmatter.description,
                   )}
+                  className="mb-10 text-sm md:text-base text-[#300B6A]/90 whitespace-pre-line leading-relaxed max-w-5xl mx-auto"
+                  style={{fontFamily: 'Consolas, monospace'}}
+                />
+
+                {/* Enhanced button with proper Wallpoet font styling */}
+                <div className="mb-8">
+                  <Link
+                    className="inline-block btn btn-lg bg-gradient-to-r from-[#BDFF07] to-[#BDFF07]/90 text-[#300B6A] hover:from-[#BDFF07]/90 hover:to-[#BDFF07] hover:scale-105 font-bold text-lg px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-[#300B6A]/10 relative z-20"
+                    href={data.frontmatter.button.link}
+                    style={{
+                      fontFamily: 'var(--font-wallpoet), sans-serif',
+                      WebkitFontSmoothing: 'antialiased',
+                      MozOsxFontSmoothing: 'grayscale',
+                      fontWeight: 400
+                    }}
+                  >
+                    {data.frontmatter.button.label}
+                  </Link>
                 </div>
 
-                <div className="mx-auto lg:col-5 mb-6 lg:mb-0">
-                  <ImageFallback
-                    src={data.frontmatter.image}
-                    width={543}
-                    height={390}
-                    alt="Bitcoin Pizza Day Tee"
-                    className="mx-auto rounded-lg shadow-xl"
-                    priority
-                  />
-                </div>
+                {/* Fine print with better visibility */}
+                {data.frontmatter.fine_print && (
+                  <p className="text-base text-[#9658F9]/80 font-medium" style={{fontFamily: 'Consolas, monospace'}}>
+                    {data.frontmatter.fine_print}
+                  </p>
+                )}
               </div>
             </div>
           </div>

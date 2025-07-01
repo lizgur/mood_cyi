@@ -331,7 +331,7 @@ const Home = () => {
         </div>
       </section>
 
-      <CallToAction data={callToAction} />
+      <CallToAction data={callToAction} variant="home" />
     </>
   );
 };
