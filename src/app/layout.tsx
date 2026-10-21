@@ -6,6 +6,7 @@ import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
+import { PostHogProvider } from "@/layouts/components/analytics/PostHogProvider";
 import "@/styles/main.css";
 import { Wallpoet, Cute_Font } from "next/font/google";
 import { Metadata } from "next";
@@ -87,6 +88,7 @@ export default function RootLayout({
 
       <body suppressHydrationWarning={true}>
         <TwSizeIndicator />
+        <PostHogProvider>
         <Providers>
           <Header>
             <OpenCart />
@@ -95,6 +97,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Providers>
+        </PostHogProvider>
       </body>
     </html>
   );
