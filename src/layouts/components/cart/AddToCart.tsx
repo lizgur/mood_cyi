@@ -2,6 +2,7 @@
 
 import { ProductVariant } from "@/lib/shopify/types";
 import { addItem } from "@/lib/utils/cartActions";
+import { track } from "@/layouts/components/analytics/PostHogProvider";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useActionState } from "react";
@@ -57,7 +58,11 @@ function SubmitButton({
   return (
     <button
       onClick={(e: React.FormEvent<HTMLButtonElement>) => {
-        if (pending) e.preventDefault();
+        if (pending) {
+          e.preventDefault();
+          return;
+        }
+        track("add_to_cart");
       }}
       aria-label="Add to cart"
       aria-disabled={pending ? "true" : "false"}

@@ -3,6 +3,7 @@
 import { DEFAULT_OPTION } from "@/lib/constants";
 import { Cart } from "@/lib/shopify/types";
 import { createUrl } from "@/lib/utils";
+import { track } from "@/layouts/components/analytics/PostHogProvider";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -212,6 +213,10 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                 href={cart.checkoutUrl}
                 className="block w-full rounded-md bg-dark  p-3 text-center text-sm font-medium text-white  opacity-100 hover:opacity-90"
                 onClick={async (e) => {
+                  track("begin_checkout", {
+                    cart_id: cart?.id,
+                    total_quantity: cart?.totalQuantity,
+                  });
                   // Debug logging for checkout
                   console.log("Checkout button clicked");
                   console.log("Cart data:", {
