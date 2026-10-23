@@ -10,6 +10,8 @@ import { PostHogProvider } from "@/layouts/components/analytics/PostHogProvider"
 import "@/styles/main.css";
 import { Wallpoet, Cute_Font } from "next/font/google";
 import { Metadata } from "next";
+import JsonLd from "@/layouts/components/JsonLd";
+import { organizationJsonLd } from "@/lib/seo";
 
 // Load Google Fonts with Next.js optimization
 const wallpoet = Wallpoet({
@@ -51,9 +53,6 @@ export const metadata: Metadata = {
     images: [config.metadata.meta_image],
   },
   authors: [{ name: config.metadata.meta_author }],
-  alternates: {
-    canonical: config.site.base_url,
-  },
 };
 
 export default function RootLayout({
@@ -87,6 +86,7 @@ export default function RootLayout({
       </head>
 
       <body suppressHydrationWarning={true}>
+        <JsonLd data={organizationJsonLd} />
         <TwSizeIndicator />
         <PostHogProvider>
         <Providers>

@@ -13,6 +13,12 @@ import CallToAction from "@/partials/CallToAction";
 import ProductFilters from "@/partials/ProductFilters";
 import ResponsiveProductView from "@/partials/ResponsiveProductView";
 import { Suspense } from "react";
+import { Metadata } from "next";
+import { absoluteUrl } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: absoluteUrl("/products") },
+};
 
 // Removed force-dynamic to prevent SSR failures in production
 // export const dynamic = "force-dynamic";
@@ -232,6 +238,9 @@ const ProductsListPage = async (props: {
   return (
     <>
       {/* <PageHeader title={"Products"} /> */}
+      <div className="container">
+        <h1 className="h2 text-center pt-8 md:pt-12">Bitcoin T-Shirts</h1>
+      </div>
       <Suspense fallback={<LoadingProducts />}>
         <ShowProducts searchParams={searchParams} />
       </Suspense>

@@ -46,7 +46,7 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
                   src={featuredImage?.url || "/images/product_image404.jpg"}
                   width={312}
                   height={269}
-                  alt={featuredImage?.altText || "fallback image"}
+                  alt={featuredImage?.altText || title}
                   className="w-full h-[150px] md:h-[269px] object-cover border border-border rounded-md"
                 />
 

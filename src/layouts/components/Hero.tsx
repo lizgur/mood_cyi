@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="hidden md:block absolute -left-40 -top-20 w-[500px] h-[500px] opacity-15">
           <img
             src="/images/graffiti/grafity.svg"
-            alt="Graffiti background"
+            alt=""
             className="w-full h-full object-contain"
           />
         </div>
@@ -18,7 +18,7 @@ const Hero = () => {
         <div className="absolute -right-20 md:-right-40 top-20 md:top-20 w-[200px] h-[200px] md:w-[400px] md:h-[400px] opacity-15">
           <img
             src="/images/graffiti/grafitybox.svg"
-            alt="Graffiti box"
+            alt=""
             className="w-full h-full object-contain"
           />
         </div>
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="absolute left-1/2 -bottom-20 md:-bottom-20 -translate-x-1/2 w-[250px] h-[250px] md:w-[450px] md:h-[450px] opacity-15">
           <img
             src="/images/graffiti/grafityyellow.svg"
-            alt="Yellow graffiti"
+            alt=""
             className="w-full h-full object-contain"
           />
         </div>

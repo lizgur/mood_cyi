@@ -13,6 +13,8 @@ import { getListPage } from "@/lib/contentParser";
 import { getProduct, getProductRecommendations } from "@/lib/shopify";
 import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
+import JsonLd from "@/layouts/components/JsonLd";
+import { absoluteUrl } from "@/lib/seo";
 import Image from "next/image";
 import { Suspense } from "react";
 import fs from "fs";
@@ -208,14 +210,54 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
       });
     }
 
+    const productUrl = absoluteUrl(`/products/${product.handle}`);
+    const productJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: title,
+      image: images.length
+        ? images.map((image) => image.url)
+        : product.featuredImage?.url
+          ? [product.featuredImage.url]
+          : undefined,
+      description: description || undefined,
+      brand: { "@type": "Brand", name: "MOOD" },
+      url: productUrl,
+      offers: {
+        "@type": "Offer",
+        url: productUrl,
+        price: priceRange.minVariantPrice.amount,
+        priceCurrency: priceRange.minVariantPrice.currencyCode || "EUR",
+        availability: product.availableForSale
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock",
+      },
+    };
+    const breadcrumbJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+        { "@type": "ListItem", position: 2, name: "Products", item: absoluteUrl("/products") },
+        { "@type": "ListItem", position: 3, name: title, item: productUrl },
+      ],
+    };
+
     return (
       <>
+        <JsonLd data={productJsonLd} />
+        <JsonLd data={breadcrumbJsonLd} />
         <section className="md:section-sm">
           <div className="container">
             <div className="row justify-center">
               {/* right side contents  */}
               <div className="col-10 md:col-8 lg:col-6">
-                <ProductGalleryWrapper images={images} />
+                <ProductGalleryWrapper
+                  images={images.map((image) => ({
+                    ...image,
+                    altText: image.altText || title,
+                  }))}
+                />
               </div>
 
               {/* left side contents  */}
