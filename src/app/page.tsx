@@ -10,7 +10,6 @@ import { getListPage } from "@/lib/contentParser";
 import { getCollectionProducts, getCollections } from "@/lib/shopify";
 import CallToAction from "@/partials/CallToAction";
 import FeaturedProducts from "@/partials/FeaturedProducts";
-import SeoMeta from "@/partials/SeoMeta";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { absoluteUrl } from "@/lib/seo";
@@ -212,7 +211,6 @@ const Home = () => {
 
   return (
     <>
-      <SeoMeta />
       <Hero />
 
       {/* _drop01 Products section */}

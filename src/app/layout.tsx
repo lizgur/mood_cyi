@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     images: [config.metadata.meta_image],
   },
   authors: [{ name: config.metadata.meta_author }],
+  verification: {
+    google: "aWuNIz7S0ApaeCebIhcbu67YA3FxgYpVwZRtWr8pcUI",
+  },
 };
 
 export default function RootLayout({
