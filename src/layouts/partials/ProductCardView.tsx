@@ -256,7 +256,7 @@ const ProductCardView = ({
                   }
                   width={312}
                   height={269}
-                  alt={product.featuredImage?.altText || "fallback image"}
+                  alt={product.featuredImage?.altText || product.title}
                   className="w-full h-[200px] sm:w-[312px] md:h-[269px] object-cover rounded-md border mx-auto"
                 />
 

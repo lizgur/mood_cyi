@@ -36,7 +36,7 @@ const CallToAction = ({ data, variant = "products" }: CallToActionProps) => {
             <div className="absolute -left-40 top-10 w-[400px] h-[400px] opacity-15">
               <img
                 src="/images/graffiti/grafity.svg"
-                alt="Graffiti background"
+                alt=""
                 className="w-full h-full object-contain"
               />
             </div>
@@ -44,7 +44,7 @@ const CallToAction = ({ data, variant = "products" }: CallToActionProps) => {
             <div className="absolute -right-20 top-10 w-[300px] h-[300px] opacity-15">
               <img
                 src="/images/graffiti/grafitybox.svg"
-                alt="Graffiti box"
+                alt=""
                 className="w-full h-full object-contain"
               />
             </div>
@@ -52,7 +52,7 @@ const CallToAction = ({ data, variant = "products" }: CallToActionProps) => {
             <div className="absolute -left-20 -bottom-20 w-[350px] h-[350px] opacity-15">
               <img
                 src="/images/graffiti/grafityyellow.svg"
-                alt="Yellow graffiti"
+                alt=""
                 className="w-full h-full object-contain"
               />
             </div>
@@ -60,7 +60,7 @@ const CallToAction = ({ data, variant = "products" }: CallToActionProps) => {
             <div className="absolute -right-30 -bottom-10 w-[250px] h-[250px] opacity-15">
               <img
                 src="/images/graffiti/grafity.svg"
-                alt="Graffiti background"
+                alt=""
                 className="w-full h-full object-contain"
               />
             </div>

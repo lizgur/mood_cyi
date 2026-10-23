@@ -261,7 +261,7 @@ const ProductListView = ({
                       }
                       width={312}
                       height={269}
-                      alt={featuredImage?.altText || "fallback image"}
+                      alt={featuredImage?.altText || title}
                       className="w-full h-[180px] sm:h-[200px] md:h-[269px] object-cover rounded-md border mx-auto"
                     />
                   </div>
