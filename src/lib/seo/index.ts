@@ -27,3 +27,46 @@ export const organizationJsonLd = {
   },
   ...(sameAs.length ? { sameAs } : {}),
 };
+
+export const faqPageJsonLd = (
+  faqs: { title: string; content: string }[],
+) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.title,
+    acceptedAnswer: { "@type": "Answer", text: faq.content },
+  })),
+});
+
+export const articleJsonLd = ({
+  headline,
+  description,
+  datePublished,
+  url,
+  image,
+  author = "MOOD",
+}: {
+  headline: string;
+  description: string;
+  datePublished: string;
+  url: string;
+  image?: string;
+  author?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline,
+  description,
+  datePublished,
+  author: { "@type": "Organization", name: author },
+  publisher: {
+    "@type": "Organization",
+    name: "MOOD",
+    url: siteUrl,
+    logo: { "@type": "ImageObject", url: `${siteUrl}/images/logo.png` },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  ...(image ? { image: image.startsWith("http") ? image : `${siteUrl}${image}` } : {}),
+});
