@@ -35,6 +35,14 @@
       "url": "/faq"
     },
     {
+      "name": "Shipping",
+      "url": "/shipping"
+    },
+    {
+      "name": "Returns",
+      "url": "/returns"
+    },
+    {
       "name": "Terms of Service",
       "url": "/terms-services"
     }

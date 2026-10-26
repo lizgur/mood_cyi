@@ -52,25 +52,26 @@ const TermsOfService = () => {
 
               <h2>5. Shipping and Delivery</h2>
               <p>
-                Shipping policies vary by location:
+                Shipping rates, carriers, and typical delivery times are listed on our{" "}
+                <a href="/shipping" className="text-primary hover:underline">
+                  Shipping
+                </a>{" "}
+                page. Free shipping within Cyprus.
               </p>
               <ul>
-                <li><strong>Cyprus:</strong> Free shipping</li>
-                <li><strong>International:</strong> Shipping costs covered by buyer</li>
                 <li>Delivery times may vary based on location and product availability</li>
                 <li>We are not responsible for delays caused by customs or postal services</li>
               </ul>
 
               <h2>6. Returns and Exchanges</h2>
               <p>
-                We offer a 14-day return policy for unworn items in original condition:
+                We offer a 14-day return policy. How to start a return, refund
+                rules, and the model withdrawal form are on our{" "}
+                <a href="/returns" className="text-primary hover:underline">
+                  Returns
+                </a>{" "}
+                page.
               </p>
-              <ul>
-                <li>Items must be returned within 14 days of delivery</li>
-                <li>Items must be unworn, unwashed, and in original packaging</li>
-                <li>Return shipping costs are the responsibility of the customer</li>
-                <li>Refunds will be processed within 5-10 business days after receiving returned items</li>
-              </ul>
 
               <h2>7. Intellectual Property</h2>
               <p>
