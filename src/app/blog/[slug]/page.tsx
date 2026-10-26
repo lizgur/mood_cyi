@@ -94,6 +94,11 @@ const BlogPost = async (props: { params: Promise<{ slug: string }> }) => {
                 <FaqList faqs={faqs} />
               </div>
             )}
+            {frontmatter.after_faq && (
+              <div className="mt-14">
+                <MDXContent content={frontmatter.after_faq} />
+              </div>
+            )}
             <div className="mt-10">
               <p className="mb-3 font-medium">Share</p>
               <Share

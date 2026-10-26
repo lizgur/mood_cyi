@@ -60,6 +60,7 @@ export type Post = {
     draft?: boolean;
     faq_section_title?: string;
     faqs?: { title: string; content: string }[];
+    after_faq?: string;
   };
   slug?: string;
   content?: string;

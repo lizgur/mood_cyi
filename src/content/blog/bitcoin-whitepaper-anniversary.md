@@ -29,6 +29,18 @@ faqs:
     content: "The original paper is published at https://bitcoin.org/bitcoin.pdf."
   - title: "Why is 31 October celebrated as Bitcoin Whitepaper Day?"
     content: "It marks the day Bitcoin first appeared publicly, as an idea on paper, before any code or coins existed."
+after_faq: |
+  ## Wear the nine pages
+
+  To mark the anniversary, we made one design about the document itself. The [MOOD Whitepaper T-shirt](/products/whitepaper-t-shirt) is a white T-shirt printed with Satoshi's original Whitepaper, every line and diagram, under a graffiti-style MOOD logo. It costs €100 and comes in sizes M and XL.
+
+  <a href="/products/whitepaper-t-shirt" className="btn btn-primary">Shop the Whitepaper T-shirt</a>
+
+  ## Sources
+
+  - [Bitcoin: A Peer-to-Peer Electronic Cash System (bitcoin.org/bitcoin.pdf)](https://bitcoin.org/bitcoin.pdf)
+  - [Satoshi Nakamoto Institute archive of the 31 October 2008 email](https://satoshi.nakamotoinstitute.org/emails/cryptography/)
+  - [Hal Finney's 7 November 2008 reply (mail-archive.com)](https://www.mail-archive.com/cryptography@metzdowd.com/msg09975.html)
 ---
 
 On **Friday, 31 October 2008, at 18:10 UTC**, an unknown author using the name **Satoshi Nakamoto** sent an email titled *"Bitcoin P2P e-cash paper"* to the Cryptography Mailing List hosted at metzdowd.com. It opened with one line: *"I've been working on a new electronic cash system that's fully peer-to-peer, with no trusted third party."* Linked in the email was a nine-page paper: [**Bitcoin: A Peer-to-Peer Electronic Cash System**](https://bitcoin.org/bitcoin.pdf).
@@ -68,15 +80,3 @@ The Whitepaper became working software within weeks:
 - **22 May 2010:** Laszlo Hanyecz paid 10,000 BTC for two pizzas, the first well-known purchase of real goods with bitcoin.
 
 Satoshi stepped away around 2010 to 2011. Their identity is still unknown. The design in the Whitepaper is still how Bitcoin works today.
-
-## Wear the nine pages
-
-To mark the anniversary, we made one design about the document itself. The [MOOD Whitepaper T-shirt](/products/whitepaper-t-shirt) is a white T-shirt printed with Satoshi's original Whitepaper, every line and diagram, under a graffiti-style MOOD logo. It costs €100 and comes in sizes M and XL.
-
-[Shop the Whitepaper T-shirt](/products/whitepaper-t-shirt)
-
-## Sources
-
-- [Bitcoin: A Peer-to-Peer Electronic Cash System (bitcoin.org/bitcoin.pdf)](https://bitcoin.org/bitcoin.pdf)
-- [Satoshi Nakamoto Institute archive of the 31 October 2008 email](https://satoshi.nakamotoinstitute.org/emails/cryptography/)
-- [Hal Finney's 7 November 2008 reply (mail-archive.com)](https://www.mail-archive.com/cryptography@metzdowd.com/msg09975.html)
