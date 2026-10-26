@@ -14,8 +14,26 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import { absoluteUrl } from "@/lib/seo";
 
+const homeTitle = "MOOD – Bitcoin T-Shirts & Crypto Streetwear";
+const homeDescription =
+  "High quality Bitcoin T-shirts telling the story of Bitcoin: the Whitepaper, the genesis block and Bitcoin Pizza Day. Code your identity.";
+
 export const metadata: Metadata = {
+  title: homeTitle,
+  description: homeDescription,
   alternates: { canonical: absoluteUrl("/") },
+  openGraph: {
+    url: absoluteUrl("/"),
+    title: homeTitle,
+    description: homeDescription,
+    images: [config.metadata.meta_image],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription,
+    images: [config.metadata.meta_image],
+  },
 };
 import Hero from "@/layouts/components/Hero";
 import Link from "next/link";

@@ -15,9 +15,29 @@ import ResponsiveProductView from "@/partials/ResponsiveProductView";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { absoluteUrl } from "@/lib/seo";
+import config from "@/config/config.json";
+
+const productsTitle =
+  "Shop Bitcoin T-Shirts – Whitepaper, Genesis, Pizza | MOOD";
+const productsDescription =
+  "Browse MOOD's Bitcoin T-shirts: the Whitepaper, Genesis Block and Bitcoin Pizza Day designs. High quality streetwear built on Bitcoin history.";
 
 export const metadata: Metadata = {
+  title: productsTitle,
+  description: productsDescription,
   alternates: { canonical: absoluteUrl("/products") },
+  openGraph: {
+    url: absoluteUrl("/products"),
+    title: productsTitle,
+    description: productsDescription,
+    images: [config.metadata.meta_image],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: productsTitle,
+    description: productsDescription,
+    images: [config.metadata.meta_image],
+  },
 };
 
 // Removed force-dynamic to prevent SSR failures in production
