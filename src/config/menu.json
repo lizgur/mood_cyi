@@ -11,6 +11,10 @@
     {
       "name": "About",
       "url": "/about"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
     }
   ],
   "footer": [
@@ -21,6 +25,14 @@
     {
       "name": "Products",
       "url": "/products"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "FAQ",
+      "url": "/faq"
     },
     {
       "name": "Terms of Service",

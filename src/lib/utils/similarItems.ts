@@ -10,12 +10,12 @@ const similerItems = (
   let tags: string[] = [];
 
   // set categories
-  if (currentItem.frontmatter.categories.length > 0) {
+  if (currentItem.frontmatter.categories && currentItem.frontmatter.categories.length > 0) {
     categories = currentItem.frontmatter.categories;
   }
 
   // set tags
-  if (currentItem.frontmatter.tags.length > 0) {
+  if (currentItem.frontmatter.tags && currentItem.frontmatter.tags.length > 0) {
     tags = currentItem.frontmatter.tags;
   }
 

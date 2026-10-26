@@ -53,11 +53,13 @@ export type Post = {
     meta_title?: string;
     description?: string;
     image?: string;
-    categories: string[];
-    author: string;
-    tags: string[];
+    categories?: string[];
+    author?: string;
+    tags?: string[];
     date?: string;
     draft?: boolean;
+    faq_section_title?: string;
+    faqs?: { title: string; content: string }[];
   };
   slug?: string;
   content?: string;

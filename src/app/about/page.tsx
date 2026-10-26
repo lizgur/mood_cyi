@@ -1,7 +1,12 @@
 import config from "@/config/config.json";
 import JsonLd from "@/layouts/components/JsonLd";
+import { getListPage } from "@/lib/contentParser";
+import { faqPageJsonLd } from "@/lib/seo";
+import { plainify } from "@/lib/utils/textConverter";
 import { Metadata } from "next";
+import FaqSection from "@/layouts/partials/FaqSection";
 import PageHeader from "@/layouts/partials/PageHeader";
+import { RegularPage } from "@/types";
 import { FaShieldAlt, FaBoxOpen, FaLeaf, FaUsers } from "react-icons/fa";
 
 const aboutDescription =
@@ -15,54 +20,25 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "About", description: aboutDescription, images: [config.metadata.meta_image] },
 };
 
-// FAQ content rendered on this page; also the single source for the FAQPage JSON-LD.
-const faqs = [
-  {
-    question: "What makes MOOD different from other streetwear brands?",
-    answer:
-      "MOOD is specifically designed for the Web3 community. Every design is rooted in real blockchain history, crypto culture, and tech milestones. We're not just printing random designs - we're creating wearable pieces of digital culture.",
-  },
-  {
-    question: "What are your T-shirts made of?",
-    answer:
-      "Our T-shirts are made from premium, ethically sourced cotton blends. We use eco-conscious printing methods and sustainable materials because we believe in building a better future - both digitally and environmentally.",
-  },
-  {
-    question: "How do limited drops work?",
-    answer:
-      "Our T-shirt releases are limited and exclusive. Once a design sells out, it's gone forever. We announce upcoming drops on our social channels like Instagram.",
-  },
-  {
-    question: "How does shipping work?",
-    answer:
-      "Shipping is free to Cyprus. For all other countries, delivery cost is covered by the buyer. To place your order, send us your details: Full name, Phone number, Address with postal code. Sit back and wait to claim your T-shirt(s)! We'll keep you updated on the process.",
-  },
-  {
-    question: "What's your return policy?",
-    answer:
-      "We offer a 14-day return window for unworn items in original condition. Since our drops are limited, we encourage checking our size guide carefully before ordering.",
-  },
-  {
-    question: "Can I suggest designs or collaborate with MOOD?",
-    answer:
-      "Absolutely! We're always looking for fresh ideas from the community. Reach out to us with your concepts - the best community suggestions might make it into future drops with proper credit.",
-  },
-];
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
-};
-
 const About = () => {
+  const about: RegularPage = getListPage("about/_index.md");
+  const faqs = about.frontmatter.faqs || [];
+  const faqTitle =
+    about.frontmatter.faq_section_title || "Frequently Asked Questions";
+  const faqSubtitle =
+    about.frontmatter.faq_section_subtitle ||
+    "Got questions about MOOD? We've got answers.";
+
   return (
     <>
-      <JsonLd data={faqJsonLd} />
+      <JsonLd
+        data={faqPageJsonLd(
+          faqs.map((faq) => ({
+            title: faq.title,
+            content: plainify(faq.content),
+          })),
+        )}
+      />
       <PageHeader title="About Us" />
       
       {/* About Us Content */}
@@ -135,33 +111,13 @@ const About = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-10">
-        <div className="container">
-          <div className="bg-light px-7 lg:px-32 py-12 mb-8 rounded-b-md">
-            <div className="row">
-              <div className="md:col-5 mx-auto space-y-5 mb-10 md:mb-0">
-                <h2 className="h1">Frequently Asked Questions</h2>
-                <p className="md:text-lg">Got questions about MOOD? We've got answers. From sizing to shipping, here's everything you need to know about our crypto-inspired streetwear.</p>
-                <a className="btn btn-sm md:btn-lg btn-primary font-medium" href="mailto:moodcyi@gmail.com">Contact Us</a>
-              </div>
-              <div className="md:col-7">
-                <div className="space-y-4">
-                  {faqs.map((faq) => (
-                    <details className="group" key={faq.question}>
-                      <summary className="flex justify-between items-center cursor-pointer p-4 bg-white rounded-lg">
-                        <span className="font-semibold">{faq.question}</span>
-                        <span className="group-open:rotate-180 transition-transform">▼</span>
-                      </summary>
-                      <div className="p-4 bg-gray-50 rounded-b-lg">{faq.answer}</div>
-                    </details>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        title={faqTitle}
+        subtitle={faqSubtitle}
+        faqs={faqs}
+        contactHref={about.frontmatter.button?.link}
+        contactLabel={about.frontmatter.button?.label}
+      />
     </>
   );
 };

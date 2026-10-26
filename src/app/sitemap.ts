@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getBlogPosts } from "@/lib/blog";
 import { getProducts } from "@/lib/shopify";
 import { Product } from "@/lib/shopify/types";
 import { absoluteUrl } from "@/lib/seo";
@@ -26,10 +27,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getAllProducts();
   const seen = new Set<string>();
 
+  const posts = getBlogPosts();
+
   return [
     { url: absoluteUrl("/"), lastModified: STATIC_LAST_MODIFIED },
     { url: absoluteUrl("/products"), lastModified: STATIC_LAST_MODIFIED },
     { url: absoluteUrl("/about"), lastModified: STATIC_LAST_MODIFIED },
+    { url: absoluteUrl("/faq"), lastModified: STATIC_LAST_MODIFIED },
+    { url: absoluteUrl("/blog"), lastModified: STATIC_LAST_MODIFIED },
+    ...posts.map((post) => ({
+      url: absoluteUrl(`/blog/${post.slug}`),
+      lastModified: post.frontmatter.date
+        ? new Date(post.frontmatter.date)
+        : STATIC_LAST_MODIFIED,
+    })),
     ...products
       .filter((p) => p.handle && !seen.has(p.handle) && seen.add(p.handle))
       .map((p) => ({
