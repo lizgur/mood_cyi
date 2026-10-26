@@ -13,6 +13,16 @@ const nextConfig = {
     ],
   },
   eslint: { ignoreDuringBuilds: true },
+
+  // Sitemap is force-dynamic and runs in a Vercel function. NFT does not
+  // follow the runtime readdir of src/content/blog, so include those files
+  // explicitly for sitemap + blog routes.
+  outputFileTracingIncludes: {
+    "/sitemap": ["./src/content/blog/**/*.md"],
+    "/sitemap.xml": ["./src/content/blog/**/*.md"],
+    "/blog": ["./src/content/blog/**/*.md"],
+    "/blog/[slug]": ["./src/content/blog/**/*.md"],
+  },
   
   async headers() {
     return [

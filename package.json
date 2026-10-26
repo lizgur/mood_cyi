@@ -7,6 +7,8 @@
   "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "next dev --turbopack",
+    "generate:blog-catalog": "node scripts/generate-blog-catalog.js",
+    "prebuild": "node scripts/generate-blog-catalog.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
