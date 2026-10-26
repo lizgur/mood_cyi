@@ -9,15 +9,16 @@ import PageHeader from "@/layouts/partials/PageHeader";
 import { RegularPage } from "@/types";
 import { FaShieldAlt, FaBoxOpen, FaLeaf, FaUsers } from "react-icons/fa";
 
+const aboutTitle = "About MOOD – Bitcoin History Streetwear Brand";
 const aboutDescription =
-  "MOOD is not just a T-shirt brand — it's a digital statement. Born at the intersection of blockchain culture, streetwear, and self-expression.";
+  "MOOD makes high quality Bitcoin T-shirts that turn moments from Bitcoin history into streetwear. Our story, our designs and answers to common questions.";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: aboutTitle,
   description: aboutDescription,
   alternates: { canonical: `${config.site.base_url}/about` },
-  openGraph: { url: `${config.site.base_url}/about`, title: "About", description: aboutDescription, images: [config.metadata.meta_image] },
-  twitter: { card: "summary_large_image", title: "About", description: aboutDescription, images: [config.metadata.meta_image] },
+  openGraph: { url: `${config.site.base_url}/about`, title: aboutTitle, description: aboutDescription, images: [config.metadata.meta_image] },
+  twitter: { card: "summary_large_image", title: aboutTitle, description: aboutDescription, images: [config.metadata.meta_image] },
 };
 
 const About = () => {

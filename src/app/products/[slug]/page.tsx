@@ -14,7 +14,9 @@ import { getProduct, getProductRecommendations } from "@/lib/shopify";
 import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
 import JsonLd from "@/layouts/components/JsonLd";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, faqPageJsonLd, firstSeoText } from "@/lib/seo";
+import { getProductEditorial } from "@/lib/productStories";
+import ProductStoryFaq from "@/partials/ProductStoryFaq";
 import Image from "next/image";
 import { Suspense } from "react";
 import fs from "fs";
@@ -23,22 +25,26 @@ import matter from "gray-matter";
 
 export const generateMetadata = async (props: {
   params: Promise<{ slug: string }>;
-}) => {
+}): Promise<Metadata> => {
   const params = await props.params;
   const product = await getProduct(params.slug);
   if (!product) return notFound();
-  
-  const title = product.seo.title || product.title;
-  const description = product.seo.description || product.description;
+
+  // Shopify SEO title/description win when present; fall back to product name.
+  const title = firstSeoText(product.seo?.title, product.title) || product.title;
+  const description = firstSeoText(
+    product.seo?.description,
+    product.description,
+  );
   const image = product.featuredImage?.url || config.metadata.meta_image;
-  const url = `${config.site.base_url}/products/${params.slug}`;
-  
+  const url = absoluteUrl(`/products/${params.slug}`);
+
   return {
     title,
     description,
     openGraph: {
       url,
-      type: 'website',
+      type: "website",
       title,
       description,
       images: [
@@ -51,7 +57,7 @@ export const generateMetadata = async (props: {
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [image],
@@ -211,6 +217,7 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
     }
 
     const productUrl = absoluteUrl(`/products/${product.handle}`);
+    const editorial = getProductEditorial(product.handle);
     const productJsonLd = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -247,6 +254,9 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
       <>
         <JsonLd data={productJsonLd} />
         <JsonLd data={breadcrumbJsonLd} />
+        {editorial && editorial.faqs.length > 0 && (
+          <JsonLd data={faqPageJsonLd(editorial.faqs)} />
+        )}
         <section className="md:section-sm">
           <div className="container">
             <div className="row justify-center">
@@ -340,6 +350,8 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
         </section>
+
+        {editorial && <ProductStoryFaq editorial={editorial} />}
 
         {relatedProducts.length > 0 && (
           <section className="pt-2 pb-8 md:pt-3 md:pb-12">

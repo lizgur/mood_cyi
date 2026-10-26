@@ -9,6 +9,17 @@ export const siteUrl = (process.env.SITE_URL || config.site.base_url).replace(
 export const absoluteUrl = (path: string) =>
   `${siteUrl}${path === "/" ? "" : path}`;
 
+/** First non-empty trimmed string. Used so Shopify SEO fields win over product title. */
+export const firstSeoText = (
+  ...values: Array<string | null | undefined>
+): string | undefined => {
+  for (const value of values) {
+    const trimmed = value?.trim();
+    if (trimmed) return trimmed;
+  }
+  return undefined;
+};
+
 // Only real social profile URLs present in the repo config (mailto links excluded).
 const sameAs = social.main
   .map((s) => s.link)
