@@ -56,6 +56,13 @@ export const metadata: Metadata = {
   verification: {
     google: "aWuNIz7S0ApaeCebIhcbu67YA3FxgYpVwZRtWr8pcUI",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: config.site.favicon, sizes: "320x320", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
@@ -73,7 +80,9 @@ export default function RootLayout({
         />
 
         {/* favicon */}
-        <link rel="shortcut icon" href={config.site.favicon} />
+        <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+        <link rel="icon" href={config.site.favicon} sizes="320x320" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
         {/* theme meta */}
         <meta name="theme-name" content="commerceplate" />
         <meta name="msapplication-TileColor" content="#000000" />
