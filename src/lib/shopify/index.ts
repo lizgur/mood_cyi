@@ -660,6 +660,19 @@ export async function getProducts({
   }
 }
 
+/** Paginate the Storefront API so sitemaps and catalog pages see every product. */
+export async function getAllProducts(): Promise<Product[]> {
+  const all: Product[] = [];
+  let cursor: string | undefined;
+  for (let page = 0; page < 20; page++) {
+    const { products, pageInfo } = await getProducts({ cursor });
+    all.push(...products);
+    if (!pageInfo?.hasNextPage || !pageInfo.endCursor) break;
+    cursor = pageInfo.endCursor;
+  }
+  return all;
+}
+
 export async function getHighestProductPrice(): Promise<{
   amount: string;
   currencyCode: string;

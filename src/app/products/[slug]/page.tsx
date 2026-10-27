@@ -15,6 +15,7 @@ import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
 import JsonLd from "@/layouts/components/JsonLd";
 import { absoluteUrl, faqPageJsonLd, firstSeoText } from "@/lib/seo";
+import { withProductImageAlts } from "@/lib/seo/productImages";
 import { getProductEditorial } from "@/lib/productStories";
 import ProductStoryFaq from "@/partials/ProductStoryFaq";
 import Image from "next/image";
@@ -160,11 +161,16 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
     // Create product details from available data
     const productDetails = [];
 
+    // Product Details and Product JSON-LD share this string so they cannot drift.
+    // Whitepaper Shopify description is now 100% cotton (Vlad-approved alignment).
+    // Older Whitepaper body copy mentioned a cotton-poly blend; do not reintroduce it.
+    const material = "100% Cotton";
+
     // Add material information
     productDetails.push({
       key: "material",
       label: "Material",
-      value: "100% Cotton",
+      value: material,
     });
 
     // Add fit information
@@ -218,6 +224,8 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
 
     const productUrl = absoluteUrl(`/products/${product.handle}`);
     const editorial = getProductEditorial(product.handle);
+    const galleryImages = withProductImageAlts(product.handle, title, images);
+    const sizeValues = sizeOption?.values ?? [];
     const productJsonLd = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -229,6 +237,8 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
           : undefined,
       description: description || undefined,
       brand: { "@type": "Brand", name: "MOOD" },
+      material,
+      ...(sizeValues.length ? { size: sizeValues.join(", ") } : {}),
       url: productUrl,
       offers: {
         "@type": "Offer",
@@ -262,12 +272,7 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
             <div className="row justify-center">
               {/* right side contents  */}
               <div className="col-10 md:col-8 lg:col-6">
-                <ProductGalleryWrapper
-                  images={images.map((image) => ({
-                    ...image,
-                    altText: image.altText || title,
-                  }))}
-                />
+                <ProductGalleryWrapper images={galleryImages} />
               </div>
 
               {/* left side contents  */}

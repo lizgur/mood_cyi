@@ -73,6 +73,36 @@ const renderMenuItem = (
   );
 };
 
+const MenuGlyph = ({
+  open,
+  className,
+}: {
+  open: boolean;
+  className: string;
+}) =>
+  open ? (
+    <svg
+      className={className}
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <polygon
+        points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+        transform="rotate(45 10 10)"
+      ></polygon>
+    </svg>
+  ) : (
+    <svg
+      className={className}
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+    </svg>
+  );
+
 const Header: React.FC<{ children: any }> = ({ children }) => {
   const [navbarShadow, setNavbarShadow] = useState(false);
   const { main }: { main: INavigationLink[] } = menu;
@@ -124,21 +154,13 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
                 id="nav-toggle"
                 className="focus:outline-none"
                 onClick={handleToggleSidebar}
+                aria-label={showSidebar ? "Close menu" : "Open menu"}
+                aria-expanded={showSidebar}
               >
-                {showSidebar ? (
-                  <svg className="h-3 fill-current block" viewBox="0 0 20 20">
-                    <title>Menu Close</title>
-                    <polygon
-                      points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                      transform="rotate(45 10 10)"
-                    ></polygon>
-                  </svg>
-                ) : (
-                  <svg className="h-3 fill-current block" viewBox="0 0 20 20">
-                    <title>Menu Open</title>
-                    <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
-                  </svg>
-                )}
+                <MenuGlyph
+                  open={showSidebar}
+                  className="h-3 fill-current block"
+                />
               </button>
             </label>
 
@@ -153,14 +175,12 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
               <div className="flex justify-between items-center mb-14">
                 <Logo />
 
-                <button onClick={handleToggleSidebar} className="p-2">
-                  <svg className="h-5 fill-current block" viewBox="0 0 20 20">
-                    <title>Menu Close</title>
-                    <polygon
-                      points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                      transform="rotate(45 10 10)"
-                    ></polygon>
-                  </svg>
+                <button
+                  onClick={handleToggleSidebar}
+                  className="p-2"
+                  aria-label="Close menu"
+                >
+                  <MenuGlyph open className="h-5 fill-current block" />
                 </button>
               </div>
               <ul>
@@ -215,21 +235,13 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
                 id="nav-toggle"
                 className="focus:outline-none"
                 onClick={handleToggleSidebar}
+                aria-label={showSidebar ? "Close menu" : "Open menu"}
+                aria-expanded={showSidebar}
               >
-                {showSidebar ? (
-                  <svg className="h-5 fill-current block" viewBox="0 0 20 20">
-                    <title>Menu Close</title>
-                    <polygon
-                      points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                      transform="rotate(45 10 10)"
-                    ></polygon>
-                  </svg>
-                ) : (
-                  <svg className="h-5 fill-current block" viewBox="0 0 20 20">
-                    <title>Menu Open</title>
-                    <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
-                  </svg>
-                )}
+                <MenuGlyph
+                  open={showSidebar}
+                  className="h-5 fill-current block"
+                />
               </button>
             </label>
 
@@ -244,14 +256,12 @@ const Header: React.FC<{ children: any }> = ({ children }) => {
               <div className="flex justify-between items-center mb-14">
                 <Logo />
 
-                <button onClick={handleToggleSidebar} className="p-2">
-                  <svg className="h-5 fill-current block" viewBox="0 0 20 20">
-                    <title>Menu Close</title>
-                    <polygon
-                      points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                      transform="rotate(45 10 10)"
-                    ></polygon>
-                  </svg>
+                <button
+                  onClick={handleToggleSidebar}
+                  className="p-2"
+                  aria-label="Close menu"
+                >
+                  <MenuGlyph open className="h-5 fill-current block" />
                 </button>
               </div>
               <ul>

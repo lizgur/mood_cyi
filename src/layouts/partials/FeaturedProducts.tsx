@@ -1,6 +1,7 @@
 "use client";
 import { AddToCart } from "@/components/cart/AddToCart";
 import ImageFallback from "@/helpers/ImageFallback";
+import { featuredProductImageAlt } from "@/lib/seo/productImages";
 import { Product } from "@/lib/shopify/types";
 import Link from "next/link";
 
@@ -46,7 +47,11 @@ const FeaturedProducts = ({ products }: { products: Product[] }) => {
                   src={featuredImage?.url || "/images/product_image404.jpg"}
                   width={312}
                   height={269}
-                  alt={featuredImage?.altText || title}
+                  alt={featuredProductImageAlt(
+                    handle,
+                    title,
+                    featuredImage?.altText,
+                  )}
                   className="w-full h-[150px] md:h-[269px] object-cover border border-border rounded-md"
                 />
 

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getBlogSitemapEntries } from "@/lib/blog";
-import { getProducts } from "@/lib/shopify";
-import { Product } from "@/lib/shopify/types";
+import { getAllProducts } from "@/lib/shopify";
+import { productImageEntries } from "@/lib/seo/imageSitemap";
 import { absoluteUrl } from "@/lib/seo";
 
 // Render per request: the Shopify client uses no-store fetches, so a static
@@ -10,18 +10,6 @@ export const dynamic = "force-dynamic";
 
 // Last meaningful content change for the static pages.
 const STATIC_LAST_MODIFIED = new Date("2026-10-23");
-
-async function getAllProducts(): Promise<Product[]> {
-  const all: Product[] = [];
-  let cursor: string | undefined;
-  for (let page = 0; page < 20; page++) {
-    const { products, pageInfo } = await getProducts({ cursor });
-    all.push(...products);
-    if (!pageInfo?.hasNextPage || !pageInfo.endCursor) break;
-    cursor = pageInfo.endCursor;
-  }
-  return all;
-}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getAllProducts();
@@ -32,6 +20,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: absoluteUrl("/"), lastModified: STATIC_LAST_MODIFIED },
     { url: absoluteUrl("/products"), lastModified: STATIC_LAST_MODIFIED },
+    {
+      url: absoluteUrl("/bitcoin-t-shirts"),
+      lastModified: new Date("2026-10-27"),
+    },
     { url: absoluteUrl("/about"), lastModified: STATIC_LAST_MODIFIED },
     { url: absoluteUrl("/faq"), lastModified: STATIC_LAST_MODIFIED },
     { url: absoluteUrl("/shipping"), lastModified: new Date("2026-10-26") },
@@ -46,6 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .map((p) => ({
         url: absoluteUrl(`/products/${p.handle}`),
         lastModified: p.updatedAt ? new Date(p.updatedAt) : STATIC_LAST_MODIFIED,
+        images: productImageEntries(p).map((image) => image.loc),
       })),
   ];
 }
