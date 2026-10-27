@@ -7,3 +7,4 @@ Host: https://moodcyi.com/
 
 # Sitemaps
 Sitemap: https://moodcyi.com/sitemap.xml
+Sitemap: https://moodcyi.com/sitemap-images.xml

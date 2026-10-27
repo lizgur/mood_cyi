@@ -7,6 +7,7 @@ import useLoadMore from "@/hooks/useLoadMore";
 import { defaultSort, sorting } from "@/lib/constants";
 import { getCollectionProducts, getProducts } from "@/lib/shopify";
 import { PageInfo, Product } from "@/lib/shopify/types";
+import { featuredProductImageAlt } from "@/lib/seo/productImages";
 import { titleify } from "@/lib/utils/textConverter";
 import Link from "next/link";
 import { Suspense, useEffect, useRef, useState } from "react";
@@ -261,7 +262,11 @@ const ProductListView = ({
                       }
                       width={312}
                       height={269}
-                      alt={featuredImage?.altText || title}
+                      alt={featuredProductImageAlt(
+                        handle,
+                        title,
+                        featuredImage?.altText,
+                      )}
                       className="w-full h-[180px] sm:h-[200px] md:h-[269px] object-cover rounded-md border mx-auto"
                     />
                   </div>

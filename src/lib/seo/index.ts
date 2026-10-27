@@ -31,6 +31,14 @@ export const organizationJsonLd = {
   name: "MOOD",
   url: siteUrl,
   logo: `${siteUrl}/images/logo.png`,
+  email: "moodcyi@gmail.com",
+  description:
+    "MOOD is a Bitcoin-history streetwear brand based in Paphos, Cyprus. Designer Yelyzaveta Hurieva turns the Genesis block, the Bitcoin Whitepaper, and Bitcoin Pizza Day into T-shirts.",
+  founder: {
+    "@type": "Person",
+    name: "Yelyzaveta Hurieva",
+    jobTitle: "Founder and designer",
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Paphos",

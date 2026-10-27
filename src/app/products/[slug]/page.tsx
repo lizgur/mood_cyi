@@ -15,6 +15,7 @@ import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
 import JsonLd from "@/layouts/components/JsonLd";
 import { absoluteUrl, faqPageJsonLd, firstSeoText } from "@/lib/seo";
+import { withProductImageAlts } from "@/lib/seo/productImages";
 import { getProductEditorial } from "@/lib/productStories";
 import ProductStoryFaq from "@/partials/ProductStoryFaq";
 import Image from "next/image";
@@ -218,6 +219,8 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
 
     const productUrl = absoluteUrl(`/products/${product.handle}`);
     const editorial = getProductEditorial(product.handle);
+    const galleryImages = withProductImageAlts(product.handle, title, images);
+    const sizeValues = sizeOption?.values ?? [];
     const productJsonLd = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -229,6 +232,7 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
           : undefined,
       description: description || undefined,
       brand: { "@type": "Brand", name: "MOOD" },
+      ...(sizeValues.length ? { size: sizeValues.join(", ") } : {}),
       url: productUrl,
       offers: {
         "@type": "Offer",
@@ -262,12 +266,7 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
             <div className="row justify-center">
               {/* right side contents  */}
               <div className="col-10 md:col-8 lg:col-6">
-                <ProductGalleryWrapper
-                  images={images.map((image) => ({
-                    ...image,
-                    altText: image.altText || title,
-                  }))}
-                />
+                <ProductGalleryWrapper images={galleryImages} />
               </div>
 
               {/* left side contents  */}

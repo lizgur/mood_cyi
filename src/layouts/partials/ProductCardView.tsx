@@ -12,6 +12,7 @@ import useLoadMore from "@/hooks/useLoadMore";
 import { defaultSort, sorting } from "@/lib/constants";
 import { getCollectionProducts, getProducts } from "@/lib/shopify";
 import { PageInfo, Product } from "@/lib/shopify/types";
+import { featuredProductImageAlt } from "@/lib/seo/productImages";
 import { titleify } from "@/lib/utils/textConverter";
 import { Suspense, useEffect, useRef } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
@@ -256,7 +257,11 @@ const ProductCardView = ({
                   }
                   width={312}
                   height={269}
-                  alt={product.featuredImage?.altText || product.title}
+                  alt={featuredProductImageAlt(
+                    product.handle,
+                    product.title,
+                    product.featuredImage?.altText,
+                  )}
                   className="w-full h-[200px] sm:w-[312px] md:h-[269px] object-cover rounded-md border mx-auto"
                 />
 
