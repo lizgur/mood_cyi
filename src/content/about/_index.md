@@ -27,13 +27,13 @@ faqs:
     content: "MOOD is specifically designed for the Web3 community. Every design is rooted in real blockchain history, crypto culture, and tech milestones. We're not just printing random designs - we're creating wearable pieces of digital culture."
 
   - title: "What are your T-shirts made of?"
-    content: "Our T-shirts are made from premium, ethically sourced cotton blends. We use eco-conscious printing methods and sustainable materials because we believe in building a better future - both digitally and environmentally."
+    content: "The Bitcoin Genesis Block and Bitcoin Pizza Day T-Shirts are 100% cotton. Exact fabric for each drop is listed under Product Details on that product page. We use eco-conscious printing methods where we can."
 
   - title: "How do limited drops work?"
     content: "Our T-shirt releases are limited and exclusive. Once a design sells out, it's gone forever. We announce upcoming drops on our social channels like Instagram."
 
   - title: "How does shipping work?"
-    content: "Shipping is free to Cyprus. For all other countries, delivery cost is covered by the buyer. To place your order, send us your details: Full name, Phone number, Address with postal code. Sit back and wait to claim your T-shirt(s)! We'll keep you updated on the process."
+    content: "Shipping is free to Cyprus. For other countries, delivery is paid by the buyer at checkout. Order through the store checkout — you don’t need to email your address. Full rates and zones: [https://moodcyi.com/shipping](https://moodcyi.com/shipping)"
 
   - title: "What's your return policy?"
     content: "We offer a 14-day return window for unworn items in original condition. Since our drops are limited, we encourage checking our size guide carefully before ordering."

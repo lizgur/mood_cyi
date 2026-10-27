@@ -1,4 +1,5 @@
 import type { Image } from "@/lib/shopify/types";
+import { productDisplayName } from "@/lib/seo/productTitles";
 
 /**
  * Descriptive alts used when Shopify leaves alt empty, or when the storefront
@@ -7,11 +8,11 @@ import type { Image } from "@/lib/shopify/types";
  */
 export const PRODUCT_IMAGE_ALTS: Record<string, string> = {
   "genesis-t-shirt":
-    'MOOD Genesis T-shirt — The Times 03/Jan/2009 genesis block headline printed on the chest',
+    "Bitcoin Genesis Block T-Shirt — The Times 03/Jan/2009 genesis block headline printed on the chest",
   "whitepaper-t-shirt":
-    "MOOD Whitepaper T-shirt — all-over print of Satoshi Nakamoto's Bitcoin Whitepaper",
+    "Bitcoin Whitepaper T-Shirt — all-over print of Satoshi Nakamoto's Bitcoin Whitepaper",
   "pizza-t-shirt":
-    "MOOD Pizza T-shirt — Bitcoin Pizza Day design with the 2010 pizza transaction hash on the sleeve cuffs",
+    "Bitcoin Pizza Day T-Shirt — Bitcoin Pizza Day design with the 2010 pizza transaction hash on the sleeve cuffs",
 };
 
 const WHITEPAPER_CHEST_ALT = /printed on the chest/i;
@@ -45,7 +46,7 @@ export function productImageAlt({
     return index > 0 ? `${known} — gallery image ${index + 1}` : known;
   }
 
-  return shopify || title?.trim() || "MOOD Bitcoin T-shirt";
+  return shopify || productDisplayName(handle, title);
 }
 
 export function withProductImageAlts<T extends Pick<Image, "altText">>(

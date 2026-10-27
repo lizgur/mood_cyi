@@ -161,11 +161,16 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
     // Create product details from available data
     const productDetails = [];
 
+    // Product Details and Product JSON-LD share this string so they cannot drift.
+    // Whitepaper Shopify description is now 100% cotton (Vlad-approved alignment).
+    // Older Whitepaper body copy mentioned a cotton-poly blend; do not reintroduce it.
+    const material = "100% Cotton";
+
     // Add material information
     productDetails.push({
       key: "material",
       label: "Material",
-      value: "100% Cotton",
+      value: material,
     });
 
     // Add fit information
@@ -232,6 +237,7 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
           : undefined,
       description: description || undefined,
       brand: { "@type": "Brand", name: "MOOD" },
+      material,
       ...(sizeValues.length ? { size: sizeValues.join(", ") } : {}),
       url: productUrl,
       offers: {

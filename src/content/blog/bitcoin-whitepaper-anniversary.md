@@ -32,9 +32,9 @@ faqs:
 after_faq: |
   ## Wear the nine pages
 
-  To mark the anniversary, we made one design about the document itself. The [MOOD Whitepaper T-shirt](/products/whitepaper-t-shirt) is a white T-shirt printed with Satoshi's original Whitepaper, every line and diagram, under a graffiti-style MOOD logo. It costs €100 and comes in sizes M and XL.
+  To mark the anniversary, we made one design about the document itself. The [Bitcoin Whitepaper T-Shirt](/products/whitepaper-t-shirt) is a white T-shirt printed with Satoshi's original Whitepaper, every line and diagram, under a graffiti-style MOOD logo. It costs €100 and comes in sizes M and XL.
 
-  <a href="/products/whitepaper-t-shirt" className="btn btn-primary">Shop the Whitepaper T-shirt</a>
+  <a href="/products/whitepaper-t-shirt" className="btn btn-primary">Shop the Bitcoin Whitepaper T-Shirt</a>
 
   ## Sources
 

@@ -22,9 +22,9 @@ const getStoreFaqs = () => {
 };
 
 export const generateMetadata = (): Metadata => {
-  const { subtitle } = getStoreFaqs();
-  const title = "FAQ";
-  const description = subtitle;
+  const title = "FAQ | MOOD – Bitcoin T-Shirts";
+  const description =
+    "FAQ for MOOD Bitcoin T-shirts: what the tees are made of, how shipping from Cyprus works, and our returns window.";
 
   return {
     title,
