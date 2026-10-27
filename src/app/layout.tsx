@@ -54,7 +54,10 @@ export const metadata: Metadata = {
   },
   authors: [{ name: config.metadata.meta_author }],
   verification: {
-    google: "aWuNIz7S0ApaeCebIhcbu67YA3FxgYpVwZRtWr8pcUI",
+    google: [
+      "aWuNIz7S0ApaeCebIhcbu67YA3FxgYpVwZRtWr8pcUI",
+      "K0Oqi5vFzw8-emqQq6TOf61geCz8vgimoo3I3Z2xnd4",
+    ],
   },
   icons: {
     icon: [
