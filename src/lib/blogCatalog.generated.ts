@@ -17,6 +17,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "bitcoin-whitepaper-explained",
+    "date": "2026-10-28",
+    "draft": false
+  },
+  {
     "slug": "genesis-block-message-chancellor-on-brink",
     "date": "2026-10-27",
     "draft": false
