@@ -160,7 +160,12 @@ const BitcoinTShirtsPage = async () => {
               <Link href="/blog" className="text-primary">
                 blog
               </Link>
-              . Order through store checkout — you do not need to email your
+              . If you are buying for someone else, our{" "}
+              <Link href="/blog/bitcoin-gift-ideas" className="text-primary">
+                Bitcoin gift ideas
+              </Link>{" "}
+              guide matches each shirt to a date in Bitcoin history. Order
+              through store checkout — you do not need to email your
               address. We ship from Cyprus with ACS Courier.{" "}
               <Link href="/shipping" className="text-primary">
                 Shipping

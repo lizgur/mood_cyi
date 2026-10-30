@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: absoluteUrl("/products"), lastModified: STATIC_LAST_MODIFIED },
     {
       url: absoluteUrl("/bitcoin-t-shirts"),
-      lastModified: new Date("2026-10-27"),
+      lastModified: new Date("2026-10-30"),
     },
     { url: absoluteUrl("/about"), lastModified: STATIC_LAST_MODIFIED },
     { url: absoluteUrl("/faq"), lastModified: STATIC_LAST_MODIFIED },
