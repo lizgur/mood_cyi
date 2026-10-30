@@ -7,7 +7,7 @@ import FaqSection from "@/layouts/partials/FaqSection";
 import PageHeader from "@/layouts/partials/PageHeader";
 import { getProduct } from "@/lib/shopify";
 import { Product } from "@/lib/shopify/types";
-import { absoluteUrl, faqPageJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbListJsonLd, faqPageJsonLd } from "@/lib/seo";
 import { productDisplayName } from "@/lib/seo/productTitles";
 
 export const dynamic = "force-dynamic";
@@ -19,9 +19,15 @@ const BITCOIN_TEE_HANDLES = [
   "pizza-t-shirt",
 ] as const;
 
-const pageTitle = "Bitcoin T-Shirts";
+const pageHeading = "Bitcoin T-Shirts";
+const pageTitle =
+  "Bitcoin T-Shirts – Genesis, Whitepaper & Pizza Day | MOOD";
 const pageDescription =
   "MOOD Bitcoin T-shirts from Paphos, Cyprus: Bitcoin Genesis Block, Bitcoin Whitepaper, and Bitcoin Pizza Day designs by Yelyzaveta Hurieva.";
+const bitcoinTeeCrumbs = [
+  { name: "Home", href: "/" },
+  { name: pageHeading, href: "/bitcoin-t-shirts" },
+];
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -87,7 +93,7 @@ const BitcoinTShirtsPage = async () => {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: pageTitle,
+    name: pageHeading,
     description: pageDescription,
     url: absoluteUrl("/bitcoin-t-shirts"),
     mainEntity: {
@@ -105,7 +111,8 @@ const BitcoinTShirtsPage = async () => {
     <>
       <JsonLd data={faqPageJsonLd(faqs)} />
       <JsonLd data={itemListJsonLd} />
-      <PageHeader title="Bitcoin T-Shirts" />
+      <JsonLd data={breadcrumbListJsonLd(bitcoinTeeCrumbs)} />
+      <PageHeader title={pageHeading} breadcrumbs={bitcoinTeeCrumbs} />
 
       <section className="py-10">
         <div className="container">
