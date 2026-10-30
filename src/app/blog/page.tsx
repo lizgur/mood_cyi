@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getBlogIndex, getBlogPosts } from "@/lib/blog";
-import { absoluteUrl } from "@/lib/seo";
+import JsonLd from "@/layouts/components/JsonLd";
+import { absoluteUrl, breadcrumbListJsonLd } from "@/lib/seo";
 import dateFormat from "@/lib/utils/dateFormat";
 import PageHeader from "@/partials/PageHeader";
 import { Post } from "@/types";
@@ -29,13 +30,19 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
+const blogCrumbs = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+];
+
 const BlogIndex = () => {
   const { frontmatter } = getBlogIndex();
   const posts = getBlogPosts();
 
   return (
     <>
-      <PageHeader title={frontmatter.title} />
+      <JsonLd data={breadcrumbListJsonLd(blogCrumbs)} />
+      <PageHeader title={frontmatter.title} breadcrumbs={blogCrumbs} />
       <section className="section">
         <div className="container">
           <div className="max-w-4xl mx-auto">

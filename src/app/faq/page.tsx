@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import JsonLd from "@/layouts/components/JsonLd";
 import { getListPage } from "@/lib/contentParser";
-import { absoluteUrl, faqPageJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbListJsonLd, faqPageJsonLd } from "@/lib/seo";
 import { plainify } from "@/lib/utils/textConverter";
 import FaqSection from "@/partials/FaqSection";
 import PageHeader from "@/partials/PageHeader";
@@ -43,6 +43,11 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
+const faqCrumbs = [
+  { name: "Home", href: "/" },
+  { name: "FAQ", href: "/faq" },
+];
+
 const FaqPage = () => {
   const { title, subtitle, faqs, contactHref, contactLabel } = getStoreFaqs();
 
@@ -56,7 +61,8 @@ const FaqPage = () => {
           })),
         )}
       />
-      <PageHeader title="FAQ" />
+      <JsonLd data={breadcrumbListJsonLd(faqCrumbs)} />
+      <PageHeader title="FAQ" breadcrumbs={faqCrumbs} />
       <FaqSection
         title={title}
         subtitle={subtitle}

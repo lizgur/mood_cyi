@@ -4,7 +4,7 @@ import JsonLd from "@/layouts/components/JsonLd";
 import Share from "@/layouts/components/Share";
 import MDXContent from "@/helpers/MDXContent";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
-import { absoluteUrl, articleJsonLd, faqPageJsonLd } from "@/lib/seo";
+import { absoluteUrl, articleJsonLd, breadcrumbListJsonLd, faqPageJsonLd } from "@/lib/seo";
 import dateFormat from "@/lib/utils/dateFormat";
 import { plainify } from "@/lib/utils/textConverter";
 import FaqList from "@/partials/FaqList";
@@ -56,6 +56,11 @@ const BlogPost = async (props: { params: Promise<{ slug: string }> }) => {
   const { frontmatter, content } = post;
   const url = absoluteUrl(`/blog/${slug}`);
   const faqs = frontmatter.faqs || [];
+  const breadcrumbs = [
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: frontmatter.title, href: `/blog/${slug}` },
+  ];
 
   return (
     <>
@@ -66,9 +71,9 @@ const BlogPost = async (props: { params: Promise<{ slug: string }> }) => {
           datePublished: frontmatter.date || new Date().toISOString(),
           url,
           image: frontmatter.image,
-          author: frontmatter.author || "MOOD",
         })}
       />
+      <JsonLd data={breadcrumbListJsonLd(breadcrumbs)} />
       {faqs.length > 0 && (
         <JsonLd
           data={faqPageJsonLd(
@@ -79,7 +84,7 @@ const BlogPost = async (props: { params: Promise<{ slug: string }> }) => {
           )}
         />
       )}
-      <PageHeader title={frontmatter.title} />
+      <PageHeader title={frontmatter.title} breadcrumbs={breadcrumbs} />
       <section className="section">
         <div className="container">
           <div className="content max-w-4xl mx-auto">

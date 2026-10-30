@@ -14,7 +14,7 @@ import { getProduct, getProductRecommendations } from "@/lib/shopify";
 import LatestProducts from "@/partials/FeaturedProducts";
 import CallToAction from "@/partials/CallToAction";
 import JsonLd from "@/layouts/components/JsonLd";
-import { absoluteUrl, faqPageJsonLd, firstSeoText } from "@/lib/seo";
+import { absoluteUrl, breadcrumbListJsonLd, faqPageJsonLd, firstSeoText } from "@/lib/seo";
 import { withProductImageAlts } from "@/lib/seo/productImages";
 import { getProductEditorial } from "@/lib/productStories";
 import ProductStoryFaq from "@/partials/ProductStoryFaq";
@@ -250,15 +250,11 @@ const ShowProductSingle = async ({ params }: { params: { slug: string } }) => {
           : "https://schema.org/OutOfStock",
       },
     };
-    const breadcrumbJsonLd = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
-        { "@type": "ListItem", position: 2, name: "Products", item: absoluteUrl("/products") },
-        { "@type": "ListItem", position: 3, name: title, item: productUrl },
-      ],
-    };
+    const breadcrumbJsonLd = breadcrumbListJsonLd([
+      { name: "Home", href: "/" },
+      { name: "Products", href: "/products" },
+      { name: title, href: `/products/${product.handle}` },
+    ]);
 
     return (
       <>

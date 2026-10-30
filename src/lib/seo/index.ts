@@ -59,27 +59,32 @@ export const faqPageJsonLd = (
   })),
 });
 
+/** Schema author for articles. Visible bylines stay on post frontmatter. */
+export const articleAuthor = {
+  "@type": "Person",
+  name: "Yelyzaveta Hurieva",
+  url: absoluteUrl("/about"),
+} as const;
+
 export const articleJsonLd = ({
   headline,
   description,
   datePublished,
   url,
   image,
-  author = "MOOD",
 }: {
   headline: string;
   description: string;
   datePublished: string;
   url: string;
   image?: string;
-  author?: string;
 }) => ({
   "@context": "https://schema.org",
   "@type": "Article",
   headline,
   description,
   datePublished,
-  author: { "@type": "Organization", name: author },
+  author: articleAuthor,
   publisher: {
     "@type": "Organization",
     name: "MOOD",
@@ -88,4 +93,20 @@ export const articleJsonLd = ({
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": url },
   ...(image ? { image: image.startsWith("http") ? image : `${siteUrl}${image}` } : {}),
+});
+
+export type SiteCrumb = {
+  name: string;
+  href: string;
+};
+
+export const breadcrumbListJsonLd = (crumbs: SiteCrumb[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: crumb.name,
+    item: absoluteUrl(crumb.href),
+  })),
 });
