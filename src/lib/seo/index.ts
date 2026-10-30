@@ -59,11 +59,11 @@ export const faqPageJsonLd = (
   })),
 });
 
-/** Schema author for articles. Visible bylines stay on post frontmatter. */
+/** Schema author for articles. Visible bylines stay on post frontmatter.
+ *  No url: /about is the brand page, not a Vladislav Hramtsov bio. */
 export const articleAuthor = {
   "@type": "Person",
-  name: "Yelyzaveta Hurieva",
-  url: absoluteUrl("/about"),
+  name: "Vladislav Hramtsov",
 } as const;
 
 export const articleJsonLd = ({
