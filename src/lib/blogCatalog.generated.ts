@@ -7,6 +7,11 @@ export type BlogCatalogEntry = {
 
 export const blogCatalog: BlogCatalogEntry[] = [
   {
+    "slug": "bitcoin-anniversaries-calendar",
+    "date": "2026-10-31",
+    "draft": false
+  },
+  {
     "slug": "bitcoin-gift-ideas",
     "date": "2026-10-30",
     "draft": false
