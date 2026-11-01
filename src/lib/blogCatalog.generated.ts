@@ -37,6 +37,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "find-genesis-block-pizza-transaction-explorer",
+    "date": "2026-11-01",
+    "draft": false
+  },
+  {
     "slug": "genesis-block-message-chancellor-on-brink",
     "date": "2026-10-27",
     "draft": false
