@@ -45,5 +45,10 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "slug": "genesis-block-message-chancellor-on-brink",
     "date": "2026-10-27",
     "draft": false
+  },
+  {
+    "slug": "laszlo-hanyecz",
+    "date": "2026-11-02",
+    "draft": false
   }
 ];
