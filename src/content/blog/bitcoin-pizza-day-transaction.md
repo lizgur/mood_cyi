@@ -36,7 +36,7 @@ after_faq: |
   - [mempool.space transaction data](https://mempool.space/tx/a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d)
 ---
 
-**Bitcoin Pizza Day is 22 May.** On that day in 2010, programmer Laszlo Hanyecz paid 10,000 BTC for two pizzas, the first widely known purchase of a real-world good with bitcoin. The payment is still on the blockchain: transaction `a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d`, confirmed in block 57,043. Anyone can look it up.
+**Bitcoin Pizza Day is 22 May.** On that day in 2010, programmer [Laszlo Hanyecz](/blog/laszlo-hanyecz) paid 10,000 BTC for two pizzas, the first widely known purchase of a real-world good with bitcoin. The payment is still on the blockchain: transaction `a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d`, confirmed in block 57,043. Anyone can look it up.
 
 Here's the story, the on-chain details, and how to check them yourself.
 
