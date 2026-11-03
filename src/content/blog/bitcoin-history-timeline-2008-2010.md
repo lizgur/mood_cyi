@@ -55,7 +55,7 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 3 Jan 2009 | The genesis block (block 0) is mined, with a Times headline inside it |
 | 8 Jan 2009 | Satoshi announces Bitcoin v0.1 on the same mailing list |
 | 9 Jan 2009 | The first open-source Bitcoin client is released on SourceForge |
-| 11 Jan 2009 (UTC) | Hal Finney posts "Running bitcoin" |
+| 11 Jan 2009 (UTC) | [Hal Finney](/blog/hal-finney-first-bitcoin-transaction) posts "Running bitcoin" |
 | 12 Jan 2009 | The first Bitcoin transaction: 10 BTC from Satoshi to Hal Finney, in block 170 |
 | 22 May 2010 | Bitcoin Pizza Day: 10,000 BTC for two Papa John's pizzas |
 | 18 Jul 2010 | Mt. Gox launches its Bitcoin exchange |
