@@ -118,7 +118,7 @@ Jed McCaleb read about Bitcoin on Slashdot in July 2010 and decided the communit
 
 ### 15 August 2010: the value overflow incident
 
-A bug in how the software added up transaction outputs let someone create bitcoin out of nothing. On 15 August 2010, a single transaction created just over 92 billion BTC for each of two addresses. It was spotted within hours, a fixed version of the software was released, and miners moved to a chain that left the bad transaction out. It no longer appears in Bitcoin's history today.
+A bug in how the software added up transaction outputs let someone create bitcoin out of nothing. On [15 August 2010](/blog/bitcoin-value-overflow-incident-2010), a single transaction created just over 92 billion BTC for each of two addresses. It was spotted within hours, a fixed version of the software was released, and miners moved to a chain that left the bad transaction out. It no longer appears in Bitcoin's history today.
 
 It's a useful reminder that early Bitcoin was experimental software, and that the network's rules held because people fixed problems in public.
 
