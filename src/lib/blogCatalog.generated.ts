@@ -47,6 +47,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "first-bitcoin-price-2009",
+    "date": "2026-11-05",
+    "draft": false
+  },
+  {
     "slug": "genesis-block-message-chancellor-on-brink",
     "date": "2026-10-27",
     "draft": false

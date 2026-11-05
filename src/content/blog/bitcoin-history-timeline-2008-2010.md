@@ -57,6 +57,8 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 9 Jan 2009 | The first open-source Bitcoin client is released on SourceForge |
 | 11 Jan 2009 (UTC) | [Hal Finney](/blog/hal-finney-first-bitcoin-transaction) posts "Running bitcoin" |
 | 12 Jan 2009 | The first Bitcoin transaction: 10 BTC from Satoshi to Hal Finney, in block 170 |
+| 5 Oct 2009 | [NewLibertyStandard](/blog/first-bitcoin-price-2009) posts the first dollar rate: $1 = 1,309.03 BTC |
+| 12 Oct 2009 | Martti Malmi sells 5,050 BTC for $5.02, the first known bitcoin-for-fiat trade |
 | 22 May 2010 | Bitcoin Pizza Day: 10,000 BTC for two Papa John's pizzas |
 | 18 Jul 2010 | Mt. Gox launches its Bitcoin exchange |
 | 15 Aug 2010 | The value overflow bug is exploited, then fixed within hours |
@@ -101,6 +103,12 @@ Hal Finney, a cryptographer and one of the first people to run the software, pos
 Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to another on the network. It was recorded in block 170.
 
 Other early supporters included Wei Dai, who designed the earlier b-money proposal, and Nick Szabo, who designed bit gold. Both ideas fed into the thinking Bitcoin drew on.
+
+### 5 October 2009: the first dollar price
+
+On [5 October 2009](/blog/first-bitcoin-price-2009), a pseudonymous early Bitcoiner called NewLibertyStandard published the first known dollar exchange rate: $1.00 = 1,309.03 BTC, about $0.00076 per coin. The number came from the electricity cost of mining, not from an order book.
+
+A week later, on 12 October 2009, Martti Malmi sold 5,050 BTC for $5.02 via PayPal, the first known bitcoin-for-fiat trade. Pizza Day was still 229 days away.
 
 ## 2010: bitcoin meets the real world
 

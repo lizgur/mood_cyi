@@ -59,6 +59,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 22 May | Bitcoin Pizza Day | 2010 |
 | 18 August | bitcoin.org registered | 2008 |
 | 24 August | SegWit activated | 2017 |
+| 5 October | First dollar rate posted (NewLibertyStandard) | 2009 |
 | 14 November | Taproot activated | 2021 |
 | About every four years | Halving (no fixed date) | 2012 |
 
@@ -99,6 +100,10 @@ Satoshi announced Bitcoin v0.1 on the cryptography mailing list on 8 January 200
 ### 12 January: the first transaction
 
 Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to another. It sits in block 170, timestamped 03:30 UTC on 12 January 2009. A day earlier, Finney had posted "Running bitcoin" on Twitter.
+
+### 5 October: the first dollar rate
+
+On 5 October 2009, NewLibertyStandard published the first known dollar exchange rate for bitcoin: $1.00 = 1,309.03 BTC, based on the electricity cost of mining. Seven days later Martti Malmi sold 5,050 BTC for $5.02. The full story is in [Bitcoin's first price](/blog/first-bitcoin-price-2009).
 
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
