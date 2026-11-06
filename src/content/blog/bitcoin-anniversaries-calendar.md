@@ -123,10 +123,12 @@ Every 210,000 blocks, the reward miners receive for a new block is cut in half. 
 
 | Halving | Block | Date (UTC) | Reward after |
 |---|---|---|---|
-| 1st | 210,000 | 28 November 2012 | 25 BTC |
+| 1st | 210,000 | [28 November 2012](/blog/first-bitcoin-halving-2012) | 25 BTC |
 | 2nd | 420,000 | 9 July 2016 | 12.5 BTC |
 | 3rd | 630,000 | 11 May 2020 | 6.25 BTC |
 | 4th | 840,000 | 20 April 2024 | 3.125 BTC |
+
+The first of those, at block 210,000, cut the subsidy from 50 BTC to 25 BTC. The full story is in [the first Bitcoin halving](/blog/first-bitcoin-halving-2012).
 
 The next halving comes at block 1,050,000, expected in 2028, when the reward drops to 1.5625 BTC. Nobody can name the exact day in advance, since it depends on how fast blocks are found.
 
