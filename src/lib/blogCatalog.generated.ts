@@ -47,6 +47,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "first-bitcoin-halving-2012",
+    "date": "2026-11-06",
+    "draft": false
+  },
+  {
     "slug": "first-bitcoin-price-2009",
     "date": "2026-11-05",
     "draft": false
