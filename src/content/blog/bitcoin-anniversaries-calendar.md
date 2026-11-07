@@ -56,6 +56,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 3 January | Genesis Day (also marked as Proof of Keys day) | 2009 |
 | 9 January | First Bitcoin software release | 2009 |
 | 12 January | First Bitcoin transaction, Satoshi to Hal Finney | 2009 |
+| 23–26 April | Satoshi's last known emails | 2011 |
 | 22 May | Bitcoin Pizza Day | 2010 |
 | 18 August | bitcoin.org registered | 2008 |
 | 24 August | SegWit activated | 2017 |
@@ -108,6 +109,10 @@ On 5 October 2009, NewLibertyStandard published the first known dollar exchange 
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
 ## Later milestones
+
+### 23–26 April: Satoshi's last known emails (2011)
+
+This is not an annual holiday. On 23 April 2011 Satoshi told Mike Hearn he had "moved on to other things"; on 26 April he emailed Gavin Andresen the network alert key. His last public Bitcointalk post was earlier, on 12 December 2010, and a mailing-list 0.3.19 note followed the next day — so the forum post is not the end of all public communication. The emails, and that distinction, are in [Satoshi's last message](/blog/satoshi-last-message-2011).
 
 ### 24 August: SegWit activates (2017)
 

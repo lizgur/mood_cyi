@@ -70,5 +70,10 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "slug": "laszlo-hanyecz",
     "date": "2026-11-02",
     "draft": false
+  },
+  {
+    "slug": "satoshi-last-message-2011",
+    "date": "2026-11-07",
+    "draft": false
   }
 ];
