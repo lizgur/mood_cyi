@@ -59,8 +59,9 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 12 Jan 2009 | The first Bitcoin transaction: 10 BTC from Satoshi to Hal Finney, in block 170 |
 | 5 Oct 2009 | [NewLibertyStandard](/blog/first-bitcoin-price-2009) posts the first dollar rate: $1 = 1,309.03 BTC |
 | 12 Oct 2009 | Martti Malmi sells 5,050 BTC for $5.02, the first known bitcoin-for-fiat trade |
+| 17 Mar 2010 | [Bitcoin Market](/blog/first-bitcoin-exchange-2010) starts trading, the first order-book exchange |
 | 22 May 2010 | Bitcoin Pizza Day: 10,000 BTC for two Papa John's pizzas |
-| 18 Jul 2010 | Mt. Gox launches its Bitcoin exchange |
+| 18 Jul 2010 | [Mt. Gox](/blog/first-bitcoin-exchange-2010) launches its Bitcoin exchange |
 | 15 Aug 2010 | The value overflow bug is exploited, then fixed within hours |
 | Dec 2010 | Satoshi's public involvement in development ends |
 
@@ -112,6 +113,10 @@ A week later, on 12 October 2009, Martti Malmi sold 5,050 BTC for $5.02 via PayP
 
 ## 2010: bitcoin meets the real world
 
+### 17 March 2010: Bitcoin Market starts trading
+
+NewLibertyStandard had posted a dollar rate in 2009, but it was one operator settling by hand. On 17 March 2010, Bitcointalk user dwdollar opened Bitcoin Market, the first order-book exchange where buyers and sellers set the price against each other. Jed McCaleb's Mt. Gox followed in July. The full story is in [the first Bitcoin exchanges of 2010](/blog/first-bitcoin-exchange-2010).
+
 ### 22 May 2010: Bitcoin Pizza Day
 
 Laszlo Hanyecz, a programmer in Jacksonville, Florida, offered 10,000 BTC on the Bitcointalk forum for two pizzas. Another forum user, jercos, took the deal and had two Papa John's pizzas delivered to him. The payment was confirmed in block 57,043. The coins were worth roughly $41 at the time, by forum estimates.
@@ -122,7 +127,7 @@ It's often called the first real-world purchase with bitcoin, and the date is no
 
 ### 18 July 2010: Mt. Gox opens
 
-Jed McCaleb read about Bitcoin on Slashdot in July 2010 and decided the community needed a place to trade it for regular money. He reused a domain he already owned, mtgox.com, and launched its exchange and price service on 18 July 2010. Mt. Gox went on to become the largest Bitcoin exchange before its collapse in 2014, but in 2010 it simply made buying and selling bitcoin easier.
+Jed McCaleb read about Bitcoin on Slashdot in July 2010 and decided the community needed a place to trade it for regular money. He reused a domain he already owned, mtgox.com, and launched its exchange and price service on 18 July 2010. It was not the first exchange: [Bitcoin Market had been matching buyers and sellers since March](/blog/first-bitcoin-exchange-2010). Mt. Gox went on to become the largest Bitcoin exchange before its collapse in 2014, but in 2010 it simply made buying and selling bitcoin easier.
 
 ### 15 August 2010: the value overflow incident
 
