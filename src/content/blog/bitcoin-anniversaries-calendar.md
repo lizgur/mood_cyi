@@ -56,8 +56,10 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 3 January | Genesis Day (also marked as Proof of Keys day) | 2009 |
 | 9 January | First Bitcoin software release | 2009 |
 | 12 January | First Bitcoin transaction, Satoshi to Hal Finney | 2009 |
+| 17 March | Bitcoin Market starts trading | 2010 |
 | 23–26 April | Satoshi's last known emails | 2011 |
 | 22 May | Bitcoin Pizza Day | 2010 |
+| 18 July | Mt. Gox opens | 2010 |
 | 18 August | bitcoin.org registered | 2008 |
 | 24 August | SegWit activated | 2017 |
 | 5 October | First dollar rate posted (NewLibertyStandard) | 2009 |
@@ -105,6 +107,14 @@ Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to anot
 ### 5 October: the first dollar rate
 
 On 5 October 2009, NewLibertyStandard published the first known dollar exchange rate for bitcoin: $1.00 = 1,309.03 BTC, based on the electricity cost of mining. Seven days later Martti Malmi sold 5,050 BTC for $5.02. The full story is in [Bitcoin's first price](/blog/first-bitcoin-price-2009).
+
+### 17 March: Bitcoin Market starts trading (2010)
+
+This is not an annual holiday. On 17 March 2010 Bitcoin Market began trading — the first order-book exchange, after NewLibertyStandard's one-desk posted rate. Four months later, on 18 July, Mt. Gox opened. Both dates, and who built them, are in [the first Bitcoin exchanges of 2010](/blog/first-bitcoin-exchange-2010).
+
+### 18 July: Mt. Gox opens (2010)
+
+This is not an annual holiday. Jed McCaleb launched Mt. Gox on 18 July 2010, announced the same day on Bitcointalk. It was not the first exchange. The March–July 2010 sequence is in [the first Bitcoin exchanges of 2010](/blog/first-bitcoin-exchange-2010).
 
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
