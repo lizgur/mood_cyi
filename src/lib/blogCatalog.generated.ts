@@ -27,6 +27,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "bitcoin-v0-1-release-2009",
+    "date": "2026-11-10",
+    "draft": false
+  },
+  {
     "slug": "bitcoin-value-overflow-incident-2010",
     "date": "2026-11-04",
     "draft": false

@@ -53,7 +53,7 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 18 Aug 2008 | The domain bitcoin.org is registered |
 | 31 Oct 2008 | Satoshi Nakamoto posts the Bitcoin Whitepaper to a cryptography mailing list |
 | 3 Jan 2009 | The genesis block (block 0) is mined, with a Times headline inside it |
-| 8 Jan 2009 | Satoshi announces Bitcoin v0.1 on the same mailing list |
+| 8 Jan 2009 | Satoshi announces [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009) on the same mailing list |
 | 9 Jan 2009 | The first open-source Bitcoin client is released on SourceForge |
 | 11 Jan 2009 (UTC) | [Hal Finney](/blog/hal-finney-first-bitcoin-transaction) posts "Running bitcoin" |
 | 12 Jan 2009 | The first Bitcoin transaction: 10 BTC from Satoshi to Hal Finney, in block 170 |
@@ -93,7 +93,7 @@ That is a real front-page headline from The Times of London on that day. It work
 
 Satoshi announced the software on the cryptography mailing list with an email titled "Bitcoin v0.1 released," dated 8 January 2009 at 19:27 UTC in the Satoshi Nakamoto Institute archive. It opens: "Announcing the first release of Bitcoin, a new electronic cash system that uses a peer-to-peer network to prevent double-spending."
 
-The first open-source client was published on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block.
+The first open-source client was published on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block. What the announcement said, the 21 million schedule, and how to check block 1 are in [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009).
 
 ### 11 January 2009: "Running bitcoin"
 
