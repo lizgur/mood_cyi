@@ -98,7 +98,7 @@ The bitcoin.org domain was registered on 18 August 2008, the first public trace 
 
 ### 9 January: the first release
 
-Satoshi announced Bitcoin v0.1 on the cryptography mailing list on 8 January 2009 (UTC), and the first open-source client went up on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block.
+Satoshi announced Bitcoin v0.1 on the cryptography mailing list on 8 January 2009 (UTC), and the first open-source client went up on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block. What the announcement said, and how to read block 1 today, is in [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009).
 
 ### 12 January: the first transaction
 
