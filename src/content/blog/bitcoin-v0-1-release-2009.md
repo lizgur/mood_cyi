@@ -38,7 +38,12 @@ after_faq: |
   - Satoshi Nakamoto Institute, [same email](https://satoshi.nakamotoinstitute.org/emails/cryptography/16/) (8 Jan 2009 19:27:40 UTC)
   - Wikipedia, [History of bitcoin](https://en.wikipedia.org/wiki/History_of_bitcoin) (first client released 9 Jan 2009 on SourceForge; Hal Finney downloaded it on release day; block 170 on 12 Jan)
   - Blockstream explorer, [block 1](https://blockstream.info/block/00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048) (timestamp 1231469665 = 9 Jan 2009 02:54:25 UTC)
-  - GitHub, bitcoin/bitcoin ["First commit"](https://github.com/bitcoin/bitcoin/commit/4405b78d6059e536c36974088a8ed4d9f0f29898) by sirius-m, 30 Aug 2009
+  - GitHub, bitcoin/bitcoin ["First commit"](https://github.com/bitcoin/bitcoin/commit/4405b78d6059e536c36974088a8ed4d9f0f29898), 30 Aug 2009 (git author name sirius-m; includes `nSubsidy >>= (nBestHeight / 210000)` in main.cpp)
+  - Bitcoin Core, [current mainnet defaults](https://github.com/bitcoin/bitcoin/blob/master/src/kernel/chainparams.cpp) (`nSubsidyHalvingInterval = 210000`, `nDefaultPort = 8333`)
+  - bitcoin.org, [*Running A Full Node*](https://bitcoin.org/en/full-node) (inbound connections on port 8333)
+  - Bitcoin Wiki, [*IP transaction*](https://en.bitcoin.it/wiki/IP_transaction) (feature removed as of Bitcoin Core 0.8.0; PR #1904)
+  - GitHub, bitcoin/bitcoin [PR #1904](https://github.com/bitcoin/bitcoin/pull/1904), *Remove send-to-IP and IP-transactions*
+  - Satoshi Nakamoto Institute, [Code](https://satoshi.nakamotoinstitute.org/code/) (hosts the original v0.1.0 rar and tgz archives)
 ---
 
 **Bitcoin went from paper to working software in January 2009. Satoshi Nakamoto announced "Bitcoin v0.1 released" to the Cryptography mailing list in an email dated 8 January 2009 (19:27 UTC), and most histories, including Wikipedia, give 9 January 2009 as the release date. It was a Windows-only download from SourceForge with the C++ source included. Block 1, the first block after the genesis block, was mined at 02:54:25 UTC on 9 January.**
@@ -68,14 +73,14 @@ The email is short and practical. In his words, Bitcoin was "a new electronic ca
 The setup was three lines: unpack the files, run `BITCOIN.EXE`, and it "automatically connects to other nodes." He added:
 
 - **Windows only for now.** Open-source C++ code was included in the download (`bitcoin-0.1.0.rar`).
-- **Port 8333.** Users who could accept incoming connections on port 8333 would be "helping the network a lot." Bitcoin still uses 8333 today.
+- **Port 8333.** Users who could accept incoming connections on port 8333 would be "helping the network a lot." Bitcoin Core's default mainnet P2P port is still 8333.
 - **Alpha software.** "There's no guarantee the system's state won't have to be restarted at some point."
 - **Mining was a menu option.** Options, then Generate Coins. Difficulty was "ridiculously easy to start with," so "a typical PC will be able to generate coins in just a few hours."
 - **120-block maturity.** Newly generated coins had to wait 120 blocks before they could be spent.
 
 ## Two ways to send money in v0.1
 
-v0.1 let you pay someone by **IP address**: if the recipient was online, your client connected to theirs, got a fresh public key and sent the transaction with a comment. The alternative was paying to a **Bitcoin address**, "a hash of their public key." Satoshi noted the trade-off: no comment travels with the payment, and "a bit of privacy may be lost if the address is used multiple times." Pay-to-IP has long since been removed; addresses won.
+v0.1 let you pay someone by **IP address**: if the recipient was online, your client connected to theirs, got a fresh public key and sent the transaction with a comment. The alternative was paying to a **Bitcoin address**, "a hash of their public key." Satoshi noted the trade-off: no comment travels with the payment, and "a bit of privacy may be lost if the address is used multiple times." Pay-to-IP was later removed from Bitcoin Core, as of version 0.8.0; addresses remained.
 
 ## The 21 million schedule, in the first email
 
@@ -86,7 +91,7 @@ The supply cap was in the very first release note: "Total circulation will be 21
 - next 4 years: 2,625,000 coins
 - next 4 years: 1,312,500 coins
 
-In the code the cut happens every 210,000 blocks rather than on a calendar date, which is why the [first halving](/blog/first-bitcoin-halving-2012) landed on 28 November 2012. Satoshi also wrote that once new coins run out, "the system can support transaction fees if needed."
+In the source, the cut happens every 210,000 blocks rather than on a calendar date (`nSubsidy >>= (nBestHeight / 210000)` already appears in the earliest commit in today's `bitcoin/bitcoin` history, dated 30 August 2009), which is why the [first halving](/blog/first-bitcoin-halving-2012) landed on 28 November 2012. Bitcoin Core still sets `consensus.nSubsidyHalvingInterval = 210000`. Satoshi also wrote that once new coins run out, "the system can support transaction fees if needed."
 
 ## Who ran it first
 
@@ -94,7 +99,7 @@ Hal Finney is the best-known early user. Wikipedia records that he downloaded th
 
 ## Can you see the v0.1 code today?
 
-The original release was distributed as a download on SourceForge, not on GitHub. The oldest commit in today's `bitcoin/bitcoin` GitHub history is titled "First commit" and dated 30 August 2009, months after v0.1, so the January 2009 files predate the repository's history there. Copies of the original source have been preserved by researchers, but treat any unofficial copy as a historical artifact, not software to run.
+The original release was distributed as a download on SourceForge, not on GitHub. The oldest commit in today's `bitcoin/bitcoin` GitHub history is titled "First commit," dated 30 August 2009, and recorded with the git author name sirius-m — months after v0.1, so the January 2009 files predate the repository's history there. The Satoshi Nakamoto Institute hosts copies of the original v0.1.0 archives (`bitcoin-0.1.0.rar` and `bitcoin-0.1.0.tgz`). Treat any unofficial copy as a historical artifact, not software to run.
 
 ## How to check block 1 yourself
 
