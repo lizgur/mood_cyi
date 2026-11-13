@@ -22,7 +22,7 @@ faqs:
   - title: "Why did Satoshi not want WikiLeaks to use Bitcoin?"
     content: "He said the project needed to grow gradually so the software could be strengthened, that WikiLeaks would get \"pocket change,\" and that \"the heat you would bring would likely destroy us at this stage.\""
   - title: "Is WikiLeaks the reason Satoshi disappeared?"
-    content: "Nobody knows. His last public post came one day after the hornet's nest message, and his last known emails were in April 2011, but he never gave WikiLeaks as a reason."
+    content: "Nobody knows. His last Bitcointalk post came one day after the hornet's nest message, and his last known emails were in April 2011, but he never gave WikiLeaks as a reason."
 after_faq: |
   ## Wear the history
 
@@ -32,8 +32,18 @@ after_faq: |
 
   ## Sources
 
-  - Satoshi Nakamoto Institute, [*Re: Wikileaks contact info?*](https://satoshi.nakamotoinstitute.org/posts/bitcointalk/523/), 5 Dec 2010
+  - WikiLeaks, [*Cablegate: 250,000 US Embassy Diplomatic Cables*](https://www.wikileaks.org/Cablegate-250-000-US-Embassy.html) (publication began 28 Nov 2010)
+  - Bitcointalk, [RHorning in *Wikileaks contact info?*](https://bitcointalk.org/index.php?topic=1735.msg26876#msg26876) (4 Dec 2010)
+  - Satoshi Nakamoto Institute, [*Re: Wikileaks contact info?*](https://satoshi.nakamotoinstitute.org/posts/bitcointalk/523/), 5 Dec 2010 (quotes RHorning's "bring it on" lines)
+  - Keir Thomas, [*Could the Wikileaks Scandal Lead to New Virtual Currency?*](https://www.pcworld.com/article/499375/could_wikileaks_scandal_lead_to_new_virtual_currency.html), PC World, 10 Dec 2010
+  - Bitcointalk thread, [*PC World Article on Bitcoin*](https://bitcointalk.org/index.php?topic=2216.0)
   - Satoshi Nakamoto Institute, [*Re: PC World Article on Bitcoin*](https://satoshi.nakamotoinstitute.org/posts/bitcointalk/542/), 11 Dec 2010
+  - Satoshi Nakamoto Institute, [*Added some DoS limits, removed safe mode (0.3.19)*](https://satoshi.nakamotoinstitute.org/posts/bitcointalk/543/), 12 Dec 2010, 18:22:33 UTC (last Bitcointalk post)
+  - Satoshi Nakamoto Institute, ["[bitcoin-list] Bitcoin 0.3.19 is released"](https://satoshi.nakamotoinstitute.org/emails/bitcoin-list/34/), 13 Dec 2010
+  - Bitcoin Core, version label "version %s%s beta" in the [12 Dec 2010 0.3.19-era tree](https://github.com/bitcoin/bitcoin/blob/97ee01ad898b0699c2319a1283313881ef4ba430/ui.cpp)
+  - Mike Hearn, [email thread including Satoshi's 23 Apr 2011 reply](https://plan99.net/~mike/satoshi-emails/thread5.html)
+  - Gavin Andresen, [*Eleven years ago today…*](https://web.archive.org/web/20230105061900/http://gavinandresen.ninja/eleven-years-ago-today) (publishes the 26 Apr 2011 alert-key email; archived)
+  - Satoshi Nakamoto, [*Bitcoin: A Peer-to-Peer Electronic Cash System*](https://bitcoin.org/bitcoin.pdf), Introduction
   - WikiLeaks, [*Banking Blockade and Donations Campaign* information pack](https://wikileaks.org/IMG/pdf/WikiLeaks-Banking-Blockade-Information-Pack.pdf)
   - The Guardian, [*WikiLeaks under attack: the definitive timeline*](https://www.theguardian.com/media/2010/dec/07/wikileaks-under-attack-definitive-timeline) (7 Dec 2010)
   - WikiLeaks tweet, 14 Jun 2011 ([archived](https://web.archive.org/web/20220622082156/twitter.com/wikileaks/status/80774521350668288))
@@ -46,7 +56,7 @@ after_faq: |
 
 | Date | What happened |
 |---|---|
-| 29 Nov 2010 | WikiLeaks begins publishing US diplomatic cables ("Cablegate") |
+| 28 Nov 2010 | WikiLeaks begins publishing US diplomatic cables ("Cablegate") |
 | 3–4 Dec 2010 | PayPal cuts off the account used for WikiLeaks donations |
 | 4 Dec 2010 | Forum user RHorning writes "Basically, bring it on" about WikiLeaks using bitcoin |
 | 5 Dec 2010, 09:08 UTC | Satoshi replies: "No, don't 'bring it on'" |
@@ -73,21 +83,21 @@ Satoshi answered the next morning, 5 December 2010 at 09:08 UTC:
 >
 > I make this appeal to WikiLeaks not to try to use Bitcoin. Bitcoin is a small beta community in its infancy. You would not stand to get more than pocket change, and the heat you would bring would likely destroy us at this stage.
 
-It is one of the few times Satoshi made a public appeal to an outside organization. His argument was practical, not political. Bitcoin was under two years old, the client was still labeled beta, and only a few months earlier the network had needed an emergency fix for the [184 billion bitcoin overflow bug](/blog/bitcoin-value-overflow-incident-2010). In his view, attention from governments would arrive before the software could take it.
+His argument was practical, not political. Bitcoin was under two years old, the 0.3.x client still labeled itself "beta," and in August 2010, only a few months earlier, the network had needed an emergency fix for the [184 billion bitcoin overflow bug](/blog/bitcoin-value-overflow-incident-2010). In his view, attention from governments would arrive before the software could take it.
 
 ## "Kicked the hornet's nest": the 11 December 2010 post
 
-A week later PC World ran an article that linked Bitcoin to the WikiLeaks fight. In the forum thread *PC World Article on Bitcoin*, Satoshi posted on 11 December 2010 at 23:39:16 UTC:
+On 10 December 2010, PC World published Keir Thomas's article "Could the Wikileaks Scandal Lead to New Virtual Currency?," which discussed Bitcoin as a way around the payment-service cuts. In the forum thread *PC World Article on Bitcoin*, Satoshi posted on 11 December 2010 at 23:39:16 UTC:
 
 > It would have been nice to get this attention in any other context. WikiLeaks has kicked the hornet's nest, and the swarm is headed towards us.
 
-That is the whole post: two sentences. It is often misquoted as Satoshi blaming WikiLeaks or praising it. He did neither. He said the attention was coming anyway, and that he would have preferred it came for some other reason.
+That is the whole post: two sentences. He did not blame WikiLeaks or praise it. He said he would have preferred the attention "in any other context."
 
 ## What happened right after
 
-On 12 December 2010, the day after the hornet's nest post, Satoshi published his last Bitcointalk message, the release notes for Bitcoin 0.3.19, which added denial-of-service limits and removed "safe mode." He kept emailing a few developers until April 2011, which we cover in [Satoshi's last message](/blog/satoshi-last-message-2011), but he never posted publicly again.
+On 12 December 2010, the day after the hornet's nest post, Satoshi published his last Bitcointalk message, the release notes for Bitcoin 0.3.19, which added denial-of-service limits and removed "safe mode" alerts. The next day he announced the same release on the bitcoin-list mailing list. He kept emailing a few developers until April 2011, which we cover in [Satoshi's last message](/blog/satoshi-last-message-2011), but he made no further forum posts.
 
-The timing is why many people link the two events. Satoshi never said WikiLeaks was the reason he stepped back, so treat that as a popular theory, not a documented fact. What the record does show is that his final public weeks were spent worrying about exactly this kind of attention.
+The timing is why many people connect the two events. In the writings we have, Satoshi never said WikiLeaks was why he stepped back, so that remains a theory, not a documented fact. What the public posts from those days do show is that he was worried about this kind of attention.
 
 ## When WikiLeaks finally accepted bitcoin
 
@@ -97,7 +107,7 @@ By then Satoshi was gone, and the network he had asked to "grow gradually" had t
 
 ## Why this moment still matters
 
-The WikiLeaks episode is one of the clearest real-world cases of the problem Bitcoin was designed for. The [whitepaper](/blog/bitcoin-whitepaper-explained) opens by describing commerce that relies "almost exclusively on financial institutions serving as trusted third parties." In December 2010 those third parties showed they could shut off payments to an organization in under a week. The [Genesis Block headline](/blog/genesis-block-message-chancellor-on-brink) was about banks; the hornet's nest line was about what happens when that idea meets the real world.
+The WikiLeaks episode is one of the clearest real-world cases of the problem Bitcoin was designed for. The [whitepaper](/blog/bitcoin-whitepaper-explained) Introduction opens: "Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments." In December 2010 those third parties showed they could shut off payments to an organization in under a week. The [genesis block](/blog/genesis-block-message-chancellor-on-brink) embeds the 3 January 2009 Times headline "Chancellor on brink of second bailout for banks"; the hornet's nest line was about what happens when that idea meets the real world.
 
 It also shows Satoshi's priorities. With an easy chance at publicity, he asked for less attention, not more, and put the software first.
 
