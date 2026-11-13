@@ -85,5 +85,10 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "slug": "satoshi-last-message-2011",
     "date": "2026-11-07",
     "draft": false
+  },
+  {
+    "slug": "satoshi-wikileaks-hornets-nest-2010",
+    "date": "2026-11-13",
+    "draft": false
   }
 ];

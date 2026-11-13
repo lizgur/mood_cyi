@@ -63,7 +63,9 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 22 May 2010 | Bitcoin Pizza Day: 10,000 BTC for two Papa John's pizzas |
 | 18 Jul 2010 | [Mt. Gox](/blog/first-bitcoin-exchange-2010) launches its Bitcoin exchange |
 | 15 Aug 2010 | The value overflow bug is exploited, then fixed within hours |
-| Dec 2010 | Satoshi's public involvement in development ends |
+| 5 Dec 2010 | Satoshi asks [WikiLeaks](/blog/satoshi-wikileaks-hornets-nest-2010) not to use Bitcoin |
+| 11–12 Dec 2010 | ["Hornet's nest" post](/blog/satoshi-wikileaks-hornets-nest-2010); last Bitcointalk message |
+| Dec 2010 | [Satoshi's public involvement](/blog/satoshi-wikileaks-hornets-nest-2010) in development ends |
 
 ## 2008: the idea
 
@@ -137,7 +139,7 @@ It's a useful reminder that early Bitcoin was experimental software, and that th
 
 ### December 2010: Satoshi steps back
 
-Satoshi was active in developing Bitcoin and posting on its forum until December 2010. After that, the work passed to other developers, with Gavin Andresen taking the lead. By then Bitcoin had a whitepaper, a running network, a first purchase and a first exchange, and it no longer needed its creator to keep going.
+Satoshi was active in developing Bitcoin and posting on its forum until December 2010. On 5 December he asked WikiLeaks not to use Bitcoin; on 11 December he wrote that it had "kicked the hornet's nest"; on 12 December he made his last Bitcointalk post. After that, the work passed to other developers, with Gavin Andresen taking the lead. By then Bitcoin had a whitepaper, a running network, a first purchase and a first exchange, and it no longer needed its creator to keep going. The quotes and dates are in [Satoshi and WikiLeaks](/blog/satoshi-wikileaks-hornets-nest-2010).
 
 ## Why these three dates matter to MOOD
 

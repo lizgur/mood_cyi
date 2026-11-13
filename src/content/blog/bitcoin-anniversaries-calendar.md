@@ -64,6 +64,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 24 August | SegWit activated | 2017 |
 | 5 October | First dollar rate posted (NewLibertyStandard) | 2009 |
 | 14 November | Taproot activated | 2021 |
+| 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
 | About every four years | Halving (no fixed date) | 2012 |
 
 ## The big three
@@ -116,13 +117,17 @@ This is not an annual holiday. On 17 March 2010 Bitcoin Market began trading —
 
 This is not an annual holiday. Jed McCaleb launched Mt. Gox on 18 July 2010, announced the same day on Bitcointalk. It was not the first exchange. The March–July 2010 sequence is in [the first Bitcoin exchanges of 2010](/blog/first-bitcoin-exchange-2010).
 
+### 5–12 December: Satoshi and WikiLeaks (2010)
+
+This is not an annual holiday. On 5 December 2010 Satoshi asked WikiLeaks not to use Bitcoin. On 11 December he wrote that WikiLeaks had "kicked the hornet's nest," and on 12 December he made his last Bitcointalk post. The quotes and dates are in [Satoshi and WikiLeaks](/blog/satoshi-wikileaks-hornets-nest-2010).
+
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
 ## Later milestones
 
 ### 23–26 April: Satoshi's last known emails (2011)
 
-This is not an annual holiday. On 23 April 2011 Satoshi told Mike Hearn he had "moved on to other things"; on 26 April he emailed Gavin Andresen the network alert key. His last public Bitcointalk post was earlier, on 12 December 2010, and a mailing-list 0.3.19 note followed the next day — so the forum post is not the end of all public communication. The emails, and that distinction, are in [Satoshi's last message](/blog/satoshi-last-message-2011).
+This is not an annual holiday. On 23 April 2011 Satoshi told Mike Hearn he had "moved on to other things"; on 26 April he emailed Gavin Andresen the network alert key. His last public Bitcointalk post was earlier, on [12 December 2010](/blog/satoshi-wikileaks-hornets-nest-2010), and a mailing-list 0.3.19 note followed the next day — so the forum post is not the end of all public communication. The emails, and that distinction, are in [Satoshi's last message](/blog/satoshi-last-message-2011).
 
 ### 24 August: SegWit activates (2017)
 
