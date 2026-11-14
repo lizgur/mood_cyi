@@ -62,6 +62,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "first-bitcoin-mining-pool-slush-2010",
+    "date": "2026-11-14",
+    "draft": false
+  },
+  {
     "slug": "first-bitcoin-price-2009",
     "date": "2026-11-05",
     "draft": false

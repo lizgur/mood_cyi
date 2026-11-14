@@ -63,8 +63,10 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 22 May 2010 | Bitcoin Pizza Day: 10,000 BTC for two Papa John's pizzas |
 | 18 Jul 2010 | [Mt. Gox](/blog/first-bitcoin-exchange-2010) launches its Bitcoin exchange |
 | 15 Aug 2010 | The value overflow bug is exploited, then fixed within hours |
+| 27 Nov 2010 | slush proposes [Cooperative mining](/blog/first-bitcoin-mining-pool-slush-2010), the first publicly known pool |
 | 5 Dec 2010 | Satoshi asks [WikiLeaks](/blog/satoshi-wikileaks-hornets-nest-2010) not to use Bitcoin |
 | 11–12 Dec 2010 | ["Hornet's nest" post](/blog/satoshi-wikileaks-hornets-nest-2010); last Bitcointalk message |
+| 16 Dec 2010 | [Slush Pool](/blog/first-bitcoin-mining-pool-slush-2010) mines block 97,834, the first known pool-mined block |
 | Dec 2010 | [Satoshi's public involvement](/blog/satoshi-wikileaks-hornets-nest-2010) in development ends |
 
 ## 2008: the idea
@@ -137,9 +139,17 @@ A bug in how the software added up transaction outputs let someone create bitcoi
 
 It's a useful reminder that early Bitcoin was experimental software, and that the network's rules held because people fixed problems in public.
 
+### 27 November 2010: Slush Pool is proposed
+
+On 27 November 2010, Bitcointalk user slush (Marek Palatinus) posted *Cooperative mining*, proposing a shared mining server so small miners could split block rewards. It is the first publicly known Bitcoin mining pool. The full story is in [the first Bitcoin mining pool](/blog/first-bitcoin-mining-pool-slush-2010).
+
 ### December 2010: Satoshi steps back
 
 Satoshi was active in developing Bitcoin and posting on its forum until December 2010. On 5 December he asked WikiLeaks not to use Bitcoin; on 11 December he wrote that it had "kicked the hornet's nest"; on 12 December he made his last Bitcointalk post. After that, the work passed to other developers, with Gavin Andresen taking the lead. By then Bitcoin had a whitepaper, a running network, a first purchase and a first exchange, and it no longer needed its creator to keep going. The quotes and dates are in [Satoshi and WikiLeaks](/blog/satoshi-wikileaks-hornets-nest-2010).
+
+### 16 December 2010: the first pool-mined block
+
+Five days after the hornet's nest post, Slush Pool found block 97,834 at 07:16:08 UTC, the first block known to be mined by a pool. It paid the 50 BTC reward to the pool, which split it among members. The on-chain details and the later rename to Braiins Pool are in [the first Bitcoin mining pool](/blog/first-bitcoin-mining-pool-slush-2010).
 
 ## Why these three dates matter to MOOD
 

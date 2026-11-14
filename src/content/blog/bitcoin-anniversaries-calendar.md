@@ -64,7 +64,9 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 24 August | SegWit activated | 2017 |
 | 5 October | First dollar rate posted (NewLibertyStandard) | 2009 |
 | 14 November | Taproot activated | 2021 |
+| 27 November | Slush Pool proposed | 2010 |
 | 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
+| 16 December | First pool-mined block (Slush Pool) | 2010 |
 | About every four years | Halving (no fixed date) | 2012 |
 
 ## The big three
@@ -117,9 +119,17 @@ This is not an annual holiday. On 17 March 2010 Bitcoin Market began trading —
 
 This is not an annual holiday. Jed McCaleb launched Mt. Gox on 18 July 2010, announced the same day on Bitcointalk. It was not the first exchange. The March–July 2010 sequence is in [the first Bitcoin exchanges of 2010](/blog/first-bitcoin-exchange-2010).
 
+### 27 November: Slush Pool proposed (2010)
+
+This is not an annual holiday. On 27 November 2010, forum user slush (Marek Palatinus) posted *Cooperative mining* on Bitcointalk, proposing a shared mining server. That pool became the first publicly known Bitcoin mining pool. The announcement, and the first pool-mined block three weeks later, are in [the first Bitcoin mining pool](/blog/first-bitcoin-mining-pool-slush-2010).
+
 ### 5–12 December: Satoshi and WikiLeaks (2010)
 
 This is not an annual holiday. On 5 December 2010 Satoshi asked WikiLeaks not to use Bitcoin. On 11 December he wrote that WikiLeaks had "kicked the hornet's nest," and on 12 December he made his last Bitcointalk post. The quotes and dates are in [Satoshi and WikiLeaks](/blog/satoshi-wikileaks-hornets-nest-2010).
+
+### 16 December: first pool-mined block (2010)
+
+This is not an annual holiday. On 16 December 2010 at 07:16:08 UTC, Slush Pool found block 97,834, the first block known to be mined by a pool. The on-chain timestamp, the forum posts, and the later Braiins Pool rename are in [the first Bitcoin mining pool](/blog/first-bitcoin-mining-pool-slush-2010).
 
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
