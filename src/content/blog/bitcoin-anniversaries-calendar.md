@@ -67,6 +67,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 27 November | Slush Pool proposed | 2010 |
 | 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
 | 16 December | First pool-mined block (Slush Pool) | 2010 |
+| 30 December | First difficulty adjustment | 2009 |
 | About every four years | Halving (no fixed date) | 2012 |
 
 ## The big three
@@ -110,6 +111,10 @@ Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to anot
 ### 5 October: the first dollar rate
 
 On 5 October 2009, NewLibertyStandard published the first known dollar exchange rate for bitcoin: $1.00 = 1,309.03 BTC, based on the electricity cost of mining. Seven days later Martti Malmi sold 5,050 BTC for $5.02. The full story is in [Bitcoin's first price](/blog/first-bitcoin-price-2009).
+
+### 30 December: first difficulty adjustment (2009)
+
+This is not an annual holiday. On 30 December 2009 at 06:11:04 UTC, block 32,256 was the first mined at a difficulty above 1, rising from 1.00 to about 1.18. Satoshi later wrote that this was the first automatic proof-of-work difficulty adjustment. The on-chain details are in [Bitcoin's first difficulty adjustment](/blog/first-bitcoin-difficulty-adjustment-2009).
 
 ### 17 March: Bitcoin Market starts trading (2010)
 

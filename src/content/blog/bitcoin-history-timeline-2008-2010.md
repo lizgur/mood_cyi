@@ -59,6 +59,7 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 | 12 Jan 2009 | The first Bitcoin transaction: 10 BTC from Satoshi to Hal Finney, in block 170 |
 | 5 Oct 2009 | [NewLibertyStandard](/blog/first-bitcoin-price-2009) posts the first dollar rate: $1 = 1,309.03 BTC |
 | 12 Oct 2009 | Martti Malmi sells 5,050 BTC for $5.02, the first known bitcoin-for-fiat trade |
+| 30 Dec 2009 | First difficulty adjustment, [block 32,256](/blog/first-bitcoin-difficulty-adjustment-2009): 1.00 to 1.18 |
 | 17 Mar 2010 | [Bitcoin Market](/blog/first-bitcoin-exchange-2010) starts trading, the first order-book exchange |
 | 22 May 2010 | Bitcoin Pizza Day: 10,000 BTC for two Papa John's pizzas |
 | 18 Jul 2010 | [Mt. Gox](/blog/first-bitcoin-exchange-2010) launches its Bitcoin exchange |
@@ -114,6 +115,10 @@ Other early supporters included Wei Dai, who designed the earlier b-money propos
 On [5 October 2009](/blog/first-bitcoin-price-2009), a pseudonymous early Bitcoiner called NewLibertyStandard published the first known dollar exchange rate: $1.00 = 1,309.03 BTC, about $0.00076 per coin. The number came from the electricity cost of mining, not from an order book.
 
 A week later, on 12 October 2009, Martti Malmi sold 5,050 BTC for $5.02 via PayPal, the first known bitcoin-for-fiat trade. Pizza Day was still 229 days away.
+
+### 30 December 2009: the first difficulty adjustment
+
+On 30 December 2009 at 06:11:04 UTC, block 32,256 was mined at a new difficulty of about 1.18, up from the minimum of 1.00. It was the first time the Whitepaper's difficulty rule made mining harder. Satoshi later wrote: "We had our first automatic adjustment of the proof-of-work difficulty on 30 Dec 2009." The full story is in [Bitcoin's first difficulty adjustment](/blog/first-bitcoin-difficulty-adjustment-2009).
 
 ## 2010: bitcoin meets the real world
 
