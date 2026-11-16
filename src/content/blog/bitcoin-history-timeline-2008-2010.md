@@ -50,7 +50,7 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 
 | Date | What happened |
 |---|---|
-| 18 Aug 2008 | The domain bitcoin.org is registered |
+| 18 Aug 2008 | The domain [bitcoin.org](/blog/bitcoin-org-domain-2008) is registered |
 | 31 Oct 2008 | Satoshi Nakamoto posts the Bitcoin Whitepaper to a cryptography mailing list |
 | 3 Jan 2009 | The genesis block (block 0) is mined, with a Times headline inside it |
 | 8 Jan 2009 | Satoshi announces [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009) on the same mailing list |
@@ -74,7 +74,7 @@ Below is each key moment from 2008 to 2010, with what happened and where you can
 
 ### 18 August 2008: bitcoin.org is registered
 
-The first public trace of Bitcoin is a domain name. bitcoin.org was registered on 18 August 2008, more than two months before anyone outside a small circle could have known what it was for.
+The first public trace of Bitcoin is a domain name. bitcoin.org was registered on 18 August 2008, more than two months before anyone outside a small circle could have known what it was for. The registry time, the Whitepaper link, and who owned the domain are in [when bitcoin.org was registered](/blog/bitcoin-org-domain-2008).
 
 ### 31 October 2008: the whitepaper
 

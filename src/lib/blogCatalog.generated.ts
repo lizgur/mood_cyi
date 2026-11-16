@@ -22,6 +22,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "bitcoin-org-domain-2008",
+    "date": "2026-11-16",
+    "draft": false
+  },
+  {
     "slug": "bitcoin-pizza-day-transaction",
     "date": "2026-10-27",
     "draft": false

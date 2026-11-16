@@ -98,7 +98,7 @@ On 22 May 2010, Laszlo Hanyecz paid 10,000 BTC to forum user jercos for two Papa
 
 ### 18 August: bitcoin.org is registered
 
-The bitcoin.org domain was registered on 18 August 2008, the first public trace of the project, more than two months before the whitepaper.
+The bitcoin.org domain was registered on 18 August 2008, the first public trace of the project, more than two months before the whitepaper. The registry time (13:19:55 UTC), the 74 days to the Whitepaper, and who owned it are in [when bitcoin.org was registered](/blog/bitcoin-org-domain-2008).
 
 ### 9 January: the first release
 
