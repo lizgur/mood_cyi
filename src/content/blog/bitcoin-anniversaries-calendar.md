@@ -64,6 +64,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 24 August | SegWit activated | 2017 |
 | 5 October | First dollar rate posted (NewLibertyStandard) | 2009 |
 | 14 November | Taproot activated | 2021 |
+| 22 November | BitcoinTalk founded | 2009 |
 | 27 November | Slush Pool proposed | 2010 |
 | 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
 | 16 December | First pool-mined block (Slush Pool) | 2010 |
@@ -111,6 +112,10 @@ Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to anot
 ### 5 October: the first dollar rate
 
 On 5 October 2009, NewLibertyStandard published the first known dollar exchange rate for bitcoin: $1.00 = 1,309.03 BTC, based on the electricity cost of mining. Seven days later Martti Malmi sold 5,050 BTC for $5.02. The full story is in [Bitcoin's first price](/blog/first-bitcoin-price-2009).
+
+### 22 November: BitcoinTalk founded (2009)
+
+This is not an annual holiday. On 22 November 2009 at 18:04:28 UTC, Satoshi Nakamoto opened the new Bitcoin forum with the post "Welcome to the new Bitcoin forum!" It ran at bitcoin.org/smf, hosted by Martti Malmi ("sirius"), and later moved to bitcointalk.org. The story is in [when BitcoinTalk was founded](/blog/bitcointalk-forum-founded-2009).
 
 ### 30 December: first difficulty adjustment (2009)
 

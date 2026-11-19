@@ -52,6 +52,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "bitcointalk-forum-founded-2009",
+    "date": "2026-11-19",
+    "draft": false
+  },
+  {
     "slug": "find-genesis-block-pizza-transaction-explorer",
     "date": "2026-11-01",
     "draft": false
