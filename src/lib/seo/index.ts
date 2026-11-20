@@ -1,5 +1,6 @@
 import config from "@/config/config.json";
 import social from "@/config/social.json";
+import { stripFootnoteMarkers } from "@/lib/sourceCitations";
 
 export const siteUrl = (process.env.SITE_URL || config.site.base_url).replace(
   /\/$/,
@@ -55,7 +56,10 @@ export const faqPageJsonLd = (
   mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.title,
-    acceptedAnswer: { "@type": "Answer", text: faq.content },
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: stripFootnoteMarkers(faq.content),
+    },
   })),
 });
 

@@ -1,3 +1,4 @@
+import { formatVisibleSourceCitations } from "@/lib/sourceCitations";
 import { markdownify } from "@/lib/utils/textConverter";
 
 export type FaqItem = { title: string; content: string };
@@ -15,7 +16,10 @@ const FaqList = ({ faqs }: { faqs: FaqItem[] }) => {
           </summary>
           <div
             className="p-4 bg-gray-50 rounded-b-lg"
-            dangerouslySetInnerHTML={markdownify(faq.content, true)}
+            dangerouslySetInnerHTML={markdownify(
+              formatVisibleSourceCitations(faq.content),
+              true,
+            )}
           />
         </details>
       ))}

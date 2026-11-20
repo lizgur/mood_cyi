@@ -103,11 +103,11 @@ The bitcoin.org domain was registered on 18 August 2008, the first public trace 
 
 ### 9 January: the first release
 
-Satoshi announced Bitcoin v0.1 on the cryptography mailing list on 8 January 2009 (UTC), and the first open-source client went up on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block. What the announcement said, and how to read block 1 today, is in [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009).
+Satoshi announced Bitcoin v0.1 on the cryptography mailing list on 8 January 2009 (UTC), and the first open-source client went up on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block. What the announcement said, and how to read block 1 today, is in [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009). Those first client-mined blocks are the ones later grouped as the [Patoshi pattern](/blog/patoshi-pattern-satoshi-coins).
 
 ### 12 January: the first transaction
 
-Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to another. It sits in block 170, timestamped 03:30 UTC on 12 January 2009. A day earlier, Finney had posted "Running bitcoin" on Twitter.
+Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to another. It sits in block 170, timestamped 03:30 UTC on 12 January 2009. A day earlier, Finney had posted "Running bitcoin" on Twitter. The 50 BTC spent in that payment came from block 9, which later [Patoshi pattern](/blog/patoshi-pattern-satoshi-coins) work places on the dominant early miner's ExtraNonce slopes.
 
 ### 5 October: the first dollar rate
 
@@ -119,7 +119,7 @@ This is not an annual holiday. On 22 November 2009 at 18:04:28 UTC, Satoshi Naka
 
 ### 30 December: first difficulty adjustment (2009)
 
-This is not an annual holiday. On 30 December 2009 at 06:11:04 UTC, block 32,256 was the first mined at a difficulty above 1, rising from 1.00 to about 1.18. Satoshi later wrote that this was the first automatic proof-of-work difficulty adjustment. The on-chain details are in [Bitcoin's first difficulty adjustment](/blog/first-bitcoin-difficulty-adjustment-2009).
+This is not an annual holiday. On 30 December 2009 at 06:11:04 UTC, block 32,256 was the first mined at a difficulty above 1, rising from 1.00 to about 1.18. Satoshi later wrote that this was the first automatic proof-of-work difficulty adjustment. The on-chain details are in [Bitcoin's first difficulty adjustment](/blog/first-bitcoin-difficulty-adjustment-2009). Until then, 2009 mining was so light that difficulty never left 1 — the window counted in the [Patoshi pattern](/blog/patoshi-pattern-satoshi-coins).
 
 ### 17 March: Bitcoin Market starts trading (2010)
 

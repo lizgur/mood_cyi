@@ -102,6 +102,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "patoshi-pattern-satoshi-coins",
+    "date": "2026-11-20",
+    "draft": false
+  },
+  {
     "slug": "satoshi-last-message-2011",
     "date": "2026-11-07",
     "draft": false
