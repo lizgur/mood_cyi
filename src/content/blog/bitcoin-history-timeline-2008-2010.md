@@ -99,7 +99,7 @@ That is a real front-page headline from The Times of London on that day. It work
 
 Satoshi announced the software on the cryptography mailing list with an email titled "Bitcoin v0.1 released," dated 8 January 2009 at 19:27 UTC in the Satoshi Nakamoto Institute archive. It opens: "Announcing the first release of Bitcoin, a new electronic cash system that uses a peer-to-peer network to prevent double-spending."
 
-The first open-source client was published on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block. What the announcement said, the 21 million schedule, and how to check block 1 are in [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009).
+The first open-source client was published on SourceForge on 9 January 2009. Block 1 followed that day, six days after the genesis block. What the announcement said, the 21 million schedule, and how to check block 1 are in [Bitcoin v0.1](/blog/bitcoin-v0-1-release-2009). Mining ran inside that client. A later fingerprint in those early blocks, the [Patoshi pattern](/blog/patoshi-pattern-satoshi-coins), is the usual source for estimates of how many of them one miner found.
 
 ### 11 January 2009: "Running bitcoin"
 
@@ -107,7 +107,7 @@ Hal Finney, a cryptographer and one of the first people to run the software, pos
 
 ### 12 January 2009: the first Bitcoin transaction
 
-Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to another on the network. It was recorded in block 170.
+Satoshi sent 10 BTC to Hal Finney, the first transaction from one person to another on the network. It was recorded in block 170. The coins came from the block 9 coinbase; later [Patoshi pattern](/blog/patoshi-pattern-satoshi-coins) work puts block 9 on the dominant early miner's ExtraNonce slopes.
 
 Other early supporters included Wei Dai, who designed the earlier b-money proposal, and Nick Szabo, who designed bit gold. Both ideas fed into the thinking Bitcoin drew on.
 
@@ -123,7 +123,7 @@ On 22 November 2009 at 18:04:28 UTC, Satoshi Nakamoto opened a new Bitcoin forum
 
 ### 30 December 2009: the first difficulty adjustment
 
-On 30 December 2009 at 06:11:04 UTC, block 32,256 was mined at a new difficulty of about 1.18, up from the minimum of 1.00. It was the first time the Whitepaper's difficulty rule made mining harder. Satoshi later wrote: "We had our first automatic adjustment of the proof-of-work difficulty on 30 Dec 2009." The full story is in [Bitcoin's first difficulty adjustment](/blog/first-bitcoin-difficulty-adjustment-2009).
+On 30 December 2009 at 06:11:04 UTC, block 32,256 was mined at a new difficulty of about 1.18, up from the minimum of 1.00. It was the first time the Whitepaper's difficulty rule made mining harder. Satoshi later wrote: "We had our first automatic adjustment of the proof-of-work difficulty on 30 Dec 2009." The full story is in [Bitcoin's first difficulty adjustment](/blog/first-bitcoin-difficulty-adjustment-2009). Until that date, 2009 hash rate was so low that difficulty never left 1 — the early-mining window counted in the [Patoshi pattern](/blog/patoshi-pattern-satoshi-coins).
 
 ## 2010: bitcoin meets the real world
 
