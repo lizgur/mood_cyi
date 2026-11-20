@@ -1,3 +1,4 @@
+import { formatVisibleSourceCitations } from "@/lib/sourceCitations";
 import shortcodes from "@/shortcodes/all";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -10,12 +11,16 @@ const MDXContent = ({ content }: { content: any }) => {
   const mdxOptions: IMdxOptions = {
     remarkPlugins: [remarkGfm],
   };
+  const source =
+    typeof content === "string"
+      ? formatVisibleSourceCitations(content)
+      : content;
 
   return (
     <>
       {/* @ts-ignore */}
       <MDXRemote
-        source={content}
+        source={source}
         components={shortcodes}
         options={{ mdxOptions }}
       />
