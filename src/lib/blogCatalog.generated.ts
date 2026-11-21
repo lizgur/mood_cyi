@@ -12,6 +12,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "bitcoin-chain-fork-march-2013",
+    "date": "2026-11-21",
+    "draft": false
+  },
+  {
     "slug": "bitcoin-gift-ideas",
     "date": "2026-10-30",
     "draft": false

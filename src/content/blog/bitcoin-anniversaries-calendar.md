@@ -56,6 +56,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 3 January | Genesis Day (also marked as Proof of Keys day) | 2009 |
 | 9 January | First Bitcoin software release | 2009 |
 | 12 January | First Bitcoin transaction, Satoshi to Hal Finney | 2009 |
+| 11–12 March | 2013 chain fork | 2013 |
 | 17 March | Bitcoin Market starts trading | 2010 |
 | 23–26 April | Satoshi's last known emails | 2011 |
 | 22 May | Bitcoin Pizza Day | 2010 |
@@ -144,6 +145,10 @@ This is not an annual holiday. On 16 December 2010 at 07:16:08 UTC, Slush Pool f
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
 ## Later milestones
+
+### 11–12 March: the 2013 chain fork
+
+This is not an annual holiday. On 11–12 March 2013, block 225,430 split Bitcoin into two chains for several hours: Bitcoin 0.8 accepted the block, many 0.7 and older nodes rejected it. The old chain overtook at block 225,455 on 12 March. The night, the rollback, BIP 50 and the OKPay double spend are in [the Bitcoin 2013 fork](/blog/bitcoin-chain-fork-march-2013).
 
 ### 23–26 April: Satoshi's last known emails (2011)
 
