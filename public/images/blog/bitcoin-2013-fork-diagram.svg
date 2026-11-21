@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 460" role="img" aria-labelledby="fork-title fork-desc">
+  <title id="fork-title">March 2013 Bitcoin chain split</title>
+  <desc id="fork-desc">After block 225,429 the chain forks into a v0.8 branch starting with a large block 225,430 at 22:39:09 UTC on 11 March, and a v0.7 / pre-0.8 branch with block 225,430 at 23:24:19 UTC that overtakes at block 225,455 at 06:20:04 UTC on 12 March.</desc>
+  <rect width="860" height="460" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">March 2013 chain split</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">shared chain up to 225,429, then two branches</text>
+
+  <line x1="36" y1="230" x2="210" y2="230" stroke="#300B6A" stroke-width="4"/>
+  <circle cx="36" cy="230" r="6" fill="#300B6A"/>
+  <rect x="78" y="198" width="132" height="64" rx="8" fill="#f2f2f2" stroke="#300B6A" stroke-width="2"/>
+  <text x="144" y="224" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">225,429</text>
+  <text x="144" y="244" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="11" fill="#666666">shared chain</text>
+
+  <path d="M210 230 C270 230 270 120 330 120" fill="none" stroke="#9658F9" stroke-width="3"/>
+  <path d="M210 230 C270 230 270 320 330 320" fill="none" stroke="#5C7515" stroke-width="3"/>
+
+  <line x1="330" y1="120" x2="820" y2="120" stroke="#9658F9" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="340" y="78" width="250" height="84" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="465" y="102" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#9658F9">v0.8 branch</text>
+  <text x="465" y="122" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">large block 225,430</text>
+  <text x="465" y="142" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">22:39:09 UTC, 11 Mar</text>
+  <text x="700" y="116" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#9658F9">abandoned</text>
+
+  <line x1="330" y1="320" x2="590" y2="320" stroke="#5C7515" stroke-width="3"/>
+  <rect x="340" y="278" width="250" height="84" rx="8" fill="#ffffff" stroke="#5C7515" stroke-width="2"/>
+  <text x="465" y="302" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#5C7515">v0.7 / pre-0.8</text>
+  <text x="465" y="322" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">block 225,430</text>
+  <text x="465" y="342" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">23:24:19 UTC, 11 Mar</text>
+
+  <line x1="590" y1="320" x2="820" y2="320" stroke="#5C7515" stroke-width="3"/>
+  <rect x="610" y="278" width="210" height="84" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="715" y="306" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">225,455 overtakes</text>
+  <text x="715" y="328" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">06:20:04 UTC, 12 Mar</text>
+</svg>

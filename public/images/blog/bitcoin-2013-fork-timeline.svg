@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 800" role="img" aria-labelledby="tl-title tl-desc">
+  <title id="tl-title">March 2013 Bitcoin fork timeline (UTC)</title>
+  <desc id="tl-desc">Timeline of the March 2013 Bitcoin fork in UTC, from the large block at 22:39 on 11 March to the old chain overtaking at 06:20 on 12 March.</desc>
+  <rect width="860" height="800" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">March 2013 fork timeline (UTC)</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">from the large block at 22:39 on 11 March to the old chain overtaking at 06:20 on 12 March</text>
+
+  <line x1="196" y1="88" x2="196" y2="768" stroke="#eaeaea" stroke-width="3"/>
+
+  <circle cx="196" cy="118" r="8" fill="#9658F9"/>
+  <text x="24" y="114" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">11 Mar</text>
+  <text x="24" y="132" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">22:39:09</text>
+  <text x="220" y="122" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Large block 225,430 mined on the 0.8 side</text>
+
+  <circle cx="196" cy="208" r="8" fill="#5C7515"/>
+  <text x="24" y="196" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">11 Mar</text>
+  <text x="24" y="214" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">23:24:19</text>
+  <text x="220" y="196" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">A different block 225,430 (797 transactions, 249 KB)</text>
+  <text x="220" y="214" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">is mined on the side old nodes accept. This is the one that survives</text>
+
+  <circle cx="196" cy="288" r="8" fill="#9658F9"/>
+  <text x="24" y="284" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">~11 Mar</text>
+  <text x="24" y="302" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">23:30</text>
+  <text x="220" y="292" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Fork first noticed on the #bitcoin-dev IRC channel</text>
+
+  <circle cx="196" cy="378" r="8" fill="#5C7515"/>
+  <text x="24" y="366" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">12 Mar</text>
+  <text x="24" y="384" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">00:30–00:45</text>
+  <text x="220" y="366" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">BTC Guild's operator starts rolling back to 0.7,</text>
+  <text x="220" y="384" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">and developers agree to prefer the 0.7 chain</text>
+
+  <circle cx="196" cy="478" r="8" fill="#9658F9"/>
+  <text x="24" y="474" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">12 Mar</text>
+  <text x="24" y="492" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">01:29:57</text>
+  <text x="220" y="466" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Pieter Wuille's alert on BitcoinTalk:</text>
+  <text x="220" y="484" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">"If you're a miner, please do not mine on 0.8 code.</text>
+  <text x="220" y="502" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Stop, or switch back to 0.7."</text>
+
+  <circle cx="196" cy="568" r="8" fill="#9658F9"/>
+  <text x="24" y="564" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">12 Mar</text>
+  <text x="24" y="582" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">~02:00</text>
+  <text x="220" y="572" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">The 0.8 chain's lead peaks at about 13 blocks</text>
+
+  <circle cx="196" cy="648" r="8" fill="#5C7515"/>
+  <text x="24" y="644" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">12 Mar</text>
+  <text x="24" y="662" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">06:19:32</text>
+  <text x="220" y="652" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">The old chain draws level at block 225,454</text>
+
+  <circle cx="196" cy="728" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="24" y="724" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">12 Mar</text>
+  <text x="24" y="742" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">06:20:04</text>
+  <text x="220" y="724" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Block 225,455 puts the old chain ahead,</text>
+  <text x="220" y="742" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">and 0.8 nodes reorganise onto it</text>
+</svg>
