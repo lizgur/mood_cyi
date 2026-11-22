@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" role="img" aria-labelledby="tl-title tl-desc">
+  <title id="tl-title">First bitcoin ATM timeline, 2013</title>
+  <desc id="tl-desc">Timeline of the first bitcoin ATM, from Bitcoiniacs ordering five Robocoin machines in September 2013 to the Vancouver launch on 28–29 October 2013 and CA$1 million in volume by late November.</desc>
+  <rect width="860" height="480" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">First bitcoin ATM timeline (2013)</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">five Robocoin machines ordered in September, Vancouver launch 28–29 October, CA$1 million by late November</text>
+
+  <line x1="196" y1="88" x2="196" y2="448" stroke="#eaeaea" stroke-width="3"/>
+
+  <circle cx="196" cy="128" r="8" fill="#9658F9"/>
+  <text x="24" y="124" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">Sep 2013</text>
+  <text x="220" y="118" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Bitcoiniacs orders five Robocoin machines</text>
+  <text x="220" y="136" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">$18,500 each; Vancouver first, then four more cities</text>
+
+  <circle cx="196" cy="218" r="8" fill="#5C7515"/>
+  <text x="24" y="206" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">28 Oct</text>
+  <text x="24" y="224" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">evening</text>
+  <text x="220" y="206" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">First working use at Waves Coffee, Vancouver</text>
+  <text x="220" y="224" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Installed that Monday; first customer that evening</text>
+
+  <circle cx="196" cy="318" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="24" y="306" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">29 Oct</text>
+  <text x="24" y="324" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">9 a.m.</text>
+  <text x="220" y="306" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Official public opening</text>
+  <text x="220" y="324" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Howe and Smithe streets, downtown Vancouver</text>
+
+  <circle cx="196" cy="418" r="8" fill="#9658F9"/>
+  <text x="24" y="406" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">late Nov</text>
+  <text x="24" y="424" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">29 days</text>
+  <text x="220" y="406" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">More than CA$1 million in volume</text>
+  <text x="220" y="424" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">More than 1,500 transactions (company figures)</text>
+</svg>

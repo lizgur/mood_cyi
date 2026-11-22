@@ -64,6 +64,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 18 August | bitcoin.org registered | 2008 |
 | 24 August | SegWit activated | 2017 |
 | 5 October | First dollar rate posted (NewLibertyStandard) | 2009 |
+| 29 October | First public bitcoin ATM, Vancouver | 2013 |
 | 14 November | Taproot activated | 2021 |
 | 22 November | BitcoinTalk founded | 2009 |
 | 27 November | Slush Pool proposed | 2010 |
@@ -157,6 +158,10 @@ This is not an annual holiday. On 23 April 2011 Satoshi told Mike Hearn he had "
 ### 24 August: SegWit activates (2017)
 
 Segregated Witness, a soft-fork upgrade that changed how transaction signatures are stored and paved the way for second-layer tools like the Lightning Network, activated on 24 August 2017 at block 481,824.
+
+### 29 October: the first public bitcoin ATM (2013)
+
+This is not an annual holiday. On 29 October 2013, the first public bitcoin ATM opened at Waves Coffee House in Vancouver. It was a two-way Robocoin machine run by Bitcoiniacs. How it worked, the first customer, and what came next are in [the first bitcoin ATM](/blog/first-bitcoin-atm-2013).
 
 ### 14 November: Taproot activates (2021)
 

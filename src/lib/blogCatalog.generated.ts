@@ -67,6 +67,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "first-bitcoin-atm-2013",
+    "date": "2026-11-22",
+    "draft": false
+  },
+  {
     "slug": "first-bitcoin-difficulty-adjustment-2009",
     "date": "2026-11-15",
     "draft": false

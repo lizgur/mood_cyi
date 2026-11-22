@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" role="img" aria-labelledby="atm-title atm-desc">
+  <title id="atm-title">How the 2013 Robocoin ATM worked</title>
+  <desc id="atm-desc">Simple diagram of how the 2013 Robocoin ATM worked: palm scan, cash in or out, trade on a back-end exchange, bitcoin sent to or from the user's wallet, with a C$3,000 daily limit.</desc>
+  <rect width="860" height="340" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">How the 2013 Robocoin ATM worked</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">two-way cash for bitcoin, palm scan, C$3,000 daily limit</text>
+
+  <rect x="24" y="100" width="178" height="96" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="113" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#9658F9">Palm scan</text>
+  <text x="113" y="162" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">unique ID</text>
+  <text x="113" y="180" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">no card needed</text>
+
+  <path d="M202 148 H238" stroke="#300B6A" stroke-width="2"/>
+  <polygon points="238,142 250,148 238,154" fill="#300B6A"/>
+
+  <rect x="250" y="100" width="178" height="96" rx="8" fill="#ffffff" stroke="#5C7515" stroke-width="2"/>
+  <text x="339" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#5C7515">Cash in or out</text>
+  <text x="339" y="162" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">two-way, cash only</text>
+  <text x="339" y="180" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">QR code for cash out</text>
+
+  <path d="M428 148 H464" stroke="#300B6A" stroke-width="2"/>
+  <polygon points="464,142 476,148 464,154" fill="#300B6A"/>
+
+  <rect x="476" y="100" width="178" height="96" rx="8" fill="#ffffff" stroke="#300B6A" stroke-width="2"/>
+  <text x="565" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Back-end exchange</text>
+  <text x="565" y="162" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">trade in real time</text>
+  <text x="565" y="180" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">cash for bitcoin</text>
+
+  <path d="M654 148 H690" stroke="#300B6A" stroke-width="2"/>
+  <polygon points="690,142 702,148 690,154" fill="#300B6A"/>
+
+  <rect x="702" y="100" width="134" height="96" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="769" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">User wallet</text>
+  <text x="769" y="162" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">bitcoin in</text>
+  <text x="769" y="180" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">or bitcoin out</text>
+
+  <rect x="24" y="236" width="812" height="72" rx="8" fill="#f2f2f2" stroke="#300B6A" stroke-width="2"/>
+  <text x="430" y="268" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">C$3,000 daily limit</text>
+  <text x="430" y="290" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">palm scan matched against a database so nobody could trade more than C$3,000 a day</text>
+</svg>
