@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" role="img" aria-labelledby="cmp-title cmp-desc">
+  <title id="cmp-title">Bitcoin at three moments: 2009, 2010, 2013</title>
+  <desc id="cmp-desc">Comparison chart of bitcoin's dollar price at three moments: 1,309.03 BTC per dollar in October 2009, 10,000 BTC for two pizzas in May 2010, and $1,000 per BTC in November 2013.</desc>
+  <rect width="860" height="340" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Three moments, three different units</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">side-by-side facts, not a scaled chart: October 2009, May 2010, November 2013</text>
+
+  <rect x="24" y="88" width="260" height="216" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="154" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#9658F9">October 2009</text>
+  <text x="154" y="168" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="20" fill="#300B6A">1,309.03 BTC</text>
+  <text x="154" y="196" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">per $1</text>
+  <text x="154" y="236" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">first published</text>
+  <text x="154" y="256" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">dollar exchange rate</text>
+
+  <rect x="300" y="88" width="260" height="216" rx="8" fill="#ffffff" stroke="#5C7515" stroke-width="2"/>
+  <text x="430" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#5C7515">May 2010</text>
+  <text x="430" y="168" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="20" fill="#300B6A">10,000 BTC</text>
+  <text x="430" y="196" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">for two pizzas</text>
+  <text x="430" y="236" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Laszlo Hanyecz</text>
+  <text x="430" y="256" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">22 May 2010</text>
+
+  <rect x="576" y="88" width="260" height="216" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="706" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">November 2013</text>
+  <text x="706" y="168" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="20" fill="#300B6A">$1,000</text>
+  <text x="706" y="196" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">per BTC</text>
+  <text x="706" y="236" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Mt. Gox</text>
+  <text x="706" y="256" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">27 November 2013</text>
+</svg>
