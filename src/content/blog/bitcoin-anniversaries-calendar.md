@@ -68,6 +68,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 14 November | Taproot activated | 2021 |
 | 22 November | BitcoinTalk founded | 2009 |
 | 27 November | Slush Pool proposed | 2010 |
+| 27 November | Bitcoin first hits $1,000 on Mt. Gox | 2013 |
 | 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
 | 16 December | First pool-mined block (Slush Pool) | 2010 |
 | 30 December | First difficulty adjustment | 2009 |
@@ -166,6 +167,10 @@ This is not an annual holiday. On 29 October 2013, the first public bitcoin ATM 
 ### 14 November: Taproot activates (2021)
 
 Taproot, the upgrade that added Schnorr signatures and more flexible, more private spending conditions, activated at block 709,632. That block is timestamped 05:15 UTC on 14 November 2021.
+
+### 27 November: bitcoin first hits $1,000 on Mt. Gox (2013)
+
+This is not an annual holiday. On 27 November 2013, bitcoin first traded at $1,000 on Mt. Gox, then the world's largest bitcoin-to-dollar exchange. The Senate hearing, the BTC China yuan equivalent, the $1,242 high two days later, and China's bank ban are in [when bitcoin first hit $1,000](/blog/bitcoin-1000-dollars-2013).
 
 ### The halvings (moving dates)
 
