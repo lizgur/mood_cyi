@@ -10,7 +10,7 @@
   <circle cx="196" cy="128" r="8" fill="#9658F9"/>
   <text x="24" y="124" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">6 Nov</text>
   <text x="24" y="142" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2013</text>
-  <text x="220" y="124" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">$300 on Mt. Gox</text>
+  <text x="220" y="124" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">$300</text>
   <text x="220" y="142" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">the November rally reaches $300</text>
 
   <circle cx="196" cy="218" r="8" fill="#5C7515"/>
@@ -21,7 +21,7 @@
   <circle cx="196" cy="318" r="8" fill="#9658F9"/>
   <text x="24" y="314" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">18 Nov</text>
   <text x="220" y="306" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">US Senate hearing on virtual currencies</text>
-  <text x="220" y="324" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">the Senate's first hearing on bitcoin</text>
+  <text x="220" y="324" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">first Senate hearing on virtual currencies</text>
 
   <circle cx="196" cy="418" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
   <text x="24" y="406" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">27 Nov</text>
