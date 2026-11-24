@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" role="img" aria-labelledby="cmp-title cmp-desc">
+  <title id="cmp-title">What China's 2013 notice allowed and barred</title>
+  <desc id="cmp-desc">Table comparing what China's 2013 notice allowed and barred: banks and payment institutions barred from bitcoin pricing, trading, insurance and custody; individuals free to trade at their own risk; exchange websites told to register with telecom regulators</desc>
+  <rect width="860" height="360" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">What China's 2013 notice allowed and barred</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">banks and payment institutions barred; individuals free to trade at their own risk</text>
+
+  <rect x="24" y="88" width="260" height="232" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="154" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#9658F9">Barred</text>
+  <text x="154" y="168" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">banks and payment</text>
+  <text x="154" y="188" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">institutions</text>
+  <text x="154" y="228" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">bitcoin pricing, trading,</text>
+  <text x="154" y="248" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">insurance and custody</text>
+
+  <rect x="300" y="88" width="260" height="232" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="430" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Allowed</text>
+  <text x="430" y="168" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="20" fill="#300B6A">individuals</text>
+  <text x="430" y="204" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">free to trade</text>
+  <text x="430" y="228" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">at their own risk</text>
+
+  <rect x="576" y="88" width="260" height="232" rx="8" fill="#ffffff" stroke="#5C7515" stroke-width="2"/>
+  <text x="706" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#5C7515">Exchange websites</text>
+  <text x="706" y="168" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">told to register</text>
+  <text x="706" y="196" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">with telecom regulators</text>
+</svg>

@@ -70,6 +70,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 27 November | Slush Pool proposed | 2010 |
 | 27 November | Bitcoin first hits $1,000 on Mt. Gox | 2013 |
 | 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
+| 5 December | China's first bitcoin ban (PBoC bars banks) | 2013 |
 | 16 December | First pool-mined block (Slush Pool) | 2010 |
 | 30 December | First difficulty adjustment | 2009 |
 | About every four years | Halving (no fixed date) | 2012 |
@@ -171,6 +172,10 @@ Taproot, the upgrade that added Schnorr signatures and more flexible, more priva
 ### 27 November: bitcoin first hits $1,000 on Mt. Gox (2013)
 
 This is not an annual holiday. On 27 November 2013, bitcoin first traded at $1,000 on Mt. Gox, then the world's largest bitcoin-to-dollar exchange. The Senate hearing, the BTC China yuan equivalent, the $1,242 high two days later, and China's bank ban are in [when bitcoin first hit $1,000](/blog/bitcoin-1000-dollars-2013).
+
+### 5 December: China bars banks from bitcoin (2013)
+
+This is not an annual holiday. On 5 December 2013, the People's Bank of China and four other regulators published a notice that barred China's financial institutions and payment companies from bitcoin business. The notice, the price reaction, and BTC China's yuan-deposit halt are in [China's first bitcoin ban](/blog/china-bitcoin-ban-december-2013).
 
 ### The halvings (moving dates)
 
