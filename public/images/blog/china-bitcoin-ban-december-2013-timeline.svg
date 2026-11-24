@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" role="img" aria-labelledby="tl-title tl-desc">
+  <title id="tl-title">China's December 2013 bitcoin crackdown</title>
+  <desc id="tl-desc">Timeline of China's December 2013 bitcoin crackdown: notice signed 3 December, published 5 December, Baidu Jiasule stops accepting bitcoin by 7 December, PBoC meets payment firms 16 December, BTC China halts yuan deposits 18 December</desc>
+  <rect width="860" height="560" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">China's December 2013 bitcoin crackdown</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">notice signed 3 December, published 5 December, Baidu Jiasule stops accepting bitcoin by 7 December</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">PBoC meets payment firms 16 December, BTC China halts yuan deposits 18 December</text>
+
+  <line x1="196" y1="100" x2="196" y2="528" stroke="#eaeaea" stroke-width="3"/>
+
+  <circle cx="196" cy="128" r="8" fill="#9658F9"/>
+  <text x="24" y="124" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">3 Dec</text>
+  <text x="24" y="142" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2013</text>
+  <text x="220" y="124" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">notice signed</text>
+  <text x="220" y="142" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">3 December</text>
+
+  <circle cx="196" cy="218" r="8" fill="#5C7515"/>
+  <text x="24" y="214" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">5 Dec</text>
+  <text x="24" y="232" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2013</text>
+  <text x="220" y="214" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">published</text>
+  <text x="220" y="232" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">5 December</text>
+
+  <circle cx="196" cy="318" r="8" fill="#9658F9"/>
+  <text x="24" y="314" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">7 Dec</text>
+  <text x="24" y="332" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2013</text>
+  <text x="220" y="314" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Baidu Jiasule stops accepting bitcoin</text>
+  <text x="220" y="332" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">by 7 December</text>
+
+  <circle cx="196" cy="418" r="8" fill="#9658F9"/>
+  <text x="24" y="414" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">16 Dec</text>
+  <text x="24" y="432" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2013</text>
+  <text x="220" y="414" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">PBoC meets payment firms</text>
+  <text x="220" y="432" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">16 December</text>
+
+  <circle cx="196" cy="508" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="24" y="504" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">18 Dec</text>
+  <text x="24" y="522" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2013</text>
+  <text x="220" y="504" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">BTC China halts yuan deposits</text>
+  <text x="220" y="522" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">18 December</text>
+</svg>

@@ -67,6 +67,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "china-bitcoin-ban-december-2013",
+    "date": "2026-11-24",
+    "draft": false
+  },
+  {
     "slug": "find-genesis-block-pizza-transaction-explorer",
     "date": "2026-11-01",
     "draft": false
