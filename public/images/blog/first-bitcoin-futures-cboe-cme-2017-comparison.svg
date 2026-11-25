@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" role="img" aria-labelledby="cmp-title cmp-desc">
+  <title id="cmp-title">Cboe XBT vs CME BTC, December 2017</title>
+  <desc id="cmp-desc">Table comparing Cboe XBT and CME BTC bitcoin futures in December 2017: launch date, ticker, contract size of 1 bitcoin versus 5 bitcoin, Gemini auction versus CME CF Bitcoin Reference Rate settlement, first-day settlement prices</desc>
+  <rect width="860" height="500" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Cboe XBT vs CME BTC, December 2017</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">launch date, ticker, contract size of 1 bitcoin versus 5 bitcoin</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Gemini auction versus CME CF Bitcoin Reference Rate settlement, first-day settlement prices</text>
+
+  <rect x="24" y="96" width="396" height="380" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="222" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#9658F9">Cboe XBT</text>
+  <text x="222" y="160" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Launch date</text>
+  <text x="222" y="180" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">10 Dec 2017, 5:00 p.m. CT</text>
+  <text x="222" y="216" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Ticker</text>
+  <text x="222" y="236" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">XBT</text>
+  <text x="222" y="272" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Contract size</text>
+  <text x="222" y="292" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">1 bitcoin</text>
+  <text x="222" y="328" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Settlement</text>
+  <text x="222" y="348" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">Gemini auction</text>
+  <text x="222" y="384" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">First-day settlement</text>
+  <text x="222" y="404" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">$18,545</text>
+  <text x="222" y="424" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Jan contract, 11 Dec</text>
+
+  <rect x="440" y="96" width="396" height="380" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="638" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">CME BTC</text>
+  <text x="638" y="160" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Launch date</text>
+  <text x="638" y="180" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">17 Dec 2017</text>
+  <text x="638" y="216" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Ticker</text>
+  <text x="638" y="236" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">BTC</text>
+  <text x="638" y="272" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Contract size</text>
+  <text x="638" y="292" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">5 bitcoin</text>
+  <text x="638" y="328" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Settlement</text>
+  <text x="638" y="348" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">CME CF Bitcoin Reference Rate</text>
+  <text x="638" y="384" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">First-day settlement</text>
+  <text x="638" y="404" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">$19,100</text>
+  <text x="638" y="424" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Jan contract, 18 Dec</text>
+</svg>

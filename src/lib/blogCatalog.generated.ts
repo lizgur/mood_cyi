@@ -92,6 +92,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "first-bitcoin-futures-cboe-cme-2017",
+    "date": "2026-11-25",
+    "draft": false
+  },
+  {
     "slug": "first-bitcoin-halving-2012",
     "date": "2026-11-06",
     "draft": false

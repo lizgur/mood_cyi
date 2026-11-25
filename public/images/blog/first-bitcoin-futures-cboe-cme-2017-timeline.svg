@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" role="img" aria-labelledby="tl-title tl-desc">
+  <title id="tl-title">The first bitcoin futures</title>
+  <desc id="tl-desc">Timeline of the first bitcoin futures: 1 December 2017 CME and CFE self-certify with the CFTC, 4 December Cboe sets its date, 10 December Cboe XBT opens at 5 p.m. CT, 17 December CME BTC opens, 14 March 2019 Cboe stops adding XBT contracts</desc>
+  <rect width="860" height="560" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">The first bitcoin futures</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">1 December 2017 CME and CFE self-certify with the CFTC, 4 December Cboe sets its date</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">10 December Cboe XBT opens at 5 p.m. CT, 17 December CME BTC opens, 14 March 2019 Cboe stops adding XBT contracts</text>
+
+  <line x1="196" y1="100" x2="196" y2="528" stroke="#eaeaea" stroke-width="3"/>
+
+  <circle cx="196" cy="128" r="8" fill="#9658F9"/>
+  <text x="24" y="124" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">1 Dec</text>
+  <text x="24" y="142" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2017</text>
+  <text x="220" y="124" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">CME and CFE self-certify with the CFTC</text>
+  <text x="220" y="142" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">1 December 2017</text>
+
+  <circle cx="196" cy="218" r="8" fill="#5C7515"/>
+  <text x="24" y="214" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">4 Dec</text>
+  <text x="24" y="232" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2017</text>
+  <text x="220" y="214" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Cboe sets its date</text>
+  <text x="220" y="232" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">4 December</text>
+
+  <circle cx="196" cy="318" r="8" fill="#9658F9"/>
+  <text x="24" y="314" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">10 Dec</text>
+  <text x="24" y="332" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2017</text>
+  <text x="220" y="314" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Cboe XBT opens 5 p.m. CT</text>
+  <text x="220" y="332" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">10 December</text>
+
+  <circle cx="196" cy="418" r="8" fill="#9658F9"/>
+  <text x="24" y="414" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">17 Dec</text>
+  <text x="24" y="432" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2017</text>
+  <text x="220" y="414" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">CME BTC opens</text>
+  <text x="220" y="432" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">17 December</text>
+
+  <circle cx="196" cy="508" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="24" y="504" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">14 Mar</text>
+  <text x="24" y="522" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2019</text>
+  <text x="220" y="504" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Cboe stops adding XBT contracts</text>
+  <text x="220" y="522" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">14 March 2019</text>
+</svg>
