@@ -72,6 +72,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 5–12 December | Satoshi, WikiLeaks, last public forum post | 2010 |
 | 5 December | China's first bitcoin ban (PBoC bars banks) | 2013 |
 | 10 December | Cboe launches first bitcoin futures | 2017 |
+| 16 December | Bitcoin v0.2 released | 2009 |
 | 16 December | First pool-mined block (Slush Pool) | 2010 |
 | 17 December | CME launches bitcoin futures | 2017 |
 | 30 December | First difficulty adjustment | 2009 |
@@ -122,6 +123,10 @@ On 5 October 2009, NewLibertyStandard published the first known dollar exchange 
 ### 22 November: BitcoinTalk founded (2009)
 
 This is not an annual holiday. On 22 November 2009 at 18:04:28 UTC, Satoshi Nakamoto opened the new Bitcoin forum with the post "Welcome to the new Bitcoin forum!" It ran at bitcoin.org/smf, hosted by Martti Malmi ("sirius"), and later moved to bitcointalk.org. The story is in [when BitcoinTalk was founded](/blog/bitcointalk-forum-founded-2009).
+
+### 16 December: Bitcoin v0.2 released (2009)
+
+This is not an annual holiday. On 16 December 2009 at 22:45:36 UTC, Satoshi Nakamoto announced Bitcoin 0.2 on the Bitcoin Forum. It was the first release with a Linux download and a Windows setup program. Martti Malmi's tray icon and autostart, plus Satoshi's multi-processor mining and Tor proxy, are in [Bitcoin v0.2](/blog/bitcoin-v0-2-release-2009).
 
 ### 30 December: first difficulty adjustment (2009)
 

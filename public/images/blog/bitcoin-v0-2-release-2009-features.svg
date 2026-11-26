@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" role="img" aria-labelledby="cmp-title cmp-desc">
+  <title id="cmp-title">Bitcoin 0.2 release notes by author</title>
+  <desc id="cmp-desc">Table splitting the Bitcoin 0.2 release notes into Martti Malmi's features (tray, autostart, options dialog, Windows setup, Linux) and Satoshi Nakamoto's (multi-processor generation, Tor proxy, faster initial block download)</desc>
+  <rect width="860" height="500" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Bitcoin 0.2 release notes by author</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Martti Malmi: tray, autostart, options dialog, Windows setup, Linux</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Satoshi Nakamoto: multi-processor generation, Tor proxy, faster initial block download</text>
+
+  <rect x="24" y="96" width="396" height="380" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="222" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#9658F9">Martti Malmi</text>
+  <text x="222" y="172" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">minimize to tray</text>
+  <text x="222" y="220" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">autostart on boot</text>
+  <text x="222" y="268" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">options dialog</text>
+  <text x="222" y="316" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Windows setup program</text>
+  <text x="222" y="364" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Linux version</text>
+  <text x="222" y="392" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">tested on Ubuntu</text>
+
+  <rect x="440" y="96" width="396" height="380" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="638" y="128" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">Satoshi Nakamoto</text>
+  <text x="638" y="188" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">multi-processor</text>
+  <text x="638" y="208" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">coin generation</text>
+  <text x="638" y="260" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">proxy support</text>
+  <text x="638" y="280" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">for use with TOR</text>
+  <text x="638" y="332" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">initial block download</text>
+  <text x="638" y="352" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">slowdown fixes</text>
+</svg>
