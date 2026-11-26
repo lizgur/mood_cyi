@@ -77,7 +77,7 @@ Divide two weeks by 11.8 days and you get about 1.18. That is exactly where the 
 
 The block itself is ordinary. It has a single coinbase transaction paying 50 BTC. Blockchain.com tags it as "the first to be mined following the networks first ever difficulty adjustment from 1 to 1.18."
 
-## "It's been getting more difficult at each adjustment since then"
+## What happened after the first adjustment
 
 Satoshi posted about it on Bitcointalk on 15 February 2010, in a thread titled *Proof-of-work difficulty increasing*. He shared a table of every adjustment so far:
 
