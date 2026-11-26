@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 980" role="img" aria-labelledby="tl-title tl-desc">
+  <title id="tl-title">Bitcoin v0.2 timeline, 2009</title>
+  <desc id="tl-desc">Timeline of Bitcoin v0.2: Malmi's tray-icon plan on 24 August 2009, tray icon commit 24 September, multi-processor mining 21 October, proxy option 29 October, pre-announcement 27 November, release candidate 13 December, release 16 December 2009</desc>
+  <rect width="860" height="980" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Bitcoin v0.2 timeline, 2009</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Malmi's tray-icon plan on 24 August 2009, tray icon commit 24 September, multi-processor mining 21 October</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">proxy option 29 October, pre-announcement 27 November, release candidate 13 December, release 16 December 2009</text>
+
+  <line x1="196" y1="96" x2="196" y2="954" stroke="#eaeaea" stroke-width="3"/>
+
+  <circle cx="196" cy="118" r="8" fill="#9658F9"/>
+  <text x="24" y="114" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">4 Feb</text>
+  <text x="24" y="132" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="114" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">v0.1.5 announced on bitcoin-list</text>
+  <text x="220" y="132" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">the last release announced there before 0.2</text>
+
+  <circle cx="196" cy="190" r="8" fill="#5C7515"/>
+  <text x="24" y="186" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">24 Aug</text>
+  <text x="24" y="204" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="186" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Malmi emails Satoshi: next he'll build</text>
+  <text x="220" y="204" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">"minimize to tray" and autostart</text>
+
+  <circle cx="196" cy="262" r="8" fill="#9658F9"/>
+  <text x="24" y="258" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">24 Sep</text>
+  <text x="24" y="276" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="258" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Malmi commits "tray icon + ask before closing"</text>
+  <text x="220" y="276" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">SVN r10</text>
+
+  <circle cx="196" cy="334" r="8" fill="#9658F9"/>
+  <text x="24" y="330" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">3 Oct</text>
+  <text x="24" y="348" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="330" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Malmi adds the NSIS Windows installer script</text>
+  <text x="220" y="348" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">r13</text>
+
+  <circle cx="196" cy="406" r="8" fill="#5C7515"/>
+  <text x="24" y="402" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">21 Oct</text>
+  <text x="24" y="420" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="402" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Satoshi commits "flush wallet.dat, multi-proc,</text>
+  <text x="220" y="420" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">reorg options…" (r15)</text>
+
+  <circle cx="196" cy="478" r="8" fill="#9658F9"/>
+  <text x="24" y="474" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">29 Oct</text>
+  <text x="24" y="492" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="474" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Satoshi commits "proxy option and privacy patches"</text>
+  <text x="220" y="492" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">r18</text>
+
+  <circle cx="196" cy="550" r="8" fill="#9658F9"/>
+  <text x="24" y="546" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">31 Oct</text>
+  <text x="24" y="564" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="546" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Malmi commits Linux alternatives to Windows-only code</text>
+  <text x="220" y="564" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">r23</text>
+
+  <circle cx="196" cy="622" r="8" fill="#5C7515"/>
+  <text x="24" y="618" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">27 Nov</text>
+  <text x="24" y="636" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="618" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Satoshi pre-announces 0.2 features on the forum</text>
+  <text x="220" y="636" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">27 November 2009</text>
+
+  <circle cx="196" cy="694" r="8" fill="#9658F9"/>
+  <text x="24" y="690" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">13 Dec</text>
+  <text x="24" y="708" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="690" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Malmi tests the emailed release candidate</text>
+  <text x="220" y="708" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">"No problems so far"</text>
+
+  <circle cx="196" cy="766" r="8" fill="#9658F9"/>
+  <text x="24" y="762" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">14 Dec</text>
+  <text x="24" y="780" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="762" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">Commit "…-- 0.2 rc2" (r49)</text>
+  <text x="220" y="780" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">GitHub's v0.2.0 tag points to it</text>
+
+  <circle cx="196" cy="838" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="24" y="834" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">16 Dec</text>
+  <text x="24" y="852" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="834" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">"Bitcoin 0.2 released!" on the forum</text>
+  <text x="220" y="852" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">16 December 2009, 22:45:36 UTC</text>
+
+  <circle cx="196" cy="910" r="8" fill="#9658F9"/>
+  <text x="24" y="906" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">17 Dec</text>
+  <text x="24" y="924" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2009</text>
+  <text x="220" y="906" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">"Bitcoin 0.2 released" on bitcoin-list</text>
+  <text x="220" y="924" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">17 December 2009</text>
+</svg>
