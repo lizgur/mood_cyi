@@ -127,6 +127,11 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "draft": false
   },
   {
+    "slug": "hodl-meaning-origin-2013",
+    "date": "2026-11-27",
+    "draft": false
+  },
+  {
     "slug": "laszlo-hanyecz",
     "date": "2026-11-02",
     "draft": false

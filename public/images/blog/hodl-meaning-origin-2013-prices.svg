@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" role="img" aria-labelledby="cmp-title cmp-desc">
+  <title id="cmp-title">Bitcoin prices on 18 December 2013 by exchange: Mt. Gox from $717 to as low as $480 (BBC), Bitstamp down as much as 43% to $382.21 and BTC China down as much as 49% to 2,011 yuan (Sydney Morning Herald)</title>
+  <desc id="cmp-desc">Bitcoin prices on 18 December 2013 by exchange: Mt. Gox from $717 to as low as $480 (BBC), Bitstamp down as much as 43% to $382.21 and BTC China down as much as 49% to 2,011 yuan (Sydney Morning Herald)</desc>
+  <rect width="860" height="400" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Bitcoin prices on 18 December 2013</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">by exchange: Mt. Gox from $717 to as low as $480 (BBC), Bitstamp down as much as 43% to $382.21</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">and BTC China down as much as 49% to 2,011 yuan (Sydney Morning Herald)</text>
+
+  <rect x="24" y="100" width="260" height="260" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="154" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#9658F9">Mt. Gox</text>
+  <text x="154" y="184" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">from $717</text>
+  <text x="154" y="212" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">to as low as $480</text>
+  <text x="154" y="256" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">BBC</text>
+
+  <rect x="300" y="100" width="260" height="260" rx="8" fill="#ffffff" stroke="#5C7515" stroke-width="2"/>
+  <text x="430" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#5C7515">Bitstamp</text>
+  <text x="430" y="184" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">down as much as 43%</text>
+  <text x="430" y="212" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">to $382.21</text>
+  <text x="430" y="256" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Sydney Morning Herald</text>
+
+  <rect x="576" y="100" width="260" height="260" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="706" y="140" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">BTC China</text>
+  <text x="706" y="184" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">down as much as 49%</text>
+  <text x="706" y="212" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">to 2,011 yuan</text>
+  <text x="706" y="256" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">Sydney Morning Herald</text>
+</svg>
