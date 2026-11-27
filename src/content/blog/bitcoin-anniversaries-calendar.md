@@ -75,6 +75,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 16 December | Bitcoin v0.2 released | 2009 |
 | 16 December | First pool-mined block (Slush Pool) | 2010 |
 | 17 December | CME launches bitcoin futures | 2017 |
+| 18 December | HODL / "I AM HODLING" posted | 2013 |
 | 30 December | First difficulty adjustment | 2009 |
 | About every four years | Halving (no fixed date) | 2012 |
 
@@ -187,6 +188,10 @@ This is not an annual holiday. On 5 December 2013, the People's Bank of China an
 ### 10 and 17 December: first bitcoin futures (2017)
 
 This is not an annual holiday. On 10 December 2017, Cboe's XBT futures began trading at 5:00 p.m. CT — the first bitcoin futures on a major U.S. exchange. CME listed its BTC contract a week later, on 17 December. Both launches, the first day, and Cboe's later exit are in [when bitcoin futures started](/blog/first-bitcoin-futures-cboe-cme-2017).
+
+### 18 December: HODL / "I AM HODLING" posted (2013)
+
+This is not an annual holiday. On 18 December 2013 at 10:03 UTC, BitcoinTalk user GameKyuubi posted a thread titled "I AM HODLING" while the bitcoin price was crashing. The misspelling of "hold" became slang for holding bitcoin instead of selling it. The origin, the crash that day, and the later "Hold On for Dear Life" backronym are in [what HODL means](/blog/hodl-meaning-origin-2013).
 
 ### The halvings (moving dates)
 
