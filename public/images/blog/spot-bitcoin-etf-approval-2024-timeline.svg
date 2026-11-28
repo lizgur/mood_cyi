@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" role="img" aria-labelledby="tl-title tl-desc">
+  <title id="tl-title">Timeline of spot bitcoin ETFs in the US: 10 March 2017 SEC disapproves the Winklevoss Bitcoin Trust, 26 July 2018 disapproves it again, 29 August 2023 the D.C. Circuit rules for Grayscale, 9 January 2024 a fake approval post on the hacked @SECGov X account, 10 January 2024 the SEC approves 11 spot bitcoin ETPs, 11 January 2024 trading begins</title>
+  <desc id="tl-desc">Timeline of spot bitcoin ETFs in the US: 10 March 2017 SEC disapproves the Winklevoss Bitcoin Trust, 26 July 2018 disapproves it again, 29 August 2023 the D.C. Circuit rules for Grayscale, 9 January 2024 a fake approval post on the hacked @SECGov X account, 10 January 2024 the SEC approves 11 spot bitcoin ETPs, 11 January 2024 trading begins</desc>
+  <rect width="860" height="620" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Timeline of spot bitcoin ETFs in the US</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">10 March 2017 SEC disapproves the Winklevoss Bitcoin Trust, 26 July 2018 disapproves it again</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">29 August 2023 the D.C. Circuit rules for Grayscale, 9 January 2024 a fake approval post</text>
+  <text x="430" y="92" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">on the hacked @SECGov X account, 10 January 2024 the SEC approves 11 spot bitcoin ETPs, 11 January 2024 trading begins</text>
+
+  <line x1="196" y1="112" x2="196" y2="588" stroke="#eaeaea" stroke-width="3"/>
+
+  <circle cx="196" cy="140" r="8" fill="#9658F9"/>
+  <text x="24" y="136" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">10 Mar</text>
+  <text x="24" y="154" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2017</text>
+  <text x="220" y="136" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">SEC disapproves the Winklevoss Bitcoin Trust</text>
+  <text x="220" y="154" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">10 March 2017</text>
+
+  <circle cx="196" cy="228" r="8" fill="#9658F9"/>
+  <text x="24" y="224" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">26 Jul</text>
+  <text x="24" y="242" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2018</text>
+  <text x="220" y="224" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">disapproves it again</text>
+  <text x="220" y="242" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">26 July 2018</text>
+
+  <circle cx="196" cy="316" r="8" fill="#5C7515"/>
+  <text x="24" y="312" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">29 Aug</text>
+  <text x="24" y="330" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2023</text>
+  <text x="220" y="312" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">the D.C. Circuit rules for Grayscale</text>
+  <text x="220" y="330" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">29 August 2023</text>
+
+  <circle cx="196" cy="404" r="8" fill="#9658F9"/>
+  <text x="24" y="400" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">9 Jan</text>
+  <text x="24" y="418" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2024</text>
+  <text x="220" y="400" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">a fake approval post on the hacked @SECGov X account</text>
+  <text x="220" y="418" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">fake, 9 January 2024</text>
+
+  <circle cx="196" cy="492" r="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="24" y="488" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">10 Jan</text>
+  <text x="24" y="506" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2024</text>
+  <text x="220" y="488" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">the SEC approves 11 spot bitcoin ETPs</text>
+  <text x="220" y="506" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">10 January 2024</text>
+
+  <circle cx="196" cy="580" r="8" fill="#9658F9"/>
+  <text x="24" y="576" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#300B6A">11 Jan</text>
+  <text x="24" y="594" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#000000">2024</text>
+  <text x="220" y="576" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#000000">trading begins</text>
+  <text x="220" y="594" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">11 January 2024</text>
+</svg>

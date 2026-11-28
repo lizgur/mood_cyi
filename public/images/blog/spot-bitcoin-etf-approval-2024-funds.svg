@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 640" role="img" aria-labelledby="cmp-title cmp-desc">
+  <title id="cmp-title">Table of the 11 spot bitcoin ETPs in the SEC's 10 January 2024 approval order by listing exchange: NYSE Arca (Grayscale GBTC, Bitwise BITB, Hashdex DEFI), Nasdaq (iShares IBIT, Valkyrie BRRR) and Cboe BZX (ARK 21Shares ARKB, Invesco Galaxy BTCO, VanEck HODL, WisdomTree BTCW, Fidelity FBTC, Franklin EZBC)</title>
+  <desc id="cmp-desc">Table of the 11 spot bitcoin ETPs in the SEC's 10 January 2024 approval order by listing exchange: NYSE Arca (Grayscale GBTC, Bitwise BITB, Hashdex DEFI), Nasdaq (iShares IBIT, Valkyrie BRRR) and Cboe BZX (ARK 21Shares ARKB, Invesco Galaxy BTCO, VanEck HODL, WisdomTree BTCW, Fidelity FBTC, Franklin EZBC)</desc>
+  <rect width="860" height="640" rx="12" fill="#ffffff" stroke="#eaeaea"/>
+  <text x="430" y="36" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="16" fill="#300B6A">Table of the 11 spot bitcoin ETPs</text>
+  <text x="430" y="56" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">in the SEC's 10 January 2024 approval order by listing exchange</text>
+  <text x="430" y="74" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">NYSE Arca (Grayscale GBTC, Bitwise BITB, Hashdex DEFI), Nasdaq (iShares IBIT, Valkyrie BRRR)</text>
+  <text x="430" y="92" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">and Cboe BZX (ARK 21Shares ARKB, Invesco Galaxy BTCO, VanEck HODL, WisdomTree BTCW, Fidelity FBTC, Franklin EZBC)</text>
+
+  <rect x="24" y="116" width="260" height="500" rx="8" fill="#ffffff" stroke="#9658F9" stroke-width="2"/>
+  <text x="154" y="148" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#9658F9">NYSE Arca</text>
+  <text x="154" y="188" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Grayscale</text>
+  <text x="154" y="208" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">GBTC</text>
+  <text x="154" y="248" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Bitwise</text>
+  <text x="154" y="268" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">BITB</text>
+  <text x="154" y="308" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Hashdex</text>
+  <text x="154" y="328" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">DEFI</text>
+
+  <rect x="300" y="116" width="260" height="500" rx="8" fill="#ffffff" stroke="#5C7515" stroke-width="2"/>
+  <text x="430" y="148" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#5C7515">Nasdaq</text>
+  <text x="430" y="188" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">iShares</text>
+  <text x="430" y="208" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">IBIT</text>
+  <text x="430" y="248" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Valkyrie</text>
+  <text x="430" y="268" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">BRRR</text>
+
+  <rect x="576" y="116" width="260" height="500" rx="8" fill="#BDFF07" stroke="#5C7515" stroke-width="2"/>
+  <text x="706" y="148" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="14" fill="#300B6A">Cboe BZX</text>
+  <text x="706" y="188" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">ARK 21Shares</text>
+  <text x="706" y="208" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">ARKB</text>
+  <text x="706" y="248" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Invesco Galaxy</text>
+  <text x="706" y="268" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">BTCO</text>
+  <text x="706" y="308" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">VanEck</text>
+  <text x="706" y="328" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">HODL</text>
+  <text x="706" y="368" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">WisdomTree</text>
+  <text x="706" y="388" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">BTCW</text>
+  <text x="706" y="428" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Fidelity</text>
+  <text x="706" y="448" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">FBTC</text>
+  <text x="706" y="488" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="13" fill="#300B6A">Franklin</text>
+  <text x="706" y="508" text-anchor="middle" font-family="Consolas, ui-monospace, monospace" font-size="12" fill="#666666">EZBC</text>
+</svg>

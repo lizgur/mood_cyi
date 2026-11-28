@@ -55,6 +55,7 @@ Today is 31 October, so the calendar starts here. Every date below has a source,
 | 31 October | Whitepaper Day | 2008 |
 | 3 January | Genesis Day (also marked as Proof of Keys day) | 2009 |
 | 9 January | First Bitcoin software release | 2009 |
+| 10 January | Spot bitcoin ETFs approved | 2024 |
 | 12 January | First Bitcoin transaction, Satoshi to Hal Finney | 2009 |
 | 11–12 March | 2013 chain fork | 2013 |
 | 17 March | Bitcoin Market starts trading | 2010 |
@@ -156,6 +157,10 @@ This is not an annual holiday. On 16 December 2010 at 07:16:08 UTC, Slush Pool f
 For everything that happened between these dates, see our [Bitcoin history timeline for 2008 to 2010](/blog/bitcoin-history-timeline-2008-2010).
 
 ## Later milestones
+
+### 10 January: spot bitcoin ETFs approved (2024)
+
+This is not an annual holiday. On Wednesday 10 January 2024, the SEC approved 11 spot bitcoin ETPs in a 3-2 vote (Release No. 34-99306), listed on NYSE Arca, Nasdaq and Cboe BZX. Trading began the next morning, Thursday 11 January. The decade of denials, the August 2023 Grayscale court ruling, and the fake @SECGov post the day before are in [when spot bitcoin ETFs were approved](/blog/spot-bitcoin-etf-approval-2024).
 
 ### 11–12 March: the 2013 chain fork
 

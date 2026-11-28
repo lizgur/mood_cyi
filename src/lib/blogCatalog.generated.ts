@@ -150,5 +150,10 @@ export const blogCatalog: BlogCatalogEntry[] = [
     "slug": "satoshi-wikileaks-hornets-nest-2010",
     "date": "2026-11-13",
     "draft": false
+  },
+  {
+    "slug": "spot-bitcoin-etf-approval-2024",
+    "date": "2026-11-28",
+    "draft": false
   }
 ];
